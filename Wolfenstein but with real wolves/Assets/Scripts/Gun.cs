@@ -2,15 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour {
+public abstract class Gun {
+    /// <summary>
+    /// Damage this gun's shots do
+    /// </summary>
+    protected int damage;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public Gun(int dmg)
+    {
+        damage = dmg;
+    }
+
+    /// <summary>
+    /// Fire from the gun
+    /// </summary>
+    /// <param name="direction">What direction it's firing.</param>
+    /// <param name="dealDamage">Whether or not to deal damage. Use false if you want to, uh, find out what it would hit?</param>
+    /// <returns></returns>
+    public GameObject Shoot(Vector3 direction, bool dealDamage = true)
+    {
+        Physics.Raycast()
+    }
 }
