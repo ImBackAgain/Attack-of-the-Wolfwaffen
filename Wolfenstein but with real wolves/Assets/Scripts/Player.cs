@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Lifeform {
-    Revolver gun;
+    Gun revolver;
     protected override void Initialize()
     {
         maxHealth = 100;
+        revolver = GetComponent<Gun>();
     }
 
-    // Use this for initialization
-    void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetAxis("Fire1") > 0)
+        {
+            GameObject hit;
+            if (revolver.Shoot(out hit, false))
+            {
+                Destroy(hit);
+            }
+            
+        }
 	}
 }

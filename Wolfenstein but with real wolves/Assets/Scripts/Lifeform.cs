@@ -17,6 +17,18 @@ public abstract class Lifeform : MonoBehaviour {
     /// </summary>
     protected abstract void Initialize();
 
+    /// <summary>
+    /// Take damage (can passs negative value to restore health)
+    /// </summary>
+    /// <param name="healthReduction">Amount by which to reduce health.</param>
+    /// <returns>Whether or not it's stilll alive</returns>
+    public bool TakeDamage(int healthReduction)
+    {
+        health -= healthReduction;
+        if (health > maxHealth) health = maxHealth;
+
+        return health > 0;
+    }
 
     // Update is called once per frame
     void Update () {
