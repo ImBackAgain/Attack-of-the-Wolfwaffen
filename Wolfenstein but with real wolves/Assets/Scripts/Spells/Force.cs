@@ -10,11 +10,16 @@ public class Force : Spells {
 
     // Use this for initialization
     void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        name = "Assantius";
+        damage = 1;
+        maxRange = 10f;
+        aoe = 0f;
+        cooldown = 5f;
+        obj = GameObject.Find("Force");
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }

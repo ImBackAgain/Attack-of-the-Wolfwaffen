@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Gravity : Spells {
+
+    protected float duration;
+
     protected override void Cast()
     {
         throw new System.NotImplementedException();
@@ -10,11 +13,17 @@ public class Gravity : Spells {
 
     // Use this for initialization
     void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        name = "Gravitus";
+        damage = 0;
+        maxRange = 0f;
+        aoe = 0f;
+        cooldown = 10f;
+        duration = 5f;
+        obj = GameObject.Find("Gravity");
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }

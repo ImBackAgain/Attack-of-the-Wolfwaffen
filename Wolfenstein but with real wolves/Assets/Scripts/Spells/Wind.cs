@@ -10,11 +10,16 @@ public class Wind : Spells {
 
     // Use this for initialization
     void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        name = "Ventus Servitas";
+        damage = 1;
+        maxRange = 3f;
+        aoe = 3f;
+        cooldown = 5f;
+        obj = GameObject.Find("Wind");
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }

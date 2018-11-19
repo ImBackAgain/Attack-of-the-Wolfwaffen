@@ -10,11 +10,16 @@ public class Lightning : Spells {
 
     // Use this for initialization
     void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        name = "Ventas Fulmino";
+        damage = 2;
+        maxRange = 5f;
+        aoe = 90f;
+        cooldown = 5f;
+        obj = GameObject.Find("Lightning");
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }
