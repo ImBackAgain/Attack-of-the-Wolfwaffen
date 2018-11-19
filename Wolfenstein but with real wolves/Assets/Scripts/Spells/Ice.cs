@@ -10,7 +10,12 @@ public class Ice : Spells {
 
     // Use this for initialization
     void Start () {
-		
+        name = "Infriga";
+        damage = 3;
+        maxRange = 10f;
+        aoe = 0f;
+        cooldown = 5f;
+        //obj = 
 	}
 	
 	// Update is called once per frame

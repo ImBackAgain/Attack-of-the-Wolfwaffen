@@ -10,11 +10,16 @@ public class Fire : Spells {
 
     // Use this for initialization
     void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        name = "Fuego";
+        damage = 2;
+        maxRange = 10f;
+        aoe = 5f;
+        cooldown = 5f;
+        obj = GameObject.Find("Fire");
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }

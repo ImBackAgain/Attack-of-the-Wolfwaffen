@@ -4,6 +4,13 @@ using UnityEngine;
 
 public abstract class Spells : MonoBehaviour {
 
+    protected string name;
+    protected int damage;
+    protected float maxRange;
+    protected float aoe;
+    protected float cooldown;
+    protected GameObject obj;
+
 	// Use this for initialization
 	void Start () {
 		
