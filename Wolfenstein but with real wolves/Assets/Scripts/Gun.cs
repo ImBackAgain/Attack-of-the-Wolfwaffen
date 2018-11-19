@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Gun {
+public abstract class Gun : MonoBehaviour {
     /// <summary>
     /// Damage this gun's shots do
     /// </summary>
     protected int damage;
+    
 
     public Gun(int dmg)
     {
@@ -21,6 +22,9 @@ public abstract class Gun {
     /// <returns></returns>
     public GameObject Shoot(Vector3 direction, bool dealDamage = true)
     {
-        Physics.Raycast()
+        RaycastHit hits;
+        Physics.Raycast(transform.position, direction, out hits);
+
+        return gameObject;
     }
 }
