@@ -5,7 +5,11 @@ using UnityEngine;
 public class Fire : Spells {
     protected override void Cast()
     {
-        throw new System.NotImplementedException();
+        if (!casted)
+        {
+            casted = true;
+            cooldownTime = 0f;
+        }
     }
 
     // Use this for initialization
@@ -15,11 +19,23 @@ public class Fire : Spells {
         maxRange = 10f;
         aoe = 5f;
         cooldown = 5f;
+        cooldownTime = 0f;
+        casted = false;
         obj = GameObject.Find("Fire");
+        casted = false;
+        cooldownTime = 0f;
     }
 
     // Update is called once per frame
-    void Update () {
-		
-	}
+    protected override void Update ()
+    {
+        if (casted)
+        {
+            cooldownTime += Time.deltaTime;
+            if (cooldownTime >= cooldown)
+            {
+                casted = false;
+            }
+        }
+    }
 }
