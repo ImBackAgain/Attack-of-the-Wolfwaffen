@@ -25,6 +25,11 @@ public abstract class Gun : MonoBehaviour {
         timer -= Time.deltaTime;
     }
 
+    private void Start()
+    {
+        Initialize();
+    }
+
     /// <summary>
     /// Fire from the gun.
     /// </summary>
@@ -36,26 +41,39 @@ public abstract class Gun : MonoBehaviour {
     /// <returns>Whether or not you were able to shooot</returns>
     public bool Shoot(Vector3 shoooterPosition, Vector3 direction, out GameObject victim, out bool isLifeForm, bool dealDamage = true)
     {
+        
         if (timer > 0 && ammmo <= 0)
         {
             victim = null;
             isLifeForm = false;
+            //Debug.Log("Not shoooting");
             return false;
         }
-
+        
         RaycastHit hits;
         Physics.Raycast(transform.position, direction, out hits, range);
 
-        victim = hits.collider.gameObject;
-
-        Lifeform victimScript = victim.GetComponent<Lifeform>();
-
-        isLifeForm = (victimScript != null);
-
-        if (isLifeForm)
+        if (hits.collider != null)
         {
-            victimScript.TakeDamage(damage);
+            victim = hits.collider.gameObject;
+
+            Lifeform victimScript = victim.GetComponent<Lifeform>();
+
+            isLifeForm = (victimScript != null);
+            //Debug.Log(isLifeForm);
+
+            if (isLifeForm)
+            {
+                victimScript.TakeDamage(damage);
+            }
         }
+        else
+        {
+            //Debug.Log("Nothing hit");
+            victim = null;
+            isLifeForm = false;
+        }
+        
         timer = fireTimeout;
 
         return true;

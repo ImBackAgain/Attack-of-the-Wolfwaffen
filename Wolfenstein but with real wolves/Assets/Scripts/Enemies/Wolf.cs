@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Woof : Enemy {
+public class Wolf : Enemy {
     protected override void Initialize()
     {
         maxHealth = 100;
