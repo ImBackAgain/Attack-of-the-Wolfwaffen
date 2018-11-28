@@ -1,0 +1,17 @@
+Warewolf - 3406 Triangles
+
+11 Animations
+
+Walk Forward
+Run Forward
+Idle Relaxed
+Idle Battle
+Attack 1
+Attack 2
+Attack 3
+Damage Receive 1
+Damage Receive 2
+Jump
+Death 1
+
+
