@@ -5,7 +5,11 @@ using UnityEngine;
 public class Force : Spells {
     protected override void Cast()
     {
-        throw new System.NotImplementedException();
+        if (!casted)
+        {
+            casted = true;
+            cooldownTime = 0f;
+        }
     }
 
     // Use this for initialization
@@ -16,10 +20,20 @@ public class Force : Spells {
         aoe = 0f;
         cooldown = 5f;
         obj = GameObject.Find("Force");
+        casted = false;
+        cooldownTime = 0f;
     }
 
     // Update is called once per frame
-    void Update () {
-		
-	}
+    protected override void Update ()
+    {
+        if (casted)
+        {
+            cooldownTime += Time.deltaTime;
+            if (cooldownTime >= cooldown)
+            {
+                casted = false;
+            }
+        }
+    }
 }

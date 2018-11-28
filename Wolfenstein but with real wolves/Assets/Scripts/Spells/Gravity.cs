@@ -5,10 +5,19 @@ using UnityEngine;
 public class Gravity : Spells {
 
     protected float duration;
+    private float timer;
+    private bool activated;
 
     protected override void Cast()
     {
-        throw new System.NotImplementedException();
+        if(!casted)
+        {
+            activated = true;
+            timer = 0f;
+            casted = true;
+            cooldownTime = 0f;
+            //modify jump
+        }
     }
 
     // Use this for initialization
@@ -20,10 +29,33 @@ public class Gravity : Spells {
         cooldown = 10f;
         duration = 5f;
         obj = GameObject.Find("Gravity");
+        casted = false;
+        timer = 0f;
+        activated = false;
+        cooldownTime = 0f;
     }
 
     // Update is called once per frame
-    void Update () {
-		
+    protected override void Update ()
+    {
+		if(activated)
+        {
+            timer += Time.deltaTime;
+            if(timer >= duration)
+            {
+                activated = false;
+                //modify jump
+            }
+        }
+
+        if(casted)
+        {
+            cooldownTime += Time.deltaTime;
+            if(cooldownTime >= cooldown)
+            {
+                casted = false;
+
+            }
+        }
 	}
 }
