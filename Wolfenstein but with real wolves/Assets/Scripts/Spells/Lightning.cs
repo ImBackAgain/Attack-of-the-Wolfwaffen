@@ -9,6 +9,7 @@ public class Lightning : Spells {
         {
             casted = true;
             cooldownTime = 0f;
+            DrawSpell();
         }
     }
 
@@ -30,10 +31,18 @@ public class Lightning : Spells {
         if (casted)
         {
             cooldownTime += Time.deltaTime;
+            obj.transform.position = player.transform.position;
+            //Check collision
+            //Deal damage if within collision
             if (cooldownTime >= cooldown)
             {
                 casted = false;
             }
         }
+    }
+
+    protected override void DrawSpell()
+    {
+        obj.transform.position = player.transform.position;
     }
 }

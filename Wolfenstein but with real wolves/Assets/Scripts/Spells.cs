@@ -12,6 +12,7 @@ public abstract class Spells : MonoBehaviour {
     protected bool casted;
     protected float cooldownTime;
     protected GameObject obj;
+    public GameObject player;
 
 	// Use this for initialization
 	void Start () {
@@ -22,4 +23,6 @@ public abstract class Spells : MonoBehaviour {
     protected abstract void Update();
 
     protected abstract void Cast();
+
+    protected abstract void DrawSpell();
 }

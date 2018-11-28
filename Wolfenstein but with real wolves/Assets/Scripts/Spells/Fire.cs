@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Fire : Spells {
+
+    private bool projectile;
+    private float speed;
+
     protected override void Cast()
     {
         if (!casted)
         {
             casted = true;
             cooldownTime = 0f;
+            DrawSpell();
         }
     }
 
@@ -24,6 +29,8 @@ public class Fire : Spells {
         obj = GameObject.Find("Fire");
         casted = false;
         cooldownTime = 0f;
+        speed = 0;
+        projectile = false;
     }
 
     // Update is called once per frame
@@ -37,5 +44,20 @@ public class Fire : Spells {
                 casted = false;
             }
         }
+        if (projectile)
+        {
+            obj.transform.position += obj.transform.forward * speed;
+            //Check collisions
+            //Explode on collision and remove projectile
+            //projectile = false;
+        }
+    }
+
+    protected override void DrawSpell()
+    {
+        obj.transform.position = player.transform.position;
+        obj.transform.forward = player.transform.forward;
+        speed = 1;
+        projectile = true;
     }
 }

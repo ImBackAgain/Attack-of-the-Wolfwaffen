@@ -9,6 +9,8 @@ public class Force : Spells {
         {
             casted = true;
             cooldownTime = 0f;
+            //Raycast collision detection
+            //Deal effect on hit
         }
     }
 
@@ -35,5 +37,10 @@ public class Force : Spells {
                 casted = false;
             }
         }
+    }
+
+    protected override void DrawSpell()
+    {
+        throw new System.NotImplementedException();
     }
 }

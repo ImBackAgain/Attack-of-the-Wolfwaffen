@@ -7,6 +7,7 @@ public class Wind : Spells {
     protected float duration;
     private float timer;
     private bool activated;
+    private float speed;
 
     protected override void Cast()
     {
@@ -16,6 +17,7 @@ public class Wind : Spells {
             timer = 0f;
             casted = true;
             cooldownTime = 0f;
+            DrawSpell();
         }
     }
 
@@ -32,6 +34,7 @@ public class Wind : Spells {
         timer = 0f;
         activated = false;
         cooldownTime = 0f;
+        speed = 0;
     }
 
     // Update is called once per frame
@@ -40,7 +43,10 @@ public class Wind : Spells {
         if (activated)
         {
             timer += Time.deltaTime;
-            //draw aoe wind effect and check for collision
+            obj.transform.LookAt(player.transform);
+            obj.transform.position += obj.transform.right * speed;
+            //Check collision in aoe
+            //Deal damage and push back if effected
             if (timer >= duration)
             {
                 activated = false;
@@ -55,5 +61,11 @@ public class Wind : Spells {
                 casted = false;
             }
         }
+    }
+
+    protected override void DrawSpell()
+    {
+        speed = 1;
+        obj.transform.position = player.transform.position + player.transform.forward * 1;
     }
 }
