@@ -11,6 +11,11 @@ public class Force : Spells {
             cooldownTime = 0f;
             //Raycast collision detection
             //Deal effect on hit
+            RaycastHit hits;
+            Physics.Raycast(player.transform.position, player.transform.forward, out hits);
+            Enemy enemy = hits.collider.gameObject.GetComponent<Enemy>();
+            enemy.TakeDamage(damage);
+            //push back
         }
     }
 

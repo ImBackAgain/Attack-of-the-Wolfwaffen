@@ -45,10 +45,9 @@ public class Wind : Spells {
             timer += Time.deltaTime;
             obj.transform.LookAt(player.transform);
             obj.transform.position += obj.transform.right * speed;
-            //Check collision in aoe
-            //Deal damage and push back if effected
             if (timer >= duration)
             {
+                Destroy(obj);
                 activated = false;
             }
         }
@@ -65,7 +64,17 @@ public class Wind : Spells {
 
     protected override void DrawSpell()
     {
+        createdObj = Instantiate(obj);
         speed = 1;
         obj.transform.position = player.transform.position + player.transform.forward * 1;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "EnemyTag")
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+            //push back
+        }
     }
 }

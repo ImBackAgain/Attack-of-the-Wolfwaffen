@@ -10,6 +10,7 @@ public class Lightning : Spells {
             casted = true;
             cooldownTime = 0f;
             DrawSpell();
+            Destroy(createdObj);
         }
     }
 
@@ -32,8 +33,6 @@ public class Lightning : Spells {
         {
             cooldownTime += Time.deltaTime;
             obj.transform.position = player.transform.position;
-            //Check collision
-            //Deal damage if within collision
             if (cooldownTime >= cooldown)
             {
                 casted = false;
@@ -43,6 +42,15 @@ public class Lightning : Spells {
 
     protected override void DrawSpell()
     {
+        createdObj = Instantiate(obj);
         obj.transform.position = player.transform.position;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "EnemyTag")
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+        }
     }
 }

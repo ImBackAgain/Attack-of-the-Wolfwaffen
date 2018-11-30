@@ -12,6 +12,7 @@ public abstract class Spells : MonoBehaviour {
     protected bool casted;
     protected float cooldownTime;
     protected GameObject obj;
+    protected GameObject createdObj;
     public GameObject player;
 
 	// Use this for initialization

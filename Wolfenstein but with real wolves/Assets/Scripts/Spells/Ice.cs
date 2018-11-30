@@ -45,17 +45,25 @@ public class Ice : Spells {
         if(projectile)
         {
             obj.transform.position += obj.transform.forward * speed;
-            //Check collision
-            //Deal damage on collision and remove projectile
-            //projectile = false;
         }
     }
 
     protected override void DrawSpell()
     {
+        createdObj = Instantiate(obj);
         obj.transform.position = player.transform.position;
         obj.transform.forward = player.transform.forward;
         speed = 1;
         projectile = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "EnemyTag")
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+        }
+        Destroy(createdObj);
+        projectile = false;
     }
 }

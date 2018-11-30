@@ -47,17 +47,27 @@ public class Fire : Spells {
         if (projectile)
         {
             obj.transform.position += obj.transform.forward * speed;
-            //Check collisions
-            //Explode on collision and remove projectile
-            //projectile = false;
+            Destroy(createdObj);
+            projectile = false;
         }
     }
 
     protected override void DrawSpell()
     {
+        createdObj = Instantiate(obj);
         obj.transform.position = player.transform.position;
         obj.transform.forward = player.transform.forward;
         speed = 1;
         projectile = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "EnemyTag")
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+            Destroy(createdObj);
+        }
+        projectile = false;
     }
 }

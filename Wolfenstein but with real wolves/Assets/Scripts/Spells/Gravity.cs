@@ -49,7 +49,7 @@ public class Gravity : Spells {
             {
                 activated = false;
                 //modify jump
-                playerController.m_GravityMultiplier = 2;
+                //playerController.m_GravityMultiplier = 2;
             }
         }
 
