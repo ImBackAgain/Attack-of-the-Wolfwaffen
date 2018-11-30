@@ -8,7 +8,7 @@ public class Gravity : Spells {
     private float timer;
     private bool activated;
 
-    protected override void Cast()
+    public override void Cast()
     {
         if(!casted)
         {
@@ -49,14 +49,6 @@ public class Gravity : Spells {
             }
         }
 
-        if(casted)
-        {
-            cooldownTime += Time.deltaTime;
-            if(cooldownTime >= cooldown)
-            {
-                casted = false;
-
-            }
-        }
-	}
+        base.Update();
+    }
 }

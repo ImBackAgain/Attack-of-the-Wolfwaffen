@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class Player : Lifeform {
     Gun revolver;
+
+    Dictionary<string, Spells> spells = new Dictionary<string, Spells>();
+
     protected override void Initialize()
     {
-        maxHealth = 100;
+        Initialize(100);
         revolver = GetComponent<Gun>();
+
+        spells.Add("Fire", GetComponent<Fire>());
+        spells.Add("Force", GetComponent<Force>());
+        spells.Add("Gravity", GetComponent<Gravity>());
+        spells.Add("Ice", GetComponent<Ice>());
+        spells.Add("Lightning", GetComponent<Lightning>());
+        spells.Add("Wind", GetComponent<Wind>());
     }
 
 	
@@ -20,8 +30,20 @@ public class Player : Lifeform {
             if (revolver.Shoot(out hit, out hitLifeForm, false) && hitLifeForm)
             {
                 Destroy(hit);
+            }   
+        }
+
+        if (Input.GetButtonDown("Reload gun"))
+        {
+            revolver.Reload();
+        }
+
+        foreach(string spelllName in spells.Keys)
+        {
+            if (Input.GetButtonDown("Cast" + spelllName))
+            {
+                spells[spelllName].Cast();
             }
-            
         }
 	}
 }

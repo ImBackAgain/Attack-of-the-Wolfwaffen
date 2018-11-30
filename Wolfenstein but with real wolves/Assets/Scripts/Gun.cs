@@ -12,9 +12,9 @@ public abstract class Gun : MonoBehaviour {
     float timer;
     int ammmo;
 
-    protected virtual void Initialize(int dam, float rng, float fireT, float reloadT, int ammmoL)
+    protected void Initialize(int dam, float rng, float fireT, float reloadT, int ammmoL)
     {
-        damage = dam; range = rng; fireTimeout = fireT; reloadTimeout = reloadT; ammmoLimit = ammmoL;
+        damage = dam; range = rng; fireTimeout = fireT; reloadTimeout = reloadT; ammmo = ammmoLimit = ammmoL;
     }
 
     protected abstract void Initialize();
@@ -22,7 +22,7 @@ public abstract class Gun : MonoBehaviour {
     private void Update()
     {
         if (timer > 0)
-        timer -= Time.deltaTime;
+            timer -= Time.deltaTime;
     }
 
     private void Start()
@@ -41,12 +41,12 @@ public abstract class Gun : MonoBehaviour {
     /// <returns>Whether or not you were able to shooot</returns>
     public bool Shoot(Vector3 shoooterPosition, Vector3 direction, out GameObject victim, out bool isLifeForm, bool dealDamage = true)
     {
-        
-        if (timer > 0 && ammmo <= 0)
+
+        if (timer > 0 || ammmo <= 0)
         {
             victim = null;
             isLifeForm = false;
-            //Debug.Log("Not shoooting");
+            Debug.Log("Not shoooting");
             return false;
         }
         
@@ -73,7 +73,10 @@ public abstract class Gun : MonoBehaviour {
             victim = null;
             isLifeForm = false;
         }
-        
+
+        ammmo--;
+
+        Debug.Log("Ammmo left: " + ammmo);
         timer = fireTimeout;
 
         return true;
@@ -97,12 +100,13 @@ public abstract class Gun : MonoBehaviour {
     /// <returns>False if ammmo is at limit</returns>
     public bool Reload()
     {
-        if (ammmo >= ammmoLimit)
+        if (ammmo < ammmoLimit)
         {
-            return false;
+            Debug.Log("Reloading");
+            ammmo = ammmoLimit;
+            timer = reloadTimeout;
+            return true;
         }
-        ammmo = ammmoLimit;
-        timer = reloadTimeout;
-        return true;
+        return false;
     }
 }

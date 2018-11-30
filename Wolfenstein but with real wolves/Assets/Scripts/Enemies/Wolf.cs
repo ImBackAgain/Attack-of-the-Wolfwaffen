@@ -5,7 +5,7 @@ using UnityEngine;
 public class Wolf : Enemy {
     protected override void Initialize()
     {
-        maxHealth = 100;
+        Initialize(100);
     }
 
     // Use this for initialization

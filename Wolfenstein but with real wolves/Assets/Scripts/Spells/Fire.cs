@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Fire : Spells {
-    protected override void Cast()
+    public override void Cast()
     {
         if (!casted)
         {
@@ -29,13 +29,6 @@ public class Fire : Spells {
     // Update is called once per frame
     protected override void Update ()
     {
-        if (casted)
-        {
-            cooldownTime += Time.deltaTime;
-            if (cooldownTime >= cooldown)
-            {
-                casted = false;
-            }
-        }
+        base.Update();
     }
 }

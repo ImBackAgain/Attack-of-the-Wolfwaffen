@@ -12,10 +12,14 @@ public abstract class Lifeform : MonoBehaviour {
         health = maxHealth;
 	}
 
-    /// <summary>
-    /// Set maxHealth, please.
-    /// </summary>
+
     protected abstract void Initialize();
+
+
+    protected void Initialize(int maxHealth)
+    {
+        this.maxHealth = maxHealth;
+    }
 
     /// <summary>
     /// Take damage (can passs negative value to restore health)
@@ -29,9 +33,4 @@ public abstract class Lifeform : MonoBehaviour {
 
         return health > 0;
     }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }

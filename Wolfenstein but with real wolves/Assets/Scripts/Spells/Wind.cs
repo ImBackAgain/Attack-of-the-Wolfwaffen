@@ -8,7 +8,7 @@ public class Wind : Spells {
     private float timer;
     private bool activated;
 
-    protected override void Cast()
+    public override void Cast()
     {
         if (!casted)
         {
@@ -38,6 +38,7 @@ public class Wind : Spells {
     // Update is called once per frame
     protected override void Update ()
     {
+        base.Update();
         if (activated)
         {
             timer += Time.deltaTime;
@@ -45,15 +46,6 @@ public class Wind : Spells {
             if (timer >= duration)
             {
                 activated = false;
-            }
-        }
-
-        if (casted)
-        {
-            cooldownTime += Time.deltaTime;
-            if (cooldownTime >= cooldown)
-            {
-                casted = false;
             }
         }
     }

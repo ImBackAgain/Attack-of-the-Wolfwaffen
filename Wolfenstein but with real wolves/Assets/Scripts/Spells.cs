@@ -19,7 +19,17 @@ public abstract class Spells : MonoBehaviour {
 	}
 
     // Update is called once per frame
-    protected abstract void Update();
+    protected virtual void Update()
+    {
+        if (casted)
+        {
+            cooldownTime += Time.deltaTime;
+            if (cooldownTime >= cooldown)
+            {
+                casted = false;
+            }
+        }
+    }
 
-    protected abstract void Cast();
+    public abstract void Cast();
 }
