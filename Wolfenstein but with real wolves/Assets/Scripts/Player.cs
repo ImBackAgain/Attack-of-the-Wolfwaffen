@@ -12,12 +12,12 @@ public class Player : Lifeform {
         Initialize(100);
         revolver = GetComponent<Gun>();
 
-        spells.Add("Fire", GetComponent<Fire>());
-        spells.Add("Force", GetComponent<Force>());
-        spells.Add("Gravity", GetComponent<Gravity>());
-        spells.Add("Ice", GetComponent<Ice>());
-        spells.Add("Lightning", GetComponent<Lightning>());
-        spells.Add("Wind", GetComponent<Wind>());
+        spells.Add("Fire", GameObject.Find("Fire").GetComponent<Fire>());
+        spells.Add("Force", GameObject.Find("Force").GetComponent<Force>());
+        spells.Add("Gravity", GameObject.Find("Gravity").GetComponent<Gravity>());
+        spells.Add("Ice", GameObject.Find("Ice").GetComponent<Ice>());
+        spells.Add("Lightning", GameObject.Find("Lightning").GetComponent<Lightning>());
+        spells.Add("Wind", GameObject.Find("Wind").GetComponent<Wind>());
     }
 
 	
