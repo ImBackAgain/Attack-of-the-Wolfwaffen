@@ -7,6 +7,7 @@ public class Force : Spells {
     {
         if (!casted)
         {
+            Debug.Log("Cast " + spellName);
             casted = true;
             cooldownTime = 0f;
         }
@@ -14,7 +15,7 @@ public class Force : Spells {
 
     // Use this for initialization
     void Start () {
-        name = "Assantius";
+        spellName = "Assantius";
         damage = 1;
         maxRange = 10f;
         aoe = 0f;

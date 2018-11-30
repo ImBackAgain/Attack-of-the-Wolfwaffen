@@ -60,7 +60,7 @@ public abstract class Gun : MonoBehaviour {
             Lifeform victimScript = victim.GetComponent<Lifeform>();
 
             isLifeForm = (victimScript != null);
-            //Debug.Log(isLifeForm);
+            Debug.Log(isLifeForm);
 
             if (isLifeForm)
             {
@@ -69,7 +69,7 @@ public abstract class Gun : MonoBehaviour {
         }
         else
         {
-            //Debug.Log("Nothing hit");
+            Debug.Log("Nothing hit");
             victim = null;
             isLifeForm = false;
         }

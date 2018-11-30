@@ -7,6 +7,7 @@ public class Ice : Spells {
     {
         if (!casted)
         {
+            Debug.Log("Cast " + spellName);
             casted = true;
             cooldownTime = 0f;
         }
@@ -14,7 +15,7 @@ public class Ice : Spells {
 
     // Use this for initialization
     void Start () {
-        name = "Infriga";
+        spellName = "Infriga";
         damage = 3;
         maxRange = 10f;
         aoe = 0f;

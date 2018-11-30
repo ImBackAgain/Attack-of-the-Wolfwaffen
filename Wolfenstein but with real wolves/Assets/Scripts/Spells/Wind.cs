@@ -12,6 +12,7 @@ public class Wind : Spells {
     {
         if (!casted)
         {
+            Debug.Log("Cast " + spellName);
             activated = true;
             timer = 0f;
             casted = true;
@@ -21,7 +22,7 @@ public class Wind : Spells {
 
     // Use this for initialization
     void Start () {
-        name = "Ventus Servitas";
+        spellName = "Ventus Servitas";
         damage = 1;
         maxRange = 3f;
         aoe = 3f;

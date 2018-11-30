@@ -12,6 +12,7 @@ public class Gravity : Spells {
     {
         if(!casted)
         {
+            Debug.Log("Cast " + spellName);
             activated = true;
             timer = 0f;
             casted = true;
@@ -22,7 +23,7 @@ public class Gravity : Spells {
 
     // Use this for initialization
     void Start () {
-        name = "Gravitus";
+        spellName = "Gravitus";
         damage = 0;
         maxRange = 0f;
         aoe = 0f;

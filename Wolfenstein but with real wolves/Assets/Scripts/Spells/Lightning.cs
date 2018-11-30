@@ -7,6 +7,7 @@ public class Lightning : Spells {
     {
         if (!casted)
         {
+            Debug.Log("Cast " + spellName);
             casted = true;
             cooldownTime = 0f;
         }
@@ -14,7 +15,7 @@ public class Lightning : Spells {
 
     // Use this for initialization
     void Start () {
-        name = "Ventas Fulmino";
+        spellName = "Ventas Fulmino";
         damage = 2;
         maxRange = 5f;
         aoe = 90f;
