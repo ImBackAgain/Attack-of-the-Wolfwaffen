@@ -10,6 +10,8 @@ public class Force : Spells {
             Debug.Log("Cast " + spellName);
             casted = true;
             cooldownTime = 0f;
+            //Raycast collision detection
+            //Deal effect on hit
         }
     }
 
@@ -28,6 +30,18 @@ public class Force : Spells {
     // Update is called once per frame
     protected override void Update ()
     {
-        base.Update();
+        if (casted)
+        {
+            cooldownTime += Time.deltaTime;
+            if (cooldownTime >= cooldown)
+            {
+                casted = false;
+            }
+        }
+    }
+
+    protected override void DrawSpell()
+    {
+        throw new System.NotImplementedException();
     }
 }

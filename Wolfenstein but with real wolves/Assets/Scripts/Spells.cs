@@ -12,6 +12,7 @@ public abstract class Spells : MonoBehaviour {
     protected bool casted;
     protected float cooldownTime;
     protected GameObject obj;
+    public GameObject player;
 
 	// Use this for initialization
 	void Start () {
@@ -19,17 +20,8 @@ public abstract class Spells : MonoBehaviour {
 	}
 
     // Update is called once per frame
-    protected virtual void Update()
-    {
-        if (casted)
-        {
-            cooldownTime += Time.deltaTime;
-            if (cooldownTime >= cooldown)
-            {
-                casted = false;
-            }
-        }
-    }
+    protected abstract void Update();
 
     public abstract void Cast();
+    protected abstract void DrawSpell();
 }

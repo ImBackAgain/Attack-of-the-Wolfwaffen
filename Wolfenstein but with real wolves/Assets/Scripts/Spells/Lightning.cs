@@ -10,6 +10,7 @@ public class Lightning : Spells {
             Debug.Log("Cast " + spellName);
             casted = true;
             cooldownTime = 0f;
+            DrawSpell();
         }
     }
 
@@ -28,6 +29,21 @@ public class Lightning : Spells {
     // Update is called once per frame
     protected override void Update ()
     {
-        base.Update();
+        if (casted)
+        {
+            cooldownTime += Time.deltaTime;
+            obj.transform.position = player.transform.position;
+            //Check collision
+            //Deal damage if within collision
+            if (cooldownTime >= cooldown)
+            {
+                casted = false;
+            }
+        }
+    }
+
+    protected override void DrawSpell()
+    {
+        obj.transform.position = player.transform.position;
     }
 }
