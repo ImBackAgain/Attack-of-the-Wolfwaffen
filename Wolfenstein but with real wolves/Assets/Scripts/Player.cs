@@ -13,10 +13,11 @@ public class Player : Lifeform {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetAxis("Fire1") > 0)
+		if (Input.GetAxis("Fire gun") > 0)
         {
             GameObject hit;
-            if (revolver.Shoot(out hit, false))
+            bool hitLifeForm;
+            if (revolver.Shoot(out hit, out hitLifeForm, false) && hitLifeForm)
             {
                 Destroy(hit);
             }
