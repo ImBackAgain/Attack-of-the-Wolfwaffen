@@ -13,7 +13,7 @@ public abstract class Spells : MonoBehaviour {
     protected float cooldownTime;
     protected GameObject obj;
     protected GameObject createdObj;
-    public GameObject player;
+    protected GameObject player;
 
 	// Use this for initialization
 	void Start () {
@@ -21,9 +21,9 @@ public abstract class Spells : MonoBehaviour {
 	}
 
     // Update is called once per frame
-    protected abstract void Update();
+    public abstract void Update();
 
-    protected abstract void Cast();
+    public abstract void Cast();
 
     protected abstract void DrawSpell();
 }

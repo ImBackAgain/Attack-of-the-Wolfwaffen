@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Force : Spells {
-    protected override void Cast()
+    public override void Cast()
     {
         if (!casted)
         {
@@ -29,10 +29,11 @@ public class Force : Spells {
         obj = GameObject.Find("Force");
         casted = false;
         cooldownTime = 0f;
+        player = this.gameObject;
     }
 
     // Update is called once per frame
-    protected override void Update ()
+    public override void Update ()
     {
         if (casted)
         {

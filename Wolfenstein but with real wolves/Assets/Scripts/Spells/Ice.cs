@@ -7,7 +7,7 @@ public class Ice : Spells {
     private float speed;
     private bool projectile;
 
-    protected override void Cast()
+    public override void Cast()
     {
         if (!casted)
         {
@@ -29,10 +29,11 @@ public class Ice : Spells {
         cooldownTime = 0f;
         projectile = false;
         speed = 0;
+        player = this.gameObject;
     }
 	
 	// Update is called once per frame
-	protected override void Update ()
+	public override void Update ()
     {
         if (casted)
         {
