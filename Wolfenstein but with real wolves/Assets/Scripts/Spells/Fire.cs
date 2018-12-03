@@ -14,7 +14,7 @@ public class Fire : Spells {
 
     // Use this for initialization
     void Start () {
-        name = "Fuego";
+        spellName = "Fuego";
         damage = 2;
         maxRange = 10f;
         aoe = 5f;

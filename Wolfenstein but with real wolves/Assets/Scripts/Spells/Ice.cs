@@ -14,7 +14,7 @@ public class Ice : Spells {
 
     // Use this for initialization
     void Start () {
-        name = "Infriga";
+        spellName = "Infriga";
         damage = 3;
         maxRange = 10f;
         aoe = 0f;

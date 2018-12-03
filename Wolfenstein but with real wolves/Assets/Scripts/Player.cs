@@ -21,7 +21,6 @@ public class Player : Lifeform {
             {
                 Destroy(hit);
             }
-            
         }
 	}
 }

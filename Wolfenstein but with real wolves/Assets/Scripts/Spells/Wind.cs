@@ -21,7 +21,7 @@ public class Wind : Spells {
 
     // Use this for initialization
     void Start () {
-        name = "Ventus Servitas";
+        spellName = "Ventus Servitas";
         damage = 1;
         maxRange = 3f;
         aoe = 3f;

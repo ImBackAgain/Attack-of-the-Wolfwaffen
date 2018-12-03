@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Spells : MonoBehaviour {
 
-    protected string name;
+    protected string spellName;
     protected int damage;
     protected float maxRange;
     protected float aoe;
