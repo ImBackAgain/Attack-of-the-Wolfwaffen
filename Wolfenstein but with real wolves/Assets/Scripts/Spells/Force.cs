@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Force : Spells {
-    protected override void Cast()
+    public override void Cast()
     {
         if (!casted)
         {
             Debug.Log("Force");
             casted = true;
             cooldownTime = 0f;
+            //Raycast collision detection
+            //Deal effect on hit
         }
     }
 
@@ -36,5 +38,10 @@ public class Force : Spells {
                 casted = false;
             }
         }
+    }
+
+    protected override void DrawSpell()
+    {
+        throw new System.NotImplementedException();
     }
 }

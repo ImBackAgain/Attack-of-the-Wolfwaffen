@@ -1,22 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Gravity : Spells {
 
     protected float duration;
     private float timer;
     private bool activated;
+    private FirstPersonController playerController;
 
-    protected override void Cast()
+    public override void Cast()
     {
         if(!casted)
         {
+            Debug.Log("Cast " + spellName);
             activated = true;
             timer = 0f;
             casted = true;
             cooldownTime = 0f;
             //modify jump
+            playerController.m_GravityMultiplier = 1;
         }
     }
 
@@ -33,6 +37,7 @@ public class Gravity : Spells {
         timer = 0f;
         activated = false;
         cooldownTime = 0f;
+        playerController = GameObject.Find("FPSController").GetComponent<FirstPersonController>();
     }
 
     // Update is called once per frame
@@ -45,9 +50,9 @@ public class Gravity : Spells {
             {
                 activated = false;
                 //modify jump
+                playerController.m_GravityMultiplier = 2;
             }
         }
-
         if(casted)
         {
             cooldownTime += Time.deltaTime;
@@ -58,4 +63,9 @@ public class Gravity : Spells {
             }
         }
 	}
+
+    protected override void DrawSpell()
+    {
+        throw new System.NotImplementedException();
+    }
 }
