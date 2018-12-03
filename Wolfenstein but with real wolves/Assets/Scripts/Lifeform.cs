@@ -16,7 +16,7 @@ public abstract class Lifeform : MonoBehaviour {
     protected abstract void Initialize();
 
 
-    protected void Initialize(int maxHealth)
+    protected virtual void Initialize(int maxHealth)
     {
         this.maxHealth = maxHealth;
     }

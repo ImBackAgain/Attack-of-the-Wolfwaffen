@@ -9,7 +9,8 @@ public class Wolf : Enemy {
     }
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
 		
 	}
 	
