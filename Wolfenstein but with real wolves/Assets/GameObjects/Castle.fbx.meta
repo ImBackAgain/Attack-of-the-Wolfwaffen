@@ -342,6 +342,212 @@ ModelImporter:
     100672: wall_straight_112
     100674: wall_straight_116
     100676: wall_windowRound_117
+    100678: floor_corner_193
+    100680: floor_corner_200
+    100682: floor_hole_176
+    100684: floor_hole_213
+    100686: floor_hole_214
+    100688: floor_hole_215
+    100690: floor_hole_216
+    100692: floor_hole_217
+    100694: floor_hole_218
+    100696: floor_hole_219
+    100698: floor_hole_220
+    100700: floor_hole_222
+    100702: floor_hole_223
+    100704: floor_hole_224
+    100706: floor_hole_225
+    100708: floor_hole_226
+    100710: floor_hole_227
+    100712: floor_hole_228
+    100714: floor_hole_229
+    100716: floor_hole_230
+    100718: floor_hole_231
+    100720: floor_hole_232
+    100722: floor_hole_233
+    100724: floor_hole_234
+    100726: floor_hole_235
+    100728: floor_hole_236
+    100730: floor_hole_237
+    100732: floor_hole_238
+    100734: floor_hole_239
+    100736: floor_square_1
+    100738: floor_square_104 1
+    100740: floor_square_105 1
+    100742: floor_square_106 1
+    100744: floor_square_107 1
+    100746: floor_square_108
+    100748: floor_square_109
+    100750: floor_square_110
+    100752: floor_square_111
+    100754: floor_square_112
+    100756: floor_square_113 1
+    100758: floor_square_114 1
+    100760: floor_square_115
+    100762: floor_square_116
+    100764: floor_square_117
+    100766: floor_square_118
+    100768: floor_square_119
+    100770: floor_square_120
+    100772: floor_square_121
+    100774: floor_square_122
+    100776: floor_square_123
+    100778: floor_square_124
+    100780: floor_square_125 1
+    100782: floor_square_126 1
+    100784: floor_square_127
+    100786: floor_square_128
+    100788: floor_square_129
+    100790: floor_square_130
+    100792: floor_square_131
+    100794: floor_square_132
+    100796: floor_square_133
+    100798: floor_square_134
+    100800: floor_square_135 1
+    100802: floor_square_136
+    100804: floor_square_137
+    100806: floor_square_138 1
+    100808: floor_square_139
+    100810: floor_square_140 1
+    100812: floor_square_141 1
+    100814: floor_square_142
+    100816: floor_square_143
+    100818: floor_square_144
+    100820: floor_square_145
+    100822: floor_square_146
+    100824: floor_square_147
+    100826: floor_square_148
+    100828: floor_square_149 1
+    100830: floor_square_150
+    100832: floor_square_151 1
+    100834: floor_square_192
+    100836: floor_square_194
+    100838: floor_square_195 1
+    100840: floor_square_196
+    100842: floor_square_197
+    100844: floor_square_198 1
+    100846: floor_square_199 1
+    100848: floor_square_201 1
+    100850: floor_square_202 1
+    100852: floor_square_203
+    100854: floor_square_204
+    100856: floor_square_205 1
+    100858: floor_square_206 1
+    100860: floor_square_207
+    100862: floor_square_208
+    100864: floor_square_209
+    100866: floor_square_240
+    100868: floor_square_31 1
+    100870: floor_square_32
+    100872: floor_square_33
+    100874: floor_square_36
+    100876: floor_square_37 1
+    100878: floor_square_39
+    100880: floor_square_40 1
+    100882: floor_square_41 1
+    100884: floor_square_42 1
+    100886: floor_square_43
+    100888: floor_square_44 1
+    100890: floor_square_45 1
+    100892: floor_square_46
+    100894: floor_square_47
+    100896: planks_floor_177
+    100898: stairs_stone_164
+    100900: stairs_stone_railing_0
+    100902: structure_column_152
+    100904: structure_column_153
+    100906: structure_column_154
+    100908: structure_column_155
+    100910: structure_column_156
+    100912: structure_column_157
+    100914: structure_column_158
+    100916: structure_column_159
+    100918: structure_column_160
+    100920: structure_column_161
+    100922: structure_column_162
+    100924: structure_column_163
+    100926: structure_column_178
+    100928: structure_column_179
+    100930: structure_column_180
+    100932: structure_column_181
+    100934: structure_column_269
+    100936: structure_column_270
+    100938: structure_column_271
+    100940: structure_column_272
+    100942: structure_column_273
+    100944: structure_column_274
+    100946: structure_column_275
+    100948: structure_column_276
+    100950: structure_column_277
+    100952: structure_column_278
+    100954: structure_column_279
+    100956: structure_column_280
+    100958: wall_corner_10
+    100960: wall_corner_17
+    100962: wall_corner_2 1
+    100964: wall_corner_24
+    100966: wall_corner_241
+    100968: wall_corner_248
+    100970: wall_corner_255
+    100972: wall_corner_262
+    100974: wall_cornerDiagonal_182
+    100976: wall_cornerDiagonal_189
+    100978: wall_straight_11 1
+    100980: wall_straight_12 1
+    100982: wall_straight_13 1
+    100984: wall_straight_14
+    100986: wall_straight_15
+    100988: wall_straight_16
+    100990: wall_straight_18
+    100992: wall_straight_183
+    100994: wall_straight_184 1
+    100996: wall_straight_185
+    100998: wall_straight_186
+    101000: wall_straight_187 1
+    101002: wall_straight_188 1
+    101004: wall_straight_19 1
+    101006: wall_straight_190
+    101008: wall_straight_191
+    101010: wall_straight_20 1
+    101012: wall_straight_21 1
+    101014: wall_straight_22 1
+    101016: wall_straight_23 1
+    101018: wall_straight_242 1
+    101020: wall_straight_243
+    101022: wall_straight_244 1
+    101024: wall_straight_245 1
+    101026: wall_straight_246 1
+    101028: wall_straight_247 1
+    101030: wall_straight_249 1
+    101032: wall_straight_25
+    101034: wall_straight_250 1
+    101036: wall_straight_251
+    101038: wall_straight_252 1
+    101040: wall_straight_253
+    101042: wall_straight_254 1
+    101044: wall_straight_256
+    101046: wall_straight_257
+    101048: wall_straight_258
+    101050: wall_straight_259
+    101052: wall_straight_26
+    101054: wall_straight_260
+    101056: wall_straight_261
+    101058: wall_straight_263
+    101060: wall_straight_264
+    101062: wall_straight_265
+    101064: wall_straight_266 1
+    101066: wall_straight_267
+    101068: wall_straight_268
+    101070: wall_straight_27
+    101072: wall_straight_28
+    101074: wall_straight_29
+    101076: wall_straight_30
+    101078: wall_straight_4 1
+    101080: wall_straight_5 1
+    101082: wall_straight_6
+    101084: wall_straight_7
+    101086: wall_straight_8
+    101088: wall_straight_9 1
     400000: //RootNode
     400002: door_round_34
     400004: floor_corner_100
@@ -681,6 +887,212 @@ ModelImporter:
     400672: wall_straight_112
     400674: wall_straight_116
     400676: wall_windowRound_117
+    400678: floor_corner_193
+    400680: floor_corner_200
+    400682: floor_hole_176
+    400684: floor_hole_213
+    400686: floor_hole_214
+    400688: floor_hole_215
+    400690: floor_hole_216
+    400692: floor_hole_217
+    400694: floor_hole_218
+    400696: floor_hole_219
+    400698: floor_hole_220
+    400700: floor_hole_222
+    400702: floor_hole_223
+    400704: floor_hole_224
+    400706: floor_hole_225
+    400708: floor_hole_226
+    400710: floor_hole_227
+    400712: floor_hole_228
+    400714: floor_hole_229
+    400716: floor_hole_230
+    400718: floor_hole_231
+    400720: floor_hole_232
+    400722: floor_hole_233
+    400724: floor_hole_234
+    400726: floor_hole_235
+    400728: floor_hole_236
+    400730: floor_hole_237
+    400732: floor_hole_238
+    400734: floor_hole_239
+    400736: floor_square_1
+    400738: floor_square_104 1
+    400740: floor_square_105 1
+    400742: floor_square_106 1
+    400744: floor_square_107 1
+    400746: floor_square_108
+    400748: floor_square_109
+    400750: floor_square_110
+    400752: floor_square_111
+    400754: floor_square_112
+    400756: floor_square_113 1
+    400758: floor_square_114 1
+    400760: floor_square_115
+    400762: floor_square_116
+    400764: floor_square_117
+    400766: floor_square_118
+    400768: floor_square_119
+    400770: floor_square_120
+    400772: floor_square_121
+    400774: floor_square_122
+    400776: floor_square_123
+    400778: floor_square_124
+    400780: floor_square_125 1
+    400782: floor_square_126 1
+    400784: floor_square_127
+    400786: floor_square_128
+    400788: floor_square_129
+    400790: floor_square_130
+    400792: floor_square_131
+    400794: floor_square_132
+    400796: floor_square_133
+    400798: floor_square_134
+    400800: floor_square_135 1
+    400802: floor_square_136
+    400804: floor_square_137
+    400806: floor_square_138 1
+    400808: floor_square_139
+    400810: floor_square_140 1
+    400812: floor_square_141 1
+    400814: floor_square_142
+    400816: floor_square_143
+    400818: floor_square_144
+    400820: floor_square_145
+    400822: floor_square_146
+    400824: floor_square_147
+    400826: floor_square_148
+    400828: floor_square_149 1
+    400830: floor_square_150
+    400832: floor_square_151 1
+    400834: floor_square_192
+    400836: floor_square_194
+    400838: floor_square_195 1
+    400840: floor_square_196
+    400842: floor_square_197
+    400844: floor_square_198 1
+    400846: floor_square_199 1
+    400848: floor_square_201 1
+    400850: floor_square_202 1
+    400852: floor_square_203
+    400854: floor_square_204
+    400856: floor_square_205 1
+    400858: floor_square_206 1
+    400860: floor_square_207
+    400862: floor_square_208
+    400864: floor_square_209
+    400866: floor_square_240
+    400868: floor_square_31 1
+    400870: floor_square_32
+    400872: floor_square_33
+    400874: floor_square_36
+    400876: floor_square_37 1
+    400878: floor_square_39
+    400880: floor_square_40 1
+    400882: floor_square_41 1
+    400884: floor_square_42 1
+    400886: floor_square_43
+    400888: floor_square_44 1
+    400890: floor_square_45 1
+    400892: floor_square_46
+    400894: floor_square_47
+    400896: planks_floor_177
+    400898: stairs_stone_164
+    400900: stairs_stone_railing_0
+    400902: structure_column_152
+    400904: structure_column_153
+    400906: structure_column_154
+    400908: structure_column_155
+    400910: structure_column_156
+    400912: structure_column_157
+    400914: structure_column_158
+    400916: structure_column_159
+    400918: structure_column_160
+    400920: structure_column_161
+    400922: structure_column_162
+    400924: structure_column_163
+    400926: structure_column_178
+    400928: structure_column_179
+    400930: structure_column_180
+    400932: structure_column_181
+    400934: structure_column_269
+    400936: structure_column_270
+    400938: structure_column_271
+    400940: structure_column_272
+    400942: structure_column_273
+    400944: structure_column_274
+    400946: structure_column_275
+    400948: structure_column_276
+    400950: structure_column_277
+    400952: structure_column_278
+    400954: structure_column_279
+    400956: structure_column_280
+    400958: wall_corner_10
+    400960: wall_corner_17
+    400962: wall_corner_2 1
+    400964: wall_corner_24
+    400966: wall_corner_241
+    400968: wall_corner_248
+    400970: wall_corner_255
+    400972: wall_corner_262
+    400974: wall_cornerDiagonal_182
+    400976: wall_cornerDiagonal_189
+    400978: wall_straight_11 1
+    400980: wall_straight_12 1
+    400982: wall_straight_13 1
+    400984: wall_straight_14
+    400986: wall_straight_15
+    400988: wall_straight_16
+    400990: wall_straight_18
+    400992: wall_straight_183
+    400994: wall_straight_184 1
+    400996: wall_straight_185
+    400998: wall_straight_186
+    401000: wall_straight_187 1
+    401002: wall_straight_188 1
+    401004: wall_straight_19 1
+    401006: wall_straight_190
+    401008: wall_straight_191
+    401010: wall_straight_20 1
+    401012: wall_straight_21 1
+    401014: wall_straight_22 1
+    401016: wall_straight_23 1
+    401018: wall_straight_242 1
+    401020: wall_straight_243
+    401022: wall_straight_244 1
+    401024: wall_straight_245 1
+    401026: wall_straight_246 1
+    401028: wall_straight_247 1
+    401030: wall_straight_249 1
+    401032: wall_straight_25
+    401034: wall_straight_250 1
+    401036: wall_straight_251
+    401038: wall_straight_252 1
+    401040: wall_straight_253
+    401042: wall_straight_254 1
+    401044: wall_straight_256
+    401046: wall_straight_257
+    401048: wall_straight_258
+    401050: wall_straight_259
+    401052: wall_straight_26
+    401054: wall_straight_260
+    401056: wall_straight_261
+    401058: wall_straight_263
+    401060: wall_straight_264
+    401062: wall_straight_265
+    401064: wall_straight_266 1
+    401066: wall_straight_267
+    401068: wall_straight_268
+    401070: wall_straight_27
+    401072: wall_straight_28
+    401074: wall_straight_29
+    401076: wall_straight_30
+    401078: wall_straight_4 1
+    401080: wall_straight_5 1
+    401082: wall_straight_6
+    401084: wall_straight_7
+    401086: wall_straight_8
+    401088: wall_straight_9 1
     2100000: stone
     2100002: lightStone
     2100004: wood
@@ -1022,6 +1434,212 @@ ModelImporter:
     2300670: wall_straight_112
     2300672: wall_straight_116
     2300674: wall_windowRound_117
+    2300676: floor_corner_193
+    2300678: floor_corner_200
+    2300680: floor_hole_176
+    2300682: floor_hole_213
+    2300684: floor_hole_214
+    2300686: floor_hole_215
+    2300688: floor_hole_216
+    2300690: floor_hole_217
+    2300692: floor_hole_218
+    2300694: floor_hole_219
+    2300696: floor_hole_220
+    2300698: floor_hole_222
+    2300700: floor_hole_223
+    2300702: floor_hole_224
+    2300704: floor_hole_225
+    2300706: floor_hole_226
+    2300708: floor_hole_227
+    2300710: floor_hole_228
+    2300712: floor_hole_229
+    2300714: floor_hole_230
+    2300716: floor_hole_231
+    2300718: floor_hole_232
+    2300720: floor_hole_233
+    2300722: floor_hole_234
+    2300724: floor_hole_235
+    2300726: floor_hole_236
+    2300728: floor_hole_237
+    2300730: floor_hole_238
+    2300732: floor_hole_239
+    2300734: floor_square_1
+    2300736: floor_square_104 1
+    2300738: floor_square_105 1
+    2300740: floor_square_106 1
+    2300742: floor_square_107 1
+    2300744: floor_square_108
+    2300746: floor_square_109
+    2300748: floor_square_110
+    2300750: floor_square_111
+    2300752: floor_square_112
+    2300754: floor_square_113 1
+    2300756: floor_square_114 1
+    2300758: floor_square_115
+    2300760: floor_square_116
+    2300762: floor_square_117
+    2300764: floor_square_118
+    2300766: floor_square_119
+    2300768: floor_square_120
+    2300770: floor_square_121
+    2300772: floor_square_122
+    2300774: floor_square_123
+    2300776: floor_square_124
+    2300778: floor_square_125 1
+    2300780: floor_square_126 1
+    2300782: floor_square_127
+    2300784: floor_square_128
+    2300786: floor_square_129
+    2300788: floor_square_130
+    2300790: floor_square_131
+    2300792: floor_square_132
+    2300794: floor_square_133
+    2300796: floor_square_134
+    2300798: floor_square_135 1
+    2300800: floor_square_136
+    2300802: floor_square_137
+    2300804: floor_square_138 1
+    2300806: floor_square_139
+    2300808: floor_square_140 1
+    2300810: floor_square_141 1
+    2300812: floor_square_142
+    2300814: floor_square_143
+    2300816: floor_square_144
+    2300818: floor_square_145
+    2300820: floor_square_146
+    2300822: floor_square_147
+    2300824: floor_square_148
+    2300826: floor_square_149 1
+    2300828: floor_square_150
+    2300830: floor_square_151 1
+    2300832: floor_square_192
+    2300834: floor_square_194
+    2300836: floor_square_195 1
+    2300838: floor_square_196
+    2300840: floor_square_197
+    2300842: floor_square_198 1
+    2300844: floor_square_199 1
+    2300846: floor_square_201 1
+    2300848: floor_square_202 1
+    2300850: floor_square_203
+    2300852: floor_square_204
+    2300854: floor_square_205 1
+    2300856: floor_square_206 1
+    2300858: floor_square_207
+    2300860: floor_square_208
+    2300862: floor_square_209
+    2300864: floor_square_240
+    2300866: floor_square_31 1
+    2300868: floor_square_32
+    2300870: floor_square_33
+    2300872: floor_square_36
+    2300874: floor_square_37 1
+    2300876: floor_square_39
+    2300878: floor_square_40 1
+    2300880: floor_square_41 1
+    2300882: floor_square_42 1
+    2300884: floor_square_43
+    2300886: floor_square_44 1
+    2300888: floor_square_45 1
+    2300890: floor_square_46
+    2300892: floor_square_47
+    2300894: planks_floor_177
+    2300896: stairs_stone_164
+    2300898: stairs_stone_railing_0
+    2300900: structure_column_152
+    2300902: structure_column_153
+    2300904: structure_column_154
+    2300906: structure_column_155
+    2300908: structure_column_156
+    2300910: structure_column_157
+    2300912: structure_column_158
+    2300914: structure_column_159
+    2300916: structure_column_160
+    2300918: structure_column_161
+    2300920: structure_column_162
+    2300922: structure_column_163
+    2300924: structure_column_178
+    2300926: structure_column_179
+    2300928: structure_column_180
+    2300930: structure_column_181
+    2300932: structure_column_269
+    2300934: structure_column_270
+    2300936: structure_column_271
+    2300938: structure_column_272
+    2300940: structure_column_273
+    2300942: structure_column_274
+    2300944: structure_column_275
+    2300946: structure_column_276
+    2300948: structure_column_277
+    2300950: structure_column_278
+    2300952: structure_column_279
+    2300954: structure_column_280
+    2300956: wall_corner_10
+    2300958: wall_corner_17
+    2300960: wall_corner_2 1
+    2300962: wall_corner_24
+    2300964: wall_corner_241
+    2300966: wall_corner_248
+    2300968: wall_corner_255
+    2300970: wall_corner_262
+    2300972: wall_cornerDiagonal_182
+    2300974: wall_cornerDiagonal_189
+    2300976: wall_straight_11 1
+    2300978: wall_straight_12 1
+    2300980: wall_straight_13 1
+    2300982: wall_straight_14
+    2300984: wall_straight_15
+    2300986: wall_straight_16
+    2300988: wall_straight_18
+    2300990: wall_straight_183
+    2300992: wall_straight_184 1
+    2300994: wall_straight_185
+    2300996: wall_straight_186
+    2300998: wall_straight_187 1
+    2301000: wall_straight_188 1
+    2301002: wall_straight_19 1
+    2301004: wall_straight_190
+    2301006: wall_straight_191
+    2301008: wall_straight_20 1
+    2301010: wall_straight_21 1
+    2301012: wall_straight_22 1
+    2301014: wall_straight_23 1
+    2301016: wall_straight_242 1
+    2301018: wall_straight_243
+    2301020: wall_straight_244 1
+    2301022: wall_straight_245 1
+    2301024: wall_straight_246 1
+    2301026: wall_straight_247 1
+    2301028: wall_straight_249 1
+    2301030: wall_straight_25
+    2301032: wall_straight_250 1
+    2301034: wall_straight_251
+    2301036: wall_straight_252 1
+    2301038: wall_straight_253
+    2301040: wall_straight_254 1
+    2301042: wall_straight_256
+    2301044: wall_straight_257
+    2301046: wall_straight_258
+    2301048: wall_straight_259
+    2301050: wall_straight_26
+    2301052: wall_straight_260
+    2301054: wall_straight_261
+    2301056: wall_straight_263
+    2301058: wall_straight_264
+    2301060: wall_straight_265
+    2301062: wall_straight_266 1
+    2301064: wall_straight_267
+    2301066: wall_straight_268
+    2301068: wall_straight_27
+    2301070: wall_straight_28
+    2301072: wall_straight_29
+    2301074: wall_straight_30
+    2301076: wall_straight_4 1
+    2301078: wall_straight_5 1
+    2301080: wall_straight_6
+    2301082: wall_straight_7
+    2301084: wall_straight_8
+    2301086: wall_straight_9 1
     3300000: door_round_34
     3300002: floor_corner_100
     3300004: floor_corner_101
@@ -1360,6 +1978,212 @@ ModelImporter:
     3300670: wall_straight_112
     3300672: wall_straight_116
     3300674: wall_windowRound_117
+    3300676: floor_corner_193
+    3300678: floor_corner_200
+    3300680: floor_hole_176
+    3300682: floor_hole_213
+    3300684: floor_hole_214
+    3300686: floor_hole_215
+    3300688: floor_hole_216
+    3300690: floor_hole_217
+    3300692: floor_hole_218
+    3300694: floor_hole_219
+    3300696: floor_hole_220
+    3300698: floor_hole_222
+    3300700: floor_hole_223
+    3300702: floor_hole_224
+    3300704: floor_hole_225
+    3300706: floor_hole_226
+    3300708: floor_hole_227
+    3300710: floor_hole_228
+    3300712: floor_hole_229
+    3300714: floor_hole_230
+    3300716: floor_hole_231
+    3300718: floor_hole_232
+    3300720: floor_hole_233
+    3300722: floor_hole_234
+    3300724: floor_hole_235
+    3300726: floor_hole_236
+    3300728: floor_hole_237
+    3300730: floor_hole_238
+    3300732: floor_hole_239
+    3300734: floor_square_1
+    3300736: floor_square_104 1
+    3300738: floor_square_105 1
+    3300740: floor_square_106 1
+    3300742: floor_square_107 1
+    3300744: floor_square_108
+    3300746: floor_square_109
+    3300748: floor_square_110
+    3300750: floor_square_111
+    3300752: floor_square_112
+    3300754: floor_square_113 1
+    3300756: floor_square_114 1
+    3300758: floor_square_115
+    3300760: floor_square_116
+    3300762: floor_square_117
+    3300764: floor_square_118
+    3300766: floor_square_119
+    3300768: floor_square_120
+    3300770: floor_square_121
+    3300772: floor_square_122
+    3300774: floor_square_123
+    3300776: floor_square_124
+    3300778: floor_square_125 1
+    3300780: floor_square_126 1
+    3300782: floor_square_127
+    3300784: floor_square_128
+    3300786: floor_square_129
+    3300788: floor_square_130
+    3300790: floor_square_131
+    3300792: floor_square_132
+    3300794: floor_square_133
+    3300796: floor_square_134
+    3300798: floor_square_135 1
+    3300800: floor_square_136
+    3300802: floor_square_137
+    3300804: floor_square_138 1
+    3300806: floor_square_139
+    3300808: floor_square_140 1
+    3300810: floor_square_141 1
+    3300812: floor_square_142
+    3300814: floor_square_143
+    3300816: floor_square_144
+    3300818: floor_square_145
+    3300820: floor_square_146
+    3300822: floor_square_147
+    3300824: floor_square_148
+    3300826: floor_square_149 1
+    3300828: floor_square_150
+    3300830: floor_square_151 1
+    3300832: floor_square_192
+    3300834: floor_square_194
+    3300836: floor_square_195 1
+    3300838: floor_square_196
+    3300840: floor_square_197
+    3300842: floor_square_198 1
+    3300844: floor_square_199 1
+    3300846: floor_square_201 1
+    3300848: floor_square_202 1
+    3300850: floor_square_203
+    3300852: floor_square_204
+    3300854: floor_square_205 1
+    3300856: floor_square_206 1
+    3300858: floor_square_207
+    3300860: floor_square_208
+    3300862: floor_square_209
+    3300864: floor_square_240
+    3300866: floor_square_31 1
+    3300868: floor_square_32
+    3300870: floor_square_33
+    3300872: floor_square_36
+    3300874: floor_square_37 1
+    3300876: floor_square_39
+    3300878: floor_square_40 1
+    3300880: floor_square_41 1
+    3300882: floor_square_42 1
+    3300884: floor_square_43
+    3300886: floor_square_44 1
+    3300888: floor_square_45 1
+    3300890: floor_square_46
+    3300892: floor_square_47
+    3300894: planks_floor_177
+    3300896: stairs_stone_164
+    3300898: stairs_stone_railing_0
+    3300900: structure_column_152
+    3300902: structure_column_153
+    3300904: structure_column_154
+    3300906: structure_column_155
+    3300908: structure_column_156
+    3300910: structure_column_157
+    3300912: structure_column_158
+    3300914: structure_column_159
+    3300916: structure_column_160
+    3300918: structure_column_161
+    3300920: structure_column_162
+    3300922: structure_column_163
+    3300924: structure_column_178
+    3300926: structure_column_179
+    3300928: structure_column_180
+    3300930: structure_column_181
+    3300932: structure_column_269
+    3300934: structure_column_270
+    3300936: structure_column_271
+    3300938: structure_column_272
+    3300940: structure_column_273
+    3300942: structure_column_274
+    3300944: structure_column_275
+    3300946: structure_column_276
+    3300948: structure_column_277
+    3300950: structure_column_278
+    3300952: structure_column_279
+    3300954: structure_column_280
+    3300956: wall_corner_10
+    3300958: wall_corner_17
+    3300960: wall_corner_2 1
+    3300962: wall_corner_24
+    3300964: wall_corner_241
+    3300966: wall_corner_248
+    3300968: wall_corner_255
+    3300970: wall_corner_262
+    3300972: wall_cornerDiagonal_182
+    3300974: wall_cornerDiagonal_189
+    3300976: wall_straight_11 1
+    3300978: wall_straight_12 1
+    3300980: wall_straight_13 1
+    3300982: wall_straight_14
+    3300984: wall_straight_15
+    3300986: wall_straight_16
+    3300988: wall_straight_18
+    3300990: wall_straight_183
+    3300992: wall_straight_184 1
+    3300994: wall_straight_185
+    3300996: wall_straight_186
+    3300998: wall_straight_187 1
+    3301000: wall_straight_188 1
+    3301002: wall_straight_19 1
+    3301004: wall_straight_190
+    3301006: wall_straight_191
+    3301008: wall_straight_20 1
+    3301010: wall_straight_21 1
+    3301012: wall_straight_22 1
+    3301014: wall_straight_23 1
+    3301016: wall_straight_242 1
+    3301018: wall_straight_243
+    3301020: wall_straight_244 1
+    3301022: wall_straight_245 1
+    3301024: wall_straight_246 1
+    3301026: wall_straight_247 1
+    3301028: wall_straight_249 1
+    3301030: wall_straight_25
+    3301032: wall_straight_250 1
+    3301034: wall_straight_251
+    3301036: wall_straight_252 1
+    3301038: wall_straight_253
+    3301040: wall_straight_254 1
+    3301042: wall_straight_256
+    3301044: wall_straight_257
+    3301046: wall_straight_258
+    3301048: wall_straight_259
+    3301050: wall_straight_26
+    3301052: wall_straight_260
+    3301054: wall_straight_261
+    3301056: wall_straight_263
+    3301058: wall_straight_264
+    3301060: wall_straight_265
+    3301062: wall_straight_266 1
+    3301064: wall_straight_267
+    3301066: wall_straight_268
+    3301068: wall_straight_27
+    3301070: wall_straight_28
+    3301072: wall_straight_29
+    3301074: wall_straight_30
+    3301076: wall_straight_4 1
+    3301078: wall_straight_5 1
+    3301080: wall_straight_6
+    3301082: wall_straight_7
+    3301084: wall_straight_8
+    3301086: wall_straight_9 1
     4300000: wall_doorwayRound_0
     4300002: wall_corner_1
     4300004: wall_corner_2
@@ -1698,6 +2522,212 @@ ModelImporter:
     4300670: wall_corner_115
     4300672: wall_straight_116
     4300674: wall_windowRound_117
+    4300676: stairs_stone_railing_0
+    4300678: floor_square_1
+    4300680: wall_corner_2
+    4300682: wall_straight_4
+    4300684: wall_straight_5
+    4300686: wall_straight_6
+    4300688: wall_straight_7
+    4300690: wall_straight_8
+    4300692: wall_straight_9
+    4300694: wall_corner_10
+    4300696: wall_straight_11
+    4300698: wall_straight_12
+    4300700: wall_straight_13
+    4300702: wall_straight_14
+    4300704: wall_straight_15
+    4300706: wall_straight_16
+    4300708: wall_corner_17
+    4300710: wall_straight_18
+    4300712: wall_straight_19
+    4300714: wall_straight_20
+    4300716: wall_straight_21
+    4300718: wall_straight_22
+    4300720: wall_straight_23
+    4300722: wall_corner_24
+    4300724: wall_straight_25
+    4300726: wall_straight_26
+    4300728: wall_straight_27
+    4300730: wall_straight_28
+    4300732: wall_straight_29
+    4300734: wall_straight_30
+    4300736: floor_square_31
+    4300738: floor_square_32
+    4300740: floor_square_33
+    4300742: floor_square_36
+    4300744: floor_square_37
+    4300746: floor_square_39
+    4300748: floor_square_40
+    4300750: floor_square_41
+    4300752: floor_square_42
+    4300754: floor_square_43
+    4300756: floor_square_44
+    4300758: floor_square_45
+    4300760: floor_square_46
+    4300762: floor_square_47
+    4300764: floor_square_104
+    4300766: floor_square_105
+    4300768: floor_square_106
+    4300770: floor_square_107
+    4300772: floor_square_108
+    4300774: floor_square_109
+    4300776: floor_square_110
+    4300778: floor_square_111
+    4300780: floor_square_112
+    4300782: floor_square_113
+    4300784: floor_square_114
+    4300786: floor_square_115
+    4300788: floor_square_116
+    4300790: floor_square_117
+    4300792: floor_square_118
+    4300794: floor_square_119
+    4300796: floor_square_120
+    4300798: floor_square_121
+    4300800: floor_square_122
+    4300802: floor_square_123
+    4300804: floor_square_124
+    4300806: floor_square_125
+    4300808: floor_square_126
+    4300810: floor_square_127
+    4300812: floor_square_128
+    4300814: floor_square_129
+    4300816: floor_square_130
+    4300818: floor_square_131
+    4300820: floor_square_132
+    4300822: floor_square_133
+    4300824: floor_square_134
+    4300826: floor_square_135
+    4300828: floor_square_136
+    4300830: floor_square_137
+    4300832: floor_square_138
+    4300834: floor_square_139
+    4300836: floor_square_140
+    4300838: floor_square_141
+    4300840: floor_square_142
+    4300842: floor_square_143
+    4300844: floor_square_144
+    4300846: floor_square_145
+    4300848: floor_square_146
+    4300850: floor_square_147
+    4300852: floor_square_148
+    4300854: floor_square_149
+    4300856: floor_square_150
+    4300858: floor_square_151
+    4300860: structure_column_152
+    4300862: structure_column_153
+    4300864: structure_column_154
+    4300866: structure_column_155
+    4300868: structure_column_156
+    4300870: structure_column_157
+    4300872: structure_column_158
+    4300874: structure_column_159
+    4300876: structure_column_160
+    4300878: structure_column_161
+    4300880: structure_column_162
+    4300882: structure_column_163
+    4300884: stairs_stone_164
+    4300886: floor_hole_176
+    4300888: planks_floor_177
+    4300890: structure_column_178
+    4300892: structure_column_179
+    4300894: structure_column_180
+    4300896: structure_column_181
+    4300898: wall_cornerDiagonal_182
+    4300900: wall_straight_183
+    4300902: wall_straight_184
+    4300904: wall_straight_185
+    4300906: wall_straight_186
+    4300908: wall_straight_187
+    4300910: wall_straight_188
+    4300912: wall_cornerDiagonal_189
+    4300914: wall_straight_190
+    4300916: wall_straight_191
+    4300918: floor_square_192
+    4300920: floor_corner_193
+    4300922: floor_square_194
+    4300924: floor_square_195
+    4300926: floor_square_196
+    4300928: floor_square_197
+    4300930: floor_square_198
+    4300932: floor_square_199
+    4300934: floor_corner_200
+    4300936: floor_square_201
+    4300938: floor_square_202
+    4300940: floor_square_203
+    4300942: floor_square_204
+    4300944: floor_square_205
+    4300946: floor_square_206
+    4300948: floor_square_207
+    4300950: floor_square_208
+    4300952: floor_square_209
+    4300954: floor_hole_213
+    4300956: floor_hole_214
+    4300958: floor_hole_215
+    4300960: floor_hole_216
+    4300962: floor_hole_217
+    4300964: floor_hole_218
+    4300966: floor_hole_219
+    4300968: floor_hole_220
+    4300970: floor_hole_222
+    4300972: floor_hole_223
+    4300974: floor_hole_224
+    4300976: floor_hole_225
+    4300978: floor_hole_226
+    4300980: floor_hole_227
+    4300982: floor_hole_228
+    4300984: floor_hole_229
+    4300986: floor_hole_230
+    4300988: floor_hole_231
+    4300990: floor_hole_232
+    4300992: floor_hole_233
+    4300994: floor_hole_234
+    4300996: floor_hole_235
+    4300998: floor_hole_236
+    4301000: floor_hole_237
+    4301002: floor_hole_238
+    4301004: floor_hole_239
+    4301006: floor_square_240
+    4301008: wall_corner_241
+    4301010: wall_straight_242
+    4301012: wall_straight_243
+    4301014: wall_straight_244
+    4301016: wall_straight_245
+    4301018: wall_straight_246
+    4301020: wall_straight_247
+    4301022: wall_corner_248
+    4301024: wall_straight_249
+    4301026: wall_straight_250
+    4301028: wall_straight_251
+    4301030: wall_straight_252
+    4301032: wall_straight_253
+    4301034: wall_straight_254
+    4301036: wall_corner_255
+    4301038: wall_straight_256
+    4301040: wall_straight_257
+    4301042: wall_straight_258
+    4301044: wall_straight_259
+    4301046: wall_straight_260
+    4301048: wall_straight_261
+    4301050: wall_corner_262
+    4301052: wall_straight_263
+    4301054: wall_straight_264
+    4301056: wall_straight_265
+    4301058: wall_straight_266
+    4301060: wall_straight_267
+    4301062: wall_straight_268
+    4301064: structure_column_269
+    4301066: structure_column_270
+    4301068: structure_column_271
+    4301070: structure_column_272
+    4301072: structure_column_273
+    4301074: structure_column_274
+    4301076: structure_column_275
+    4301078: structure_column_276
+    4301080: structure_column_277
+    4301082: structure_column_278
+    4301084: structure_column_279
+    4301086: structure_column_280
   externalObjects: {}
   materials:
     importMaterials: 1
