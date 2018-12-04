@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33541850009633916}
   - component: {fileID: 23995730878140486}
   - component: {fileID: 65436209784048022}
-  - component: {fileID: 114175317986594686}
   m_Layer: 0
   m_Name: Wind
   m_TagString: Untagged
@@ -38,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 1629261509024622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -58,7 +57,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 82ad60aaff94c8841acddfdd3927365f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,14 +96,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114175317986594686
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1629261509024622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22497950e2efaf14180cc9d8725d7190, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

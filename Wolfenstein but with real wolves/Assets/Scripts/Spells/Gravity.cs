@@ -19,7 +19,7 @@ public class Gravity : Spells {
             casted = true;
             cooldownTime = 0f;
             //modify jump
-            playerController.m_GravityMultiplier = 1;
+            playerController.m_GravityMultiplier = 1.5f;
         }
     }
 
@@ -31,7 +31,6 @@ public class Gravity : Spells {
         aoe = 0f;
         cooldown = 10f;
         duration = 5f;
-        obj = GameObject.Find("Gravity");
         casted = false;
         timer = 0f;
         activated = false;
@@ -50,7 +49,7 @@ public class Gravity : Spells {
             {
                 activated = false;
                 //modify jump
-                //playerController.m_GravityMultiplier = 2;
+                playerController.m_GravityMultiplier = 2.5f;
             }
         }
 

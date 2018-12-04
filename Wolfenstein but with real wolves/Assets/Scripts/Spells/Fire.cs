@@ -26,10 +26,8 @@ public class Fire : Spells {
         cooldown = 5f;
         cooldownTime = 0f;
         casted = false;
-        obj = GameObject.Find("Fire");
-        casted = false;
         cooldownTime = 0f;
-        speed = 0;
+        speed = 0.25f;
         projectile = false;
         player = this.gameObject;
     }
@@ -47,18 +45,15 @@ public class Fire : Spells {
         }
         if (projectile)
         {
-            obj.transform.position += obj.transform.forward * speed;
-            Destroy(createdObj);
-            projectile = false;
+            createdObj.transform.position += createdObj.transform.forward * speed;
         }
     }
 
     protected override void DrawSpell()
     {
         createdObj = Instantiate(obj);
-        obj.transform.position = player.transform.position;
-        obj.transform.forward = player.transform.forward;
-        speed = 1;
+        createdObj.transform.position = player.transform.position + player.transform.forward;
+        createdObj.transform.forward = player.transform.forward;
         projectile = true;
     }
 
@@ -67,8 +62,8 @@ public class Fire : Spells {
         if (collision.gameObject.tag == "EnemyTag")
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
-            Destroy(createdObj);
         }
+        Destroy(createdObj);
         projectile = false;
     }
 }

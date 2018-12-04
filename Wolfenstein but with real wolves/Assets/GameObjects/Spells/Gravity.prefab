@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33930347491413184}
   - component: {fileID: 23004629569412598}
   - component: {fileID: 65890099771225152}
-  - component: {fileID: 114411691561948802}
   m_Layer: 0
   m_Name: Gravity
   m_TagString: Untagged
@@ -97,14 +96,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114411691561948802
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1570227766281532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dc23c17eb96dc84eb65f2bcde368197, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -24,11 +24,10 @@ public class Ice : Spells {
         maxRange = 10f;
         aoe = 0f;
         cooldown = 5f;
-        obj = GameObject.Find("Ice");
         casted = false;
         cooldownTime = 0f;
         projectile = false;
-        speed = 0;
+        speed = 0.25f;
         player = this.gameObject;
     }
 	
@@ -45,16 +44,15 @@ public class Ice : Spells {
         }
         if(projectile)
         {
-            obj.transform.position += obj.transform.forward * speed;
+            createdObj.transform.position += createdObj.transform.forward * speed;
         }
     }
 
     protected override void DrawSpell()
     {
         createdObj = Instantiate(obj);
-        obj.transform.position = player.transform.position;
-        obj.transform.forward = player.transform.forward;
-        speed = 1;
+        createdObj.transform.position = player.transform.position + player.transform.forward;
+        createdObj.transform.forward = player.transform.forward;
         projectile = true;
     }
 

@@ -21,7 +21,6 @@ public class Lightning : Spells {
         maxRange = 5f;
         aoe = 90f;
         cooldown = 5f;
-        obj = GameObject.Find("Lightning");
         casted = false;
         cooldownTime = 0f;
         player = this.gameObject;
@@ -33,7 +32,6 @@ public class Lightning : Spells {
         if (casted)
         {
             cooldownTime += Time.deltaTime;
-            obj.transform.position = player.transform.position;
             if (cooldownTime >= cooldown)
             {
                 casted = false;
@@ -44,7 +42,7 @@ public class Lightning : Spells {
     protected override void DrawSpell()
     {
         createdObj = Instantiate(obj);
-        obj.transform.position = player.transform.position;
+        createdObj.transform.position = player.transform.position;
     }
 
     private void OnCollisionEnter(Collision collision)

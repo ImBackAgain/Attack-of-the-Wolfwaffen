@@ -26,7 +26,6 @@ public class Force : Spells {
         maxRange = 10f;
         aoe = 0f;
         cooldown = 5f;
-        obj = GameObject.Find("Force");
         casted = false;
         cooldownTime = 0f;
         player = this.gameObject;

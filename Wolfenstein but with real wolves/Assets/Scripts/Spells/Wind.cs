@@ -28,13 +28,12 @@ public class Wind : Spells {
         maxRange = 3f;
         aoe = 3f;
         cooldown = 10f;
-        obj = GameObject.Find("Wind");
         duration = 5f;
         casted = false;
         timer = 0f;
         activated = false;
         cooldownTime = 0f;
-        speed = 0;
+        speed = 0.15f;
         player = this.gameObject;
     }
 
@@ -44,11 +43,11 @@ public class Wind : Spells {
         if (activated)
         {
             timer += Time.deltaTime;
-            obj.transform.LookAt(player.transform);
-            obj.transform.position += obj.transform.right * speed;
+            createdObj.transform.LookAt(player.transform);
+            createdObj.transform.position += createdObj.transform.right * speed;
             if (timer >= duration)
             {
-                Destroy(obj);
+                Destroy(createdObj);
                 activated = false;
             }
         }
@@ -66,8 +65,8 @@ public class Wind : Spells {
     protected override void DrawSpell()
     {
         createdObj = Instantiate(obj);
-        speed = 1;
-        obj.transform.position = player.transform.position + player.transform.forward * 1;
+        createdObj.transform.parent = player.transform;
+        createdObj.transform.position = player.transform.position + player.transform.forward;
     }
 
     private void OnCollisionEnter(Collision collision)
