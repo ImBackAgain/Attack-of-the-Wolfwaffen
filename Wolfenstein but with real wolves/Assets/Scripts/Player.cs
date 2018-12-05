@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Player : Lifeform {
     Gun revolver;
-
+    public int AmmoLeft
+    {
+        get { return revolver.Ammo; }
+    }
     Dictionary<string, Spells> spells = new Dictionary<string, Spells>();
 
     protected override void Initialize()
@@ -12,12 +15,13 @@ public class Player : Lifeform {
         Initialize(100);
         revolver = GetComponent<Gun>();
 
-        spells.Add("Fire", GameObject.Find("Fire").GetComponent<Fire>());
-        spells.Add("Force", GameObject.Find("Force").GetComponent<Force>());
-        spells.Add("Gravity", GameObject.Find("Gravity").GetComponent<Gravity>());
-        spells.Add("Ice", GameObject.Find("Ice").GetComponent<Ice>());
-        spells.Add("Lightning", GameObject.Find("Lightning").GetComponent<Lightning>());
-        spells.Add("Wind", GameObject.Find("Wind").GetComponent<Wind>());
+        spells.Add("Fire", GetComponent<Fire>());
+        spells.Add("Force", GetComponent<Force>());
+        spells.Add("Gravity", GetComponent<Gravity>());
+        spells.Add("Ice", GetComponent<Ice>());
+        spells.Add("Lightning", GetComponent<Lightning>());
+        spells.Add("Wind", GetComponent<Wind>());
+        
     }
 
 	
@@ -27,10 +31,8 @@ public class Player : Lifeform {
         {
             GameObject hit;
             bool hitLifeForm;
-            if (revolver.Shoot(out hit, out hitLifeForm, false) && hitLifeForm)
-            {
-                Destroy(hit);
-            }   
+
+            revolver.Shoot(out hit, out hitLifeForm, true);
         }
 
         if (Input.GetButtonDown("Reload gun"))

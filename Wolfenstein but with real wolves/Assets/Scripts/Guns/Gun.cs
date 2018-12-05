@@ -10,11 +10,12 @@ public abstract class Gun : MonoBehaviour {
     float reloadTimeout;
     int ammmoLimit;
     float timer;
-    int ammmo;
+
+    public int Ammo { get; set; }
 
     protected void Initialize(int dam, float rng, float fireT, float reloadT, int ammmoL)
     {
-        damage = dam; range = rng; fireTimeout = fireT; reloadTimeout = reloadT; ammmo = ammmoLimit = ammmoL;
+        damage = dam; range = rng; fireTimeout = fireT; reloadTimeout = reloadT; Ammo = ammmoLimit = ammmoL;
     }
 
     protected abstract void Initialize();
@@ -42,14 +43,16 @@ public abstract class Gun : MonoBehaviour {
     public bool Shoot(Vector3 shoooterPosition, Vector3 direction, out GameObject victim, out bool isLifeForm, bool dealDamage = true)
     {
 
-        if (timer > 0 || ammmo <= 0)
+        if (timer > 0 || Ammo <= 0)
         {
             victim = null;
             isLifeForm = false;
-            Debug.Log("Not shoooting");
+            //Debug.Log("Not shoooting");
             return false;
         }
-        
+
+        Ammo--;
+
         RaycastHit hits;
         Physics.Raycast(transform.position, direction, out hits, range);
 
@@ -60,23 +63,22 @@ public abstract class Gun : MonoBehaviour {
             Lifeform victimScript = victim.GetComponent<Lifeform>();
 
             isLifeForm = (victimScript != null);
-            Debug.Log(isLifeForm);
+            //Debug.Log(isLifeForm);
 
-            if (isLifeForm)
+            if (isLifeForm && dealDamage)
             {
+                //Debug.Log("Shot a lifeform");
                 victimScript.TakeDamage(damage);
             }
         }
         else
         {
-            Debug.Log("Nothing hit");
+            //Debug.Log("Nothing hit");
             victim = null;
             isLifeForm = false;
         }
 
-        ammmo--;
-
-        Debug.Log("Ammmo left: " + ammmo);
+        //Debug.Log("Ammmo left: " + ammmo);
         timer = fireTimeout;
 
         return true;
@@ -100,10 +102,10 @@ public abstract class Gun : MonoBehaviour {
     /// <returns>False if ammmo is at limit</returns>
     public bool Reload()
     {
-        if (ammmo < ammmoLimit)
+        if (Ammo < ammmoLimit)
         {
             Debug.Log("Reloading");
-            ammmo = ammmoLimit;
+            Ammo = ammmoLimit;
             timer = reloadTimeout;
             return true;
         }
