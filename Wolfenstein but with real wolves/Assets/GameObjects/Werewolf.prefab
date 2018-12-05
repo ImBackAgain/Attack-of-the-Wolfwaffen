@@ -1893,7 +1893,7 @@ GameObject:
   - component: {fileID: 143626708552706098}
   m_Layer: 0
   m_Name: Werewolf
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3669,7 +3669,7 @@ Animation:
   m_GameObject: {fileID: 100250}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 271f228fe1f05084cb3ca30e7694251b, type: 3}
+  m_Animation: {fileID: 7400000, guid: f6758db2d1f015f4aa72150d607514f1, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: 0fac4ccbe0b18c045b7d179c3d35113a, type: 3}
   - {fileID: 7400000, guid: 540268a4ee556d642adbf588eca9df05, type: 3}

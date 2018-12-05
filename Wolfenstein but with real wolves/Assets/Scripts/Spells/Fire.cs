@@ -61,7 +61,8 @@ public class Fire : Spells {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "EnemyTag")
+        Debug.Log("fire collision");
+        if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
         }

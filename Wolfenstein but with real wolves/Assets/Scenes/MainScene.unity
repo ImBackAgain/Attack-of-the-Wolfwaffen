@@ -11915,10 +11915,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11100000, guid: 504e312f18a83ac4590c4427bd5ee4d1, type: 2}
-      propertyPath: m_Animation
-      value: 
-      objectReference: {fileID: 7400000, guid: f6758db2d1f015f4aa72150d607514f1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 504e312f18a83ac4590c4427bd5ee4d1, type: 2}
   m_IsPrefabAsset: 0
