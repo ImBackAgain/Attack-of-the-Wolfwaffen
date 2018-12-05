@@ -52,6 +52,7 @@ public class Wolf : Enemy {
 
     IEnumerator ClawAttack()
     {
+        ughWhy.Play("Attack2");
         atttacking = true;
 
         float timer = windupBeforeAtttack;
@@ -84,5 +85,6 @@ public class Wolf : Enemy {
 
         yield return new WaitForSeconds(coooldownAfterAtttack);
         atttacking = false;
+        ughWhy.Play("IdleBattle");
     }
 }

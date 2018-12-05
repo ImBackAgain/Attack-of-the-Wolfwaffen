@@ -15,7 +15,7 @@ public class BullletDisplay : MonoBehaviour {
     {
         if (bullletCount < bulletIcons.Count)
         {
-            Debug.Log("NewCount is " + bullletCount);
+            //Debug.Log("NewCount is " + bullletCount);
             for(int i = bulletIcons.Count; i > bullletCount; i--)
             {
                 Destroy(bulletIcons[i - 1]);

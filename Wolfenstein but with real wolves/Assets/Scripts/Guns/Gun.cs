@@ -104,7 +104,7 @@ public abstract class Gun : MonoBehaviour {
     {
         if (Ammo < ammmoLimit)
         {
-            Debug.Log("Reloading");
+            //Debug.Log("Reloading");
             Ammo = ammmoLimit;
             timer = reloadTimeout;
             return true;
