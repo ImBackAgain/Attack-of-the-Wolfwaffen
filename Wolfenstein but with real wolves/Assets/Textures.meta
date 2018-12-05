@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Wolfenstein but with real wolves/Assets/Textures.meta
 guid: 66b288ef5d8f1784192bff5934954511
+=======
+guid: fadeab7eea975354baff491594ec4732
+>>>>>>> origin/master:Wolfenstein but with real wolves/Assets/GameObjects/Textures.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

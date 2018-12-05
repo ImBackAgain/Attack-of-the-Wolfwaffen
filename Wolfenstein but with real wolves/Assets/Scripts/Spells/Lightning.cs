@@ -11,6 +11,7 @@ public class Lightning : Spells {
             casted = true;
             cooldownTime = 0f;
             DrawSpell();
+            Destroy(createdObj);
         }
     }
 
@@ -21,20 +22,17 @@ public class Lightning : Spells {
         maxRange = 5f;
         aoe = 90f;
         cooldown = 5f;
-        obj = GameObject.Find("Lightning");
         casted = false;
         cooldownTime = 0f;
+        player = this.gameObject;
     }
 
     // Update is called once per frame
-    protected override void Update ()
+    public override void Update ()
     {
         if (casted)
         {
             cooldownTime += Time.deltaTime;
-            obj.transform.position = player.transform.position;
-            //Check collision
-            //Deal damage if within collision
             if (cooldownTime >= cooldown)
             {
                 casted = false;
@@ -44,6 +42,15 @@ public class Lightning : Spells {
 
     protected override void DrawSpell()
     {
-        obj.transform.position = player.transform.position;
+        createdObj = Instantiate(obj);
+        createdObj.transform.position = player.transform.position;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "EnemyTag")
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+        }
     }
 }

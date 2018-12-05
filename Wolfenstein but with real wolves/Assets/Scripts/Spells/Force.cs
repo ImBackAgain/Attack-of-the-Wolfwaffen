@@ -12,6 +12,11 @@ public class Force : Spells {
             cooldownTime = 0f;
             //Raycast collision detection
             //Deal effect on hit
+            RaycastHit hits;
+            Physics.Raycast(player.transform.position, player.transform.forward, out hits);
+            Enemy enemy = hits.collider.gameObject.GetComponent<Enemy>();
+            enemy.TakeDamage(damage);
+            //push back
         }
     }
 
@@ -22,13 +27,13 @@ public class Force : Spells {
         maxRange = 10f;
         aoe = 0f;
         cooldown = 5f;
-        obj = GameObject.Find("Force");
         casted = false;
         cooldownTime = 0f;
+        player = this.gameObject;
     }
 
     // Update is called once per frame
-    protected override void Update ()
+    public override void Update ()
     {
         if (casted)
         {

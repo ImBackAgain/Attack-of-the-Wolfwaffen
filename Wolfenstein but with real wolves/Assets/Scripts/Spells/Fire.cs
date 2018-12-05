@@ -9,7 +9,6 @@ public class Fire : Spells {
     private float speed;
 
     public override void Cast()
-
     {
         if (!casted)
         {
@@ -28,15 +27,15 @@ public class Fire : Spells {
         aoe = 5f;
         cooldown = 5f;
         cooldownTime = 0f;
-        obj = GameObject.Find("Fire");
         casted = false;
         cooldownTime = 0f;
-        speed = 0;
+        speed = 0.25f;
         projectile = false;
+        player = this.gameObject;
     }
 
     // Update is called once per frame
-    protected override void Update ()
+    public override void Update ()
     {
         if (casted)
         {
@@ -48,18 +47,25 @@ public class Fire : Spells {
         }
         if (projectile)
         {
-            obj.transform.position += obj.transform.forward * speed;
-            //Check collisions
-            //Explode on collision and remove projectile
-            //projectile = false;
+            createdObj.transform.position += createdObj.transform.forward * speed;
         }
     }
 
     protected override void DrawSpell()
     {
-        obj.transform.position = player.transform.position;
-        obj.transform.forward = player.transform.forward;
-        speed = 1;
+        createdObj = Instantiate(obj);
+        createdObj.transform.position = player.transform.position + player.transform.forward;
+        createdObj.transform.forward = player.transform.forward;
         projectile = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "EnemyTag")
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+        }
+        Destroy(createdObj);
+        projectile = false;
     }
 }

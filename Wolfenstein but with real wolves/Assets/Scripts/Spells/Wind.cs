@@ -29,17 +29,17 @@ public class Wind : Spells {
         maxRange = 3f;
         aoe = 3f;
         cooldown = 10f;
-        obj = GameObject.Find("Wind");
         duration = 5f;
         casted = false;
         timer = 0f;
         activated = false;
         cooldownTime = 0f;
-        speed = 0;
+        speed = 0.15f;
+        player = this.gameObject;
     }
 
     // Update is called once per frame
-    protected override void Update ()
+    public override void Update ()
     {
         if (casted)
         {
@@ -52,12 +52,11 @@ public class Wind : Spells {
         if (activated)
         {
             timer += Time.deltaTime;
-            obj.transform.LookAt(player.transform);
-            obj.transform.position += obj.transform.right * speed;
-            //Check collision in aoe
-            //Deal damage and push back if effected
+            createdObj.transform.LookAt(player.transform);
+            createdObj.transform.position += createdObj.transform.right * speed;
             if (timer >= duration)
             {
+                Destroy(createdObj);
                 activated = false;
             }
         }
@@ -65,7 +64,17 @@ public class Wind : Spells {
 
     protected override void DrawSpell()
     {
-        speed = 1;
-        obj.transform.position = player.transform.position + player.transform.forward * 1;
+        createdObj = Instantiate(obj);
+        createdObj.transform.parent = player.transform;
+        createdObj.transform.position = player.transform.position + player.transform.forward;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "EnemyTag")
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+            //push back
+        }
     }
 }

@@ -20,7 +20,7 @@ public class Gravity : Spells {
             casted = true;
             cooldownTime = 0f;
             //modify jump
-            playerController.m_GravityMultiplier = 1;
+            playerController.m_GravityMultiplier = 1.5f;
         }
     }
 
@@ -32,16 +32,16 @@ public class Gravity : Spells {
         aoe = 0f;
         cooldown = 10f;
         duration = 5f;
-        obj = GameObject.Find("Gravity");
         casted = false;
         timer = 0f;
         activated = false;
         cooldownTime = 0f;
         playerController = GameObject.Find("FPSController").GetComponent<FirstPersonController>();
+        player = this.gameObject;
     }
 
     // Update is called once per frame
-    protected override void Update ()
+    public override void Update ()
     {
 		if(activated)
         {
@@ -50,7 +50,7 @@ public class Gravity : Spells {
             {
                 activated = false;
                 //modify jump
-                playerController.m_GravityMultiplier = 2;
+                playerController.m_GravityMultiplier = 2.5f;
             }
         }
         if(casted)

@@ -25,15 +25,15 @@ public class Ice : Spells {
         maxRange = 10f;
         aoe = 0f;
         cooldown = 5f;
-        obj = GameObject.Find("Ice");
         casted = false;
         cooldownTime = 0f;
         projectile = false;
-        speed = 0;
+        speed = 0.25f;
+        player = this.gameObject;
     }
 	
 	// Update is called once per frame
-	protected override void Update ()
+	public override void Update ()
     {
         if (casted)
         {
@@ -45,18 +45,25 @@ public class Ice : Spells {
         }
         if(projectile)
         {
-            obj.transform.position += obj.transform.forward * speed;
-            //Check collision
-            //Deal damage on collision and remove projectile
-            //projectile = false;
+            createdObj.transform.position += createdObj.transform.forward * speed;
         }
     }
 
     protected override void DrawSpell()
     {
-        obj.transform.position = player.transform.position;
-        obj.transform.forward = player.transform.forward;
-        speed = 1;
+        createdObj = Instantiate(obj);
+        createdObj.transform.position = player.transform.position + player.transform.forward;
+        createdObj.transform.forward = player.transform.forward;
         projectile = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "EnemyTag")
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+        }
+        Destroy(createdObj);
+        projectile = false;
     }
 }
