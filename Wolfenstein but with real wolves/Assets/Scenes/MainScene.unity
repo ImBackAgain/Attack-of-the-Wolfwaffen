@@ -3687,6 +3687,24 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300470, guid: 0992a01e02694e74f8e617acf7f1999d, type: 3}
+--- !u!1 &575547577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100250, guid: 504e312f18a83ac4590c4427bd5ee4d1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1421582288}
+--- !u!136 &575547585
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 575547577}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 3.1908152
+  m_Height: 22.719322
+  m_Direction: 1
+  m_Center: {x: -0.11247396, y: 8.168846, z: 0}
 --- !u!1 &579885214 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100796, guid: 0992a01e02694e74f8e617acf7f1999d,
@@ -11885,7 +11903,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400250, guid: 504e312f18a83ac4590c4427bd5ee4d1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 175.93158
+      value: 176.287
       objectReference: {fileID: 0}
     - target: {fileID: 400250, guid: 504e312f18a83ac4590c4427bd5ee4d1, type: 2}
       propertyPath: m_LocalPosition.y

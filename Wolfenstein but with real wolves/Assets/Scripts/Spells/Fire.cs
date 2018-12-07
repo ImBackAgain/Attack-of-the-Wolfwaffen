@@ -45,6 +45,10 @@ public class Fire : Spells {
                 casted = false;
             }
         }
+        if(createdObj == null)
+        {
+            projectile = false;
+        }
         if (projectile)
         {
             createdObj.transform.position += createdObj.transform.forward * speed;
@@ -59,14 +63,14 @@ public class Fire : Spells {
         projectile = true;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("fire collision");
-        if (collision.gameObject.tag == "Enemy")
-        {
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
-        }
-        Destroy(createdObj);
-        projectile = false;
-    }
+    //private void OnTriggerEnter(Collider collision)
+    //{
+    //    Debug.Log("fire collision");
+    //    if (collision.gameObject.tag == "Enemy")
+    //    {
+    //        collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+    //    }
+    //    Destroy(createdObj);
+    //    projectile = false;
+    //}
 }
