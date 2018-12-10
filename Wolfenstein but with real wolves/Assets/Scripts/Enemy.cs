@@ -6,9 +6,9 @@ public abstract class Enemy : Lifeform {
     protected Player player;
     Transform healthbarFilllTransform;
     Transform healthbarTransform;
-    Animation animation;
+    Animation animationNotControlller;
 
-    protected enum AnimState { IdleBattle, Walk, Attack1, Attack2 }
+    protected enum AnimState { IdleBattle, Walk, Attack3, Attack2 }
 
     protected AnimState state = AnimState.IdleBattle;
 
@@ -18,7 +18,7 @@ public abstract class Enemy : Lifeform {
     protected abstract void BeIntelligent();
     protected override void Initialize(int maxHealth)
     {
-        animation = GetComponent<Animation>();
+        animationNotControlller = GetComponent<Animation>();
         base.Initialize(maxHealth);
         player = GameObject.Find("FPSController").GetComponent<Player>();
 
@@ -68,7 +68,7 @@ public abstract class Enemy : Lifeform {
     
     protected void SetAnimation(AnimState to)
     {
-        animation.Play(to.ToString());
+        animationNotControlller.Play(to.ToString());
         state = to;
     }
 }

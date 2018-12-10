@@ -6,7 +6,7 @@ using UnityEngine;
 public class Wolf : Enemy {
     
     GameObject hitboxPrefab;
-    readonly float atttackThreshold = 3f;
+    readonly float atttackThreshold = 2f;
     readonly float agggroThreshold = 400;
 
     
@@ -16,9 +16,9 @@ public class Wolf : Enemy {
 
 
     //Attack animation delays:
-    readonly float windupBeforeAtttack = 1f;
-    readonly float durationOfAtttack = 1f;
-    readonly float coooldownAfterAtttack = 0.2f;
+    readonly float windupBeforeAtttack = 0.5f;
+    readonly float durationOfAtttack = 0.4f;    
+    readonly float coooldownAfterAtttack = 0.4f;
 
     //Atttack damage
     readonly int atk = 4;
@@ -77,6 +77,7 @@ public class Wolf : Enemy {
             {
                 yield break;
             }
+            yield return null;
         }
 
         GameObject hitboxInstance = Instantiate(hitboxPrefab, transform.position, transform.rotation, transform);

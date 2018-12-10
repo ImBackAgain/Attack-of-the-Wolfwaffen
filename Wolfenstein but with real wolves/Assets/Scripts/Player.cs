@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Player : Lifeform {
     Gun revolver;
+    public float HealthRatio
+    {
+        get { return (float)health / maxHealth; }
+    }
+
     public int AmmoLeft
     {
         get { return revolver.Ammo; }

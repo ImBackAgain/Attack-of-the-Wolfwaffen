@@ -42,12 +42,12 @@ public abstract class Gun : MonoBehaviour {
     /// <returns>Whether or not you were able to shooot</returns>
     public bool Shoot(Vector3 shoooterPosition, Vector3 direction, out GameObject victim, out bool isLifeForm, bool dealDamage = true)
     {
-
+        
         if (timer > 0 || Ammo <= 0)
         {
             victim = null;
             isLifeForm = false;
-            //Debug.Log("Not shoooting");
+            Debug.Log("Not shoooting");
             return false;
         }
 
@@ -63,17 +63,17 @@ public abstract class Gun : MonoBehaviour {
             Lifeform victimScript = victim.GetComponent<Lifeform>();
 
             isLifeForm = (victimScript != null);
-            //Debug.Log(isLifeForm);
+            Debug.Log(isLifeForm);
 
             if (isLifeForm && dealDamage)
             {
-                //Debug.Log("Shot a lifeform");
+                Debug.Log("Shot a lifeform");
                 victimScript.TakeDamage(damage);
             }
         }
         else
         {
-            //Debug.Log("Nothing hit");
+            Debug.Log("Nothing hit");
             victim = null;
             isLifeForm = false;
         }

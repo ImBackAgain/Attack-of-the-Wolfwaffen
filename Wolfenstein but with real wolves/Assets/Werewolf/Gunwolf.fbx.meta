@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 42ef51c6b29d346479dc0f7ddb75e141
+guid: d584561b7b8041841b847180af4078ea
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -93,41 +93,41 @@ ModelImporter:
     100174: grp_locAim_bn_spB01
     100176: grp_locAim_bn_spC01
     100178: grp_locAim_bn_spD01
-    100180: //RootNode
-    100182: Iks01
-    100184: JntCtrl_chest01
-    100186: JntCtrl_hips01
-    100188: JntDrv_spA01
-    100190: JntDrv_spB01
-    100192: JntDrv_spC01
-    100194: JntDrv_spD01
-    100196: JntDrv_spE01
-    100198: Joints01
-    100200: locAim_bn_spA01
-    100202: locAim_bn_spB01
-    100204: locAim_bn_spC01
-    100206: locAim_bn_spD01
-    100208: locOri_head01
-    100210: locOri_l_shld01
-    100212: locOri_l_wrist01
-    100214: locOri_neck01
-    100216: locOri_r_shld01
-    100218: locOri_r_wrist01
-    100220: Mesh01
-    100222: rl_l_ball01
-    100224: rl_l_foot01
-    100226: rl_l_heel01
-    100228: rl_l_toe01
-    100230: rl_r_ball01
-    100232: rl_r_foot01
-    100234: rl_r_heel01
-    100236: rl_r_toe01
-    100238: rp_l_arm01
-    100240: rp_l_foot01
-    100242: rp_r_arm01
-    100244: rp_r_foot01
-    100246: spIk_spine01
-    100248: Warewolf_Hair
+    100180: Iks01
+    100182: JntCtrl_chest01
+    100184: JntCtrl_hips01
+    100186: JntDrv_spA01
+    100188: JntDrv_spB01
+    100190: JntDrv_spC01
+    100192: JntDrv_spD01
+    100194: JntDrv_spE01
+    100196: Joints01
+    100198: locAim_bn_spA01
+    100200: locAim_bn_spB01
+    100202: locAim_bn_spC01
+    100204: locAim_bn_spD01
+    100206: locOri_head01
+    100208: locOri_l_shld01
+    100210: locOri_l_wrist01
+    100212: locOri_neck01
+    100214: locOri_r_shld01
+    100216: locOri_r_wrist01
+    100218: Mesh01
+    100220: rl_l_ball01
+    100222: rl_l_foot01
+    100224: rl_l_heel01
+    100226: rl_l_toe01
+    100228: rl_r_ball01
+    100230: rl_r_foot01
+    100232: rl_r_heel01
+    100234: rl_r_toe01
+    100236: rp_l_arm01
+    100238: rp_l_foot01
+    100240: rp_r_arm01
+    100242: rp_r_foot01
+    100244: spIk_spine01
+    100246: Warewolf_Hair
+    100248: //RootNode
     100250: Werewolf_Body
     400000: be_head01
     400002: be_l_annular_c01
@@ -219,50 +219,54 @@ ModelImporter:
     400174: grp_locAim_bn_spB01
     400176: grp_locAim_bn_spC01
     400178: grp_locAim_bn_spD01
-    400180: //RootNode
-    400182: Iks01
-    400184: JntCtrl_chest01
-    400186: JntCtrl_hips01
-    400188: JntDrv_spA01
-    400190: JntDrv_spB01
-    400192: JntDrv_spC01
-    400194: JntDrv_spD01
-    400196: JntDrv_spE01
-    400198: Joints01
-    400200: locAim_bn_spA01
-    400202: locAim_bn_spB01
-    400204: locAim_bn_spC01
-    400206: locAim_bn_spD01
-    400208: locOri_head01
-    400210: locOri_l_shld01
-    400212: locOri_l_wrist01
-    400214: locOri_neck01
-    400216: locOri_r_shld01
-    400218: locOri_r_wrist01
-    400220: Mesh01
-    400222: rl_l_ball01
-    400224: rl_l_foot01
-    400226: rl_l_heel01
-    400228: rl_l_toe01
-    400230: rl_r_ball01
-    400232: rl_r_foot01
-    400234: rl_r_heel01
-    400236: rl_r_toe01
-    400238: rp_l_arm01
-    400240: rp_l_foot01
-    400242: rp_r_arm01
-    400244: rp_r_foot01
-    400246: spIk_spine01
-    400248: Warewolf_Hair
+    400180: Iks01
+    400182: JntCtrl_chest01
+    400184: JntCtrl_hips01
+    400186: JntDrv_spA01
+    400188: JntDrv_spB01
+    400190: JntDrv_spC01
+    400192: JntDrv_spD01
+    400194: JntDrv_spE01
+    400196: Joints01
+    400198: locAim_bn_spA01
+    400200: locAim_bn_spB01
+    400202: locAim_bn_spC01
+    400204: locAim_bn_spD01
+    400206: locOri_head01
+    400208: locOri_l_shld01
+    400210: locOri_l_wrist01
+    400212: locOri_neck01
+    400214: locOri_r_shld01
+    400216: locOri_r_wrist01
+    400218: Mesh01
+    400220: rl_l_ball01
+    400222: rl_l_foot01
+    400224: rl_l_heel01
+    400226: rl_l_toe01
+    400228: rl_r_ball01
+    400230: rl_r_foot01
+    400232: rl_r_heel01
+    400234: rl_r_toe01
+    400236: rp_l_arm01
+    400238: rp_l_foot01
+    400240: rp_r_arm01
+    400242: rp_r_foot01
+    400244: spIk_spine01
+    400246: Warewolf_Hair
+    400248: //RootNode
     400250: Werewolf_Body
-    2100000: Warewolf1
     4300000: Werewolf_Body
     4300002: Warewolf_Hair
     7400000: Take 001
-    9500000: //RootNode
+    11100000: //RootNode
     13700000: Warewolf_Hair
     13700002: Werewolf_Body
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Warewolf1
+    second: {fileID: 2100000, guid: e65b306efd4179d4697657b06f657658, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -289,17 +293,45 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -307,19 +339,19 @@ ModelImporter:
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
-    normalCalculationMode: 4
+    tangentImportMode: 4
+    normalCalculationMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -339,7 +371,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
