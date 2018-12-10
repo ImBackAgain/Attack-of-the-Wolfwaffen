@@ -57,13 +57,13 @@ public class Ice : Spells {
         projectile = true;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "EnemyTag")
-        {
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
-        }
-        Destroy(createdObj);
-        projectile = false;
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if(collision.gameObject.tag == "EnemyTag")
+    //    {
+    //        collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+    //    }
+    //    Destroy(createdObj);
+    //    projectile = false;
+    //}
 }
