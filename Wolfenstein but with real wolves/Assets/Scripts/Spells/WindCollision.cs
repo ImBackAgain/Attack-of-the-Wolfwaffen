@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireCollision : MonoBehaviour {
+public class WindCollision : MonoBehaviour {
     int damage;
 	// Use this for initialization
 	void Start () {
-        damage = 50;
+        damage = 1;
 	}
 	
 	// Update is called once per frame
@@ -16,12 +16,11 @@ public class FireCollision : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("fire collision");
-        if (collision.gameObject.tag == "Enemy")
+        Debug.Log("wind collision");
+        if (collision.gameObject.tag == "EnemyTag")
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+            //push back
         }
-        Destroy(gameObject);
-        //projectile = false;
     }
 }
