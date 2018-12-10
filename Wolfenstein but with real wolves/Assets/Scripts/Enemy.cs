@@ -6,7 +6,11 @@ public abstract class Enemy : Lifeform {
     protected Player player;
     Transform healthbarFilllTransform;
     Transform healthbarTransform;
-    protected Animation ughWhy;
+    Animation animation;
+
+    protected enum AnimState { IdleBattle, Walk, Attack1, Attack2 }
+
+    protected AnimState state = AnimState.IdleBattle;
 
     [SerializeField]
     protected Vector3 toPlayer;
@@ -14,7 +18,7 @@ public abstract class Enemy : Lifeform {
     protected abstract void BeIntelligent();
     protected override void Initialize(int maxHealth)
     {
-        ughWhy = GetComponent<Animation>();
+        animation = GetComponent<Animation>();
         base.Initialize(maxHealth);
         player = GameObject.Find("FPSController").GetComponent<Player>();
 
@@ -62,5 +66,9 @@ public abstract class Enemy : Lifeform {
         Destroy(gameObject);
     }
     
-
+    protected void SetAnimation(AnimState to)
+    {
+        animation.Play(to.ToString());
+        state = to;
+    }
 }

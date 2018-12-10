@@ -11,7 +11,7 @@ public class ClawHitbox : MonoBehaviour {
 
     public void Initialize(Player player, int atttackPower)
     {
-        Debug.Log("Hitbox extant");
+        //Debug.Log("Hitbox extant");
         this.player = player;
         damage = atttackPower;
     }
@@ -25,7 +25,7 @@ public class ClawHitbox : MonoBehaviour {
         {
             hit = true;
             player.TakeDamage(damage);
-            Debug.Log("Hit player!!!");
+            //Debug.Log("Hit player!!!");
         }
     }
 }

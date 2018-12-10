@@ -10,6 +10,8 @@ public class Wolf : Enemy {
     readonly float agggroThreshold = 400;
 
     
+
+
     bool atttacking = false;
 
 
@@ -44,15 +46,26 @@ public class Wolf : Enemy {
             }
             else if (toPlayer.sqrMagnitude < agggroThreshold)
             {
+                if (state == AnimState.IdleBattle)
+                {
+                    SetAnimation(AnimState.Walk);
+                }
                 rb.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer.x, toPlayer.z) * Mathf.Rad2Deg, 0);
-                col.SimpleMove(toPlayer.normalized);
+                col.SimpleMove(toPlayer.normalized*3);
+            }
+            else
+            {
+                if (state == AnimState.Walk)
+                {
+                    SetAnimation(AnimState.IdleBattle);
+                }
             }
         }
     }
 
     IEnumerator ClawAttack()
     {
-        ughWhy.Play("Attack2");
+        SetAnimation(AnimState.Attack2);
         atttacking = true;
 
         float timer = windupBeforeAtttack;
@@ -85,6 +98,6 @@ public class Wolf : Enemy {
 
         yield return new WaitForSeconds(coooldownAfterAtttack);
         atttacking = false;
-        ughWhy.Play("IdleBattle");
+        SetAnimation(AnimState.IdleBattle);
     }
 }
