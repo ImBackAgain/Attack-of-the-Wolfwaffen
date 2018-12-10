@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FireCollision : MonoBehaviour {
+    
     int damage;
 	// Use this for initialization
 	void Start () {

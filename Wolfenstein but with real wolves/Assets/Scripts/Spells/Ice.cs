@@ -43,7 +43,11 @@ public class Ice : Spells {
                 casted = false;
             }
         }
-        if(projectile)
+        if (createdObj == null)
+        {
+            projectile = false;
+        }
+        if (projectile)
         {
             createdObj.transform.position += createdObj.transform.forward * speed;
         }
