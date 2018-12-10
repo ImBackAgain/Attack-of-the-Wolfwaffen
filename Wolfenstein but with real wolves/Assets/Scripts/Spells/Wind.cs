@@ -8,6 +8,7 @@ public class Wind : Spells {
     private float timer;
     private bool activated;
     private float speed;
+    Transform fixedPlayerTransform;
 
     public override void Cast()
     {
@@ -35,7 +36,8 @@ public class Wind : Spells {
         activated = false;
         cooldownTime = 0f;
         speed = 0.15f;
-        player = this.gameObject;
+        player = gameObject;
+        fixedPlayerTransform = GameObject.Find("FPSController").transform;
     }
 
     // Update is called once per frame
@@ -52,7 +54,7 @@ public class Wind : Spells {
         if (activated)
         {
             timer += Time.deltaTime;
-            createdObj.transform.LookAt(player.transform);
+            createdObj.transform.LookAt(fixedPlayerTransform);
             createdObj.transform.position += createdObj.transform.right * speed;
             if (timer >= duration)
             {
@@ -65,8 +67,9 @@ public class Wind : Spells {
     protected override void DrawSpell()
     {
         createdObj = Instantiate(obj);
-        createdObj.transform.parent = player.transform;
-        createdObj.transform.position = player.transform.position + player.transform.forward;
+        createdObj.transform.parent = fixedPlayerTransform;
+        createdObj.transform.position = 
+            fixedPlayerTransform.position + fixedPlayerTransform.forward;
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -9,7 +9,7 @@ public class PlayerHealthDisplay : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        player = GameObject.Find("FPSController").GetComponent<Player>();
+        player = GameObject.Find("FirstPersonCharacter").GetComponent<Player>();
         barTransform = GameObject.Find("PlayerBar").GetComponent<RectTransform>();
 	}
 	

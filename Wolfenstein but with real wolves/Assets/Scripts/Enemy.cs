@@ -20,7 +20,7 @@ public abstract class Enemy : Lifeform {
     {
         animationNotControlller = GetComponent<Animation>();
         base.Initialize(maxHealth);
-        player = GameObject.Find("FPSController").GetComponent<Player>();
+        player = GameObject.Find("FirstPersonCharacter").GetComponent<Player>();
 
         healthbarTransform = Instantiate
             (

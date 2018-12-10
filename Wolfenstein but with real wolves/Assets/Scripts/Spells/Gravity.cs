@@ -36,7 +36,7 @@ public class Gravity : Spells {
         timer = 0f;
         activated = false;
         cooldownTime = 0f;
-        playerController = GameObject.Find("FPSController").GetComponent<FirstPersonController>();
+        playerController = GameObject.Find("FirstPersonCharacter").GetComponent<FirstPersonController>();
         player = this.gameObject;
     }
 
