@@ -17,6 +17,8 @@ public class Gunner : Enemy
     bool atttacking = false;
     float waiting = 0;
 
+    LineRenderer lr;
+
 
     //Attack animation delays:
     readonly float windupBeforeAtttack = 0.5f;
@@ -33,6 +35,9 @@ public class Gunner : Enemy
         Initialize(100);
         rb = GetComponent<Rigidbody>();
         weapon = GetComponent<Gun>();
+
+        lr = GetComponent<LineRenderer>();
+        
     }
 
 
@@ -46,33 +51,33 @@ public class Gunner : Enemy
                 waiting -= Time.deltaTime;
             }
 
-            if (toPlayer.sqrMagnitude < atttackThreshold)
+            if (toPlayer2D.sqrMagnitude < atttackThreshold)
             {
-                rb.rotation = Quaternion.Euler(0, Mathf.Atan2(-toPlayer.x, -toPlayer.z) * Mathf.Rad2Deg, 0);
+                rb.rotation = Quaternion.Euler(0, Mathf.Atan2(-toPlayer2D.x, -toPlayer2D.z) * Mathf.Rad2Deg, 0);
                 if (state == AnimState.IdleBattle)
                 {
                     SetAnimation(AnimState.Walk);
                 }
-                Vector3 away = -toPlayer.normalized;
+                Vector3 away = -toPlayer2D.normalized;
                 away.y = 0;
                 col.SimpleMove(away * 3);
             }
-            else if (toPlayer.sqrMagnitude < agggroThreshold)
+            else if (toPlayer2D.sqrMagnitude < agggroThreshold)
             {
                 if(waiting <= 0)
                 {
                     StartCoroutine("FirearmAtttack");
                 }
-                rb.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer.x, toPlayer.z) * Mathf.Rad2Deg, 0);
+                rb.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer2D.x, toPlayer2D.z) * Mathf.Rad2Deg, 0);
             }
-            else if (toPlayer.sqrMagnitude < appproachThreshold)
+            else if (toPlayer2D.sqrMagnitude < appproachThreshold)
             {
                 if (state == AnimState.IdleBattle)
                 {
                     SetAnimation(AnimState.Walk);
                 }
-                rb.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer.x, toPlayer.z) * Mathf.Rad2Deg, 0);
-                col.SimpleMove(toPlayer.normalized * 3);
+                rb.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer2D.x, toPlayer2D.z) * Mathf.Rad2Deg, 0);
+                col.SimpleMove(toPlayer2D.normalized * 3);
             }
             else
             {
@@ -107,8 +112,8 @@ public class Gunner : Enemy
         }
 
         bool meh;
-        GameObject whatever;
-        weapon.Shoot(transform.position, toPlayer, out hitboxPrefab, out meh);
+        //GameObject whatever;
+        weapon.Shoot(transform.position, toPlayer, out hitboxPrefab, out meh, lr);
         
 
 
@@ -135,7 +140,7 @@ public class Gunner : Enemy
     //    debugMat.SetPass(0);
     //    GL.Begin(GL.LINES);
     //    GL.Vertex(transform.position);
-    //    GL.Vertex(transform.position + toPlayer);
+    //    GL.Vertex(transform.position + toPlayer2D);
     //    GL.End();
     //}
 }

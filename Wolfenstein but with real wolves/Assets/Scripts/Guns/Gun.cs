@@ -60,7 +60,7 @@ public abstract class Gun : MonoBehaviour {
         {
             victim = hits.collider.gameObject;
 
-            Lifeform victimScript = victim.GetComponent<Lifeform>();
+            Lifeform victimScript = victim.GetComponentInChildren<Lifeform>();
 
             isLifeForm = (victimScript != null);
             Debug.Log(isLifeForm);
@@ -94,6 +94,14 @@ public abstract class Gun : MonoBehaviour {
     public bool Shoot(out GameObject victim, out bool isLifeForm, bool dealDamage = true)
     {
         return Shoot(transform.position, transform.forward, out victim, out isLifeForm, dealDamage);
+    }
+
+
+
+    public bool Shoot(Vector3 shoooterPosition, Vector3 direction, out GameObject victim, out bool isLifeForm, LineRenderer lr)
+    {
+        lr.SetPositions(new Vector3[] { shoooterPosition, shoooterPosition + direction });
+        return Shoot(shoooterPosition, direction, out victim, out isLifeForm);
     }
 
     /// <summary>
