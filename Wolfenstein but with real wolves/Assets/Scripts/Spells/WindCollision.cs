@@ -17,7 +17,7 @@ public class WindCollision : MonoBehaviour {
     private void OnTriggerEnter(Collider collision)
     {
         Debug.Log("wind collision");
-        if (collision.gameObject.tag == "EnemyTag")
+        if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
             //push back
