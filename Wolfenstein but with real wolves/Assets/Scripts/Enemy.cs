@@ -23,12 +23,12 @@ public abstract class Enemy : Lifeform {
         player = GameObject.Find("FirstPersonCharacter").GetComponent<Player>();
 
         healthbarTransform = Instantiate
-            (
-                Resources.Load<GameObject>("Healthbar"),
-                transform.position + Vector3.up * 3,
-                Quaternion.identity,
-                transform
-            ).transform;
+        (
+            Resources.Load<GameObject>("Healthbar"),
+            transform.position + Vector3.up * 3,
+            Quaternion.identity,
+            transform
+        ).transform;
 
         Transform[] transforms =
             healthbarTransform
