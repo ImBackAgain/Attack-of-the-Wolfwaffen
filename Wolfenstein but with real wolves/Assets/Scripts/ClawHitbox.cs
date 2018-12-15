@@ -21,7 +21,7 @@ public class ClawHitbox : MonoBehaviour {
         if (hit) return;
 
         Player player;
-        if (player = other.GetComponent<Player>())
+        if (player = other.GetComponentInChildren<Player>())
         {
             hit = true;
             player.TakeDamage(damage);
