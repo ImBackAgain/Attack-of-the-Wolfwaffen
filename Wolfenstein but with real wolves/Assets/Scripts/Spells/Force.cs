@@ -22,6 +22,7 @@ public class Force : Spells {
 
     // Use this for initialization
     void Start () {
+        obj = GameObject.Find("Wind");
         spellName = "Assantius";
         damage = 1;
         maxRange = 10f;
@@ -29,7 +30,7 @@ public class Force : Spells {
         cooldown = 5f;
         casted = false;
         cooldownTime = 0f;
-        player = this.gameObject;
+        player = gameObject;
     }
 
     // Update is called once per frame

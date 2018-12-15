@@ -21,6 +21,7 @@ public class Fire : Spells {
 
     // Use this for initialization
     void Start () {
+        obj = GameObject.Find("Fire");
         spellName = "Fuego";
         damage = 2;
         maxRange = 10f;
@@ -31,7 +32,7 @@ public class Fire : Spells {
         cooldownTime = 0f;
         speed = 0.25f;
         projectile = false;
-        player = this.gameObject;
+        player = gameObject;
     }
 
     // Update is called once per frame

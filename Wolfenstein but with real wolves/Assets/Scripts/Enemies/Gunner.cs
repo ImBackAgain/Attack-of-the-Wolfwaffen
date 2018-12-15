@@ -17,26 +17,24 @@ public class Gunner : Enemy
     bool atttacking = false;
     float waiting = 0;
 
-    LineRenderer lr;
+    //LineRenderer lr;
 
 
     //Attack animation delays:
     readonly float windupBeforeAtttack = 0.5f;
     readonly float coooldownAfterAtttack = 0.4f;
 
-    //Atttack damage
-    readonly int atk = 4;
 
 
     Rigidbody rb;
 
     protected override void Initialize()
     {
-        Initialize(100);
+        Initialize(8);
         rb = GetComponent<Rigidbody>();
         weapon = GetComponent<Gun>();
 
-        lr = GetComponent<LineRenderer>();
+        //lr = GetComponent<LineRenderer>();
         
     }
 
@@ -111,9 +109,7 @@ public class Gunner : Enemy
             yield return null;
         }
 
-        bool meh;
-        //GameObject whatever;
-        weapon.Shoot(transform.position, toPlayer, out hitboxPrefab, out meh, lr);
+        weapon.Shoot(transform.position, toPlayer);
         
 
 

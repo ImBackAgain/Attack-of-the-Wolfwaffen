@@ -5,6 +5,6 @@ using UnityEngine;
 public class MP40 : Gun {
     protected override void Initialize()
     {
-        Initialize(12, 100, 0.2f, 1, 4);
+        Initialize(1, 100, 0.5f, 3, 5);
     }
 }

@@ -20,6 +20,7 @@ public class Ice : Spells {
 
     // Use this for initialization
     void Start () {
+        obj = GameObject.Find("Ice");
         spellName = "Infriga";
         damage = 3;
         maxRange = 10f;

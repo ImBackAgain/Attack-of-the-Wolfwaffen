@@ -21,14 +21,14 @@ public class Wolf : Enemy {
     readonly float coooldownAfterAtttack = 0.4f;
 
     //Atttack damage
-    readonly int atk = 4;
+    readonly int atk = 5;
 
 
     Rigidbody rb;
 
     protected override void Initialize()
     {
-        Initialize(100);
+        Initialize(10);
         hitboxPrefab = Resources.Load<GameObject>("Hitbox");
         rb = GetComponent<Rigidbody>();
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Lifeform {
+    GameObject parent;
     Gun revolver;
     public float HealthRatio
     {
@@ -17,8 +18,9 @@ public class Player : Lifeform {
 
     protected override void Initialize()
     {
-        Initialize(100);
+        Initialize(30);
         revolver = GetComponent<Gun>();
+        parent = GameObject.Find("FPSController");
 
         spells.Add("Fire", GetComponent<Fire>());
         spells.Add("Force", GetComponent<Force>());
@@ -34,10 +36,7 @@ public class Player : Lifeform {
 	void Update () {
 		if (Input.GetButtonDown("Fire gun"))
         {
-            GameObject hit;
-            bool hitLifeForm;
-
-            revolver.Shoot(out hit, out hitLifeForm, true);
+            revolver.Shoot(true);
         }
 
         if (Input.GetButtonDown("Reload gun"))

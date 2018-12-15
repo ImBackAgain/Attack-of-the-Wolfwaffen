@@ -16,6 +16,7 @@ public class Lightning : Spells {
 
     // Use this for initialization
     void Start () {
+        obj = GameObject.Find("Lightning");
         spellName = "Ventas Fulmino";
         damage = 2;
         maxRange = 5f;

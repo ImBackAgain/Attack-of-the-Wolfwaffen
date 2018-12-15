@@ -26,6 +26,7 @@ public class Gravity : Spells {
 
     // Use this for initialization
     void Start () {
+        obj = GameObject.Find("Gravity");
         spellName = "Gravitus";
         damage = 0;
         maxRange = 0f;

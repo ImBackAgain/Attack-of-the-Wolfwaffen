@@ -7,6 +7,9 @@ public abstract class Enemy : Lifeform {
     Transform healthbarFilllTransform;
     Transform healthbarTransform;
     Animation animationNotControlller;
+    protected float healthOfffset = 3;
+    protected float healthScalar = 1;
+
 
     protected enum AnimState { IdleBattle, Walk, Attack3, Attack2 }
 
@@ -25,10 +28,12 @@ public abstract class Enemy : Lifeform {
         healthbarTransform = Instantiate
         (
             Resources.Load<GameObject>("Healthbar"),
-            transform.position + Vector3.up * 3,
+            transform.position + Vector3.up * healthOfffset,
             Quaternion.identity,
             transform
         ).transform;
+
+        healthbarTransform.localScale = Vector3.one * healthScalar;
 
         Transform[] transforms =
             healthbarTransform

@@ -11,6 +11,11 @@ public abstract class Gun : MonoBehaviour {
     int ammmoLimit;
     float timer;
 
+    public int GetDamage
+    {
+        get { return damage; }
+    }
+
     public int Ammo { get; set; }
 
     protected void Initialize(int dam, float rng, float fireT, float reloadT, int ammmoL)
@@ -36,36 +41,40 @@ public abstract class Gun : MonoBehaviour {
     /// </summary>
     /// <param name="shoooterPosition">The origin of the gunshot</param>
     /// <param name="direction">Direction of gunshot</param>
-    /// <param name="victim">Throw in a gameObject to hold what was hit</param>
-    /// <param name="isLifeForm">Throw in a boool to telll you if you hit a LifeForm</param>
-    /// <param name="dealDamage">Deal damage to victim? Passs false if you want only to know what was hit.</param>
     /// <returns>Whether or not you were able to shooot</returns>
-    public bool Shoot(Vector3 shoooterPosition, Vector3 direction, out GameObject victim, out bool isLifeForm, bool dealDamage = true)
+    public bool Shoot(Vector3 shoooterPosition, Vector3 direction, bool ignorePlayer = false)
     {
         
         if (timer > 0 || Ammo <= 0)
         {
-            victim = null;
-            isLifeForm = false;
-            Debug.Log("Not shoooting");
+            //victim = null;
+            //Debug.Log("Not shoooting");
+            //isLifeForm = false;
             return false;
         }
 
         Ammo--;
 
         RaycastHit hits;
-        Physics.Raycast(transform.position, direction, out hits, range);
+        if(ignorePlayer)
+        {
+            Physics.Raycast(transform.position, direction, out hits, range, LayerMask.GetMask("Enemies", "Env"));
+        }
+        else
+        {
+            Physics.Raycast(transform.position, direction, out hits, range);
+        }
 
         if (hits.collider != null)
         {
-            victim = hits.collider.gameObject;
+            GameObject victim = hits.collider.gameObject;
 
             Lifeform victimScript = victim.GetComponentInChildren<Lifeform>();
 
-            isLifeForm = (victimScript != null);
-            Debug.Log(isLifeForm);
+            bool isLifeForm = (victimScript != null);
+            //Debug.Log(isLifeForm);
 
-            if (isLifeForm && dealDamage)
+            if (isLifeForm)// && dealDamage)
             {
                 Debug.Log("Shot a lifeform");
                 victimScript.TakeDamage(damage);
@@ -74,8 +83,8 @@ public abstract class Gun : MonoBehaviour {
         else
         {
             Debug.Log("Nothing hit");
-            victim = null;
-            isLifeForm = false;
+            //isLifeForm = false;
+            //victim = null;
         }
 
         //Debug.Log("Ammmo left: " + ammmo);
@@ -87,22 +96,19 @@ public abstract class Gun : MonoBehaviour {
     /// <summary>
     /// Shooot gun from its gameObject's position, in the direction of its gameObject's forward.
     /// </summary>
-    /// <param name="victim">Throw in a gameObject to hold what was hit</param>
-    /// <param name="isLifeForm">Throw in a boool to telll you if you hit a LifeForm</param>
-    /// <param name="dealDamage">Deal damage to victim? Passs false if you want only to know what was hit.</param>
     /// <returns>Whether or not you were able to shooot</returns>
-    public bool Shoot(out GameObject victim, out bool isLifeForm, bool dealDamage = true)
+    public bool Shoot(bool ignorePlayer = false)
     {
-        return Shoot(transform.position, transform.forward, out victim, out isLifeForm, dealDamage);
+        return Shoot(transform.position, transform.forward, ignorePlayer);
     }
 
 
 
-    public bool Shoot(Vector3 shoooterPosition, Vector3 direction, out GameObject victim, out bool isLifeForm, LineRenderer lr)
-    {
-        lr.SetPositions(new Vector3[] { shoooterPosition, shoooterPosition + direction });
-        return Shoot(shoooterPosition, direction, out victim, out isLifeForm);
-    }
+    //public bool Shoot(Vector3 shoooterPosition, Vector3 direction, out GameObject victim, LineRenderer lr)
+    //{
+    //    lr.SetPositions(new Vector3[] { shoooterPosition, shoooterPosition + direction });
+    //    return Shoot(shoooterPosition, direction, out victim);
+    //}
 
     /// <summary>
     /// Reload gun

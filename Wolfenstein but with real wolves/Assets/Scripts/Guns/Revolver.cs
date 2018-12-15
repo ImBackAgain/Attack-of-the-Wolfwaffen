@@ -5,6 +5,6 @@ using UnityEngine;
 public class Revolver : Gun {
     protected override void Initialize()
     {
-        Initialize(12, 120, 0.2f, 1, 4);
+        Initialize(3, 120, 0.5f, 1, 6);
     }
 }
