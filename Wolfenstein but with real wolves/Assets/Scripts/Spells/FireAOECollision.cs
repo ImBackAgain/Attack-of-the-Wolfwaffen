@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IceCollision : MonoBehaviour {
+public class FireAOECollision : MonoBehaviour {
     int damage;
 	// Use this for initialization
 	void Start () {
-        damage = 3;
+        damage = 2;
 	}
 	
 	// Update is called once per frame
@@ -16,12 +16,11 @@ public class IceCollision : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("ice collision");
+        Debug.Log("fire aoe collision");
         if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
         }
         Destroy(gameObject);
-        //projectile = false;
     }
 }

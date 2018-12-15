@@ -5,6 +5,8 @@ using UnityEngine;
 public class FireCollision : MonoBehaviour {
     
     int damage;
+    public GameObject fireAOE;
+    GameObject createdObj;
 	// Use this for initialization
 	void Start () {
         damage = 2;
@@ -21,6 +23,8 @@ public class FireCollision : MonoBehaviour {
         if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+            createdObj = Instantiate(fireAOE);
+            createdObj.transform.position = gameObject.transform.position;
         }
         Destroy(gameObject);
     }

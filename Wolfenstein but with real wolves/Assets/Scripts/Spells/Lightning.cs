@@ -11,7 +11,6 @@ public class Lightning : Spells {
             casted = true;
             cooldownTime = 0f;
             DrawSpell();
-            Destroy(createdObj);
         }
     }
 
@@ -44,13 +43,6 @@ public class Lightning : Spells {
     {
         createdObj = Instantiate(obj);
         createdObj.transform.position = player.transform.position;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "EnemyTag")
-        {
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
-        }
+        createdObj.transform.forward = player.transform.forward;
     }
 }
