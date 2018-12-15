@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33349242989545162}
   - component: {fileID: 23592918739493890}
   - component: {fileID: 135729899789553390}
+  - component: {fileID: 114862855713476914}
   m_Layer: 0
   m_Name: FireAOECollision
   m_TagString: Untagged
@@ -84,6 +85,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1965751139957798}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114862855713476914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1965751139957798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f96f680af9e8d4e96702cfda2f3213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135729899789553390
 SphereCollider:
   m_ObjectHideFlags: 1
