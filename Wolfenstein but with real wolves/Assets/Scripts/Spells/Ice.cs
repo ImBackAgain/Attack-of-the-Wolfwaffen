@@ -49,6 +49,7 @@ public class Ice : Spells {
     protected override void DrawSpell()
     {
         CreateProjectile();
+        createdObj.GetComponent<IceCollision>().Initialize(damage, targetTag);
         projectile = true;
     }
 

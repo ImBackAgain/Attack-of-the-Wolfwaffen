@@ -37,6 +37,11 @@ public class Player : Lifeform {
         spells.Add("Lightning", GetComponent<Lightning>());
         spells.Add("Wind", GetComponent<Wind>());
 
+        foreach(string name in spells.Keys)
+        {
+            spells[name].SetTargets("Enemy");
+        }
+
         child = GetComponentsInChildren<Transform>()[1];
     }
 

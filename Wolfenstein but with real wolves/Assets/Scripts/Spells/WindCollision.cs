@@ -2,25 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WindCollision : MonoBehaviour
+public class WindCollision : SpellHitbox
 {
-    int damage;
-	// Use this for initialization
-	void Start () {
-        damage = 1;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    private void OnTriggerEnter(Collider collision)
+    Transform parent;
+    public override void Initialize(float d, string t)
     {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
-            //push back
-        }
+        base.Initialize(d, t);
+        parent = transform.parent;
+    }
+    protected override void OnHit(GameObject hit)
+    {
+        hit.GetComponent<CharacterController>().SimpleMove((hit.transform.position - parent.transform.position).normalized);
     }
 }

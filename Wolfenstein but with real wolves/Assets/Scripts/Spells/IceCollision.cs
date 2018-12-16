@@ -2,26 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IceCollision : MonoBehaviour {
-    int damage;
-    void Initialize(int d, string t)
-    {
-        damage = d;
-    }
-	
+public class IceCollision : SpellHitbox
+{
 	// Update is called once per frame
 	void Update () {
 		
 	}
 
-    private void OnTriggerEnter(Collider collision)
+    protected override void OnHit(GameObject hit)
     {
-        Debug.Log("ice collision");
-        if (collision.gameObject.tag == "Enemy")
-        {
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
-        }
         Destroy(gameObject);
-        //projectile = false;
     }
 }

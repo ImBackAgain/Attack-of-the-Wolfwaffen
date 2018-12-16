@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightningCollision : MonoBehaviour
+public class LightningCollision : SpellHitbox
 {
-    int damage;
     bool coll;
     float lifetime;
     float maxLifetime;
@@ -19,6 +18,11 @@ public class LightningCollision : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        if (!coll)
+        {
+            coll = true;
+            GetComponent<Collider>().enabled = false;
+        }
 		if(lifetime >= maxLifetime)
         {
             Destroy(gameObject);
@@ -26,15 +30,9 @@ public class LightningCollision : MonoBehaviour
         lifetime += Time.deltaTime;
 	}
 
-    private void OnTriggerEnter(Collider collision)
+   
+
+    protected override void OnHit(GameObject hit)
     {
-        //Debug.Log("enter lightning collision");
-        if (!coll && collision.gameObject.tag == "Enemy")
-        {
-            Debug.Log("lightning hit");
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
-            coll = true;
-            Destroy(gameObject);
-        }
     }
 }

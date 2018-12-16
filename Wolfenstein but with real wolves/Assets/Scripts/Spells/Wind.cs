@@ -58,14 +58,7 @@ public class Wind : Spells {
     protected override void DrawSpell()
     {
         createdObj = Instantiate(projectilePrefab, CastForm.position, CastForm.rotation, CastForm);
+        createdObj.GetComponent<WindCollision>().Initialize(damage, targetTag);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "EnemyTag")
-        {
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
-            //push back
-        }
-    }
 }
