@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : Lifeform {
     Gun revolver;
-    Transform child;
+    public Transform child;
 
     public override Vector3 Forward
     {
@@ -16,7 +16,7 @@ public class Player : Lifeform {
 
     public float HealthRatio
     {
-        get { return (float)health / maxHealth; }
+        get { return health / maxHealth; }
     }
 
     public int AmmoLeft
@@ -37,7 +37,7 @@ public class Player : Lifeform {
         spells.Add("Lightning", GetComponent<Lightning>());
         spells.Add("Wind", GetComponent<Wind>());
 
-        child = GetComponentInChildren<Transform>();
+        child = GetComponentsInChildren<Transform>()[1];
     }
 
 	

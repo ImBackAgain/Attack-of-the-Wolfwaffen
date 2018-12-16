@@ -8,13 +8,15 @@ public class FireCollision : MonoBehaviour {
     float dotDamage;
     public GameObject fireAOE;
     GameObject createdObj;
+    string targetTag;
 	
-    public void SetDamage(int d, float ad)
+    public void Initialize(int d, float ad, string t)
     {
         damage = d;
         //Debug.Log("It reallly is " + damage);
         dotDamage = ad;
         fireAOE = Resources.Load<GameObject>("FireAOECollision");
+        targetTag = t;
     }
 
 	// Update is called once per frame
@@ -23,8 +25,8 @@ public class FireCollision : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("fire collision");
-        if (collision.gameObject.tag == "Enemy")
+        //Debug.Log("fire collision with ..." + collision.gameObject + "?");
+        if (collision.gameObject.tag == targetTag)
         {
             //Debug.Log("Dealing " + damage + " to an enemy.");
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);

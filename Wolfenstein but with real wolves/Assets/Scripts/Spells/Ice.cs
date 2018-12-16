@@ -20,15 +20,9 @@ public class Ice : Spells {
 
     // Use this for initialization
     protected override void Initialize() {
-        Initialize("Infriga", 3);
-        maxRange = 10f;
-        aoe = 0f;
-        cooldown = 5f;
-        casted = false;
-        cooldownTime = 0f;
+        Initialize("Infriga", 3, 10, 5);
         projectile = false;
         speed = 0.25f;
-        caster = gameObject;
     }
 	
 	// Update is called once per frame
@@ -54,9 +48,7 @@ public class Ice : Spells {
 
     protected override void DrawSpell()
     {
-        createdObj = Instantiate(projectilePrefab);
-        createdObj.transform.position = caster.transform.position + caster.transform.forward;
-        createdObj.transform.forward = caster.transform.forward;
+        CreateProjectile();
         projectile = true;
     }
 

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightningCollision : MonoBehaviour {
+public class LightningCollision : MonoBehaviour
+{
     int damage;
     bool coll;
     float lifetime;
@@ -27,12 +28,13 @@ public class LightningCollision : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("enter lightning collision");
+        //Debug.Log("enter lightning collision");
         if (!coll && collision.gameObject.tag == "Enemy")
         {
             Debug.Log("lightning hit");
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
             coll = true;
+            Destroy(gameObject);
         }
     }
 }

@@ -16,13 +16,7 @@ public class Lightning : Spells {
 
     // Use this for initialization
     protected override void Initialize() {
-        Initialize("Ventas Fulmino", 2);
-        maxRange = 5f;
-        aoe = 90f;
-        cooldown = 5f;
-        casted = false;
-        cooldownTime = 0f;
-        caster = gameObject;
+        Initialize("Ventus Fulmino", 2, 5, 5);
     }
 
     // Update is called once per frame
@@ -40,8 +34,6 @@ public class Lightning : Spells {
 
     protected override void DrawSpell()
     {
-        createdObj = Instantiate(projectilePrefab);
-        createdObj.transform.position = caster.transform.position;
-        createdObj.transform.forward = caster.transform.forward;
+        CreateProjectile();
     }
 }

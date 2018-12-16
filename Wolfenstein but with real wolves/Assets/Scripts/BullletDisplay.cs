@@ -39,7 +39,7 @@ public class BullletDisplay : MonoBehaviour {
         bullletSeparation = (int)bullletIconPrefab.GetComponent<RectTransform>().rect.width + 3;
         bullletCount = 0;
 
-        player = GameObject.Find("FirstPersonCharacter").GetComponent<Player>();
+        player = GameObject.Find("FPSController").GetComponent<Player>();
 	}
 	
 	// Update is called once per frame

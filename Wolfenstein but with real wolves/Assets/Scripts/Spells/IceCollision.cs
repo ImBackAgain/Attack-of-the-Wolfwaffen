@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class IceCollision : MonoBehaviour {
     int damage;
-	// Use this for initialization
-	void Start () {
-        damage = 3;
-	}
+    void Initialize(int d, string t)
+    {
+        damage = d;
+    }
 	
 	// Update is called once per frame
 	void Update () {

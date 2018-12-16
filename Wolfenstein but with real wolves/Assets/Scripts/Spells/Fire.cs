@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Fire : Spells {
 
-
     private bool projectile;
     private float speed;
 
@@ -21,15 +20,9 @@ public class Fire : Spells {
 
     // Use this for initialization
     protected override void Initialize() {
-        Initialize("Fuego", 2, 10);
-        aoe = 5f;
-        cooldown = 5f;
-        cooldownTime = 0f;
-        casted = false;
-        cooldownTime = 0f;
+        Initialize("Fuego", 2, 10, 5);
         speed = 0.25f;
         projectile = false;
-        caster = gameObject;
     }
 
     // Update is called once per frame
@@ -55,19 +48,8 @@ public class Fire : Spells {
 
     protected override void DrawSpell()
     {
-        createdObj = Instantiate(projectilePrefab, transform.position + transform.forward, transform.rotation);
-        createdObj.GetComponent<FireCollision>().SetDamage(damage, (float)damage / 2);
+        CreateProjectile();
+        createdObj.GetComponent<FireCollision>().Initialize(damage, (float)damage / 2, targetTag);
         projectile = true;
     }
-
-    //private void OnTriggerEnter(Collider collision)
-    //{
-    //    Debug.Log("fire collision");
-    //    if (collision.gameObject.tag == "Enemy")
-    //    {
-    //        collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
-    //    }
-    //    Destroy(createdObj);
-    //    projectile = false;
-    //}
 }

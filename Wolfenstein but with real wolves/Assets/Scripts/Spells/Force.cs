@@ -28,12 +28,7 @@ public class Force : Spells {
 
     // Use this for initialization
     protected override void Initialize() {
-        Initialize("Assantius", 1, 10);
-        aoe = 0f;
-        cooldown = 5f;
-        casted = false;
-        cooldownTime = 0f;
-        caster = gameObject;
+        Initialize("Assantius", 1, 10, 5);
     }
 
     // Update is called once per frame
