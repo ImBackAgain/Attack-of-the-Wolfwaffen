@@ -18,9 +18,9 @@ public class Door : MonoBehaviour {
         AudioSource[] sounds = GetComponents<AudioSource>();
         if(sounds != null)
         {
-            closeSFX = sounds[0];
+            unlockSFX = sounds[0];
             lockSFX = sounds[1];
-            unlockSFX = sounds[2];
+            closeSFX = sounds[2];
             openSFX = sounds[3];
         }
 	}
