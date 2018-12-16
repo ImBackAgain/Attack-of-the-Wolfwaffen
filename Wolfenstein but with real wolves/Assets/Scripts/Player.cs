@@ -3,8 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Lifeform {
-    GameObject parent;
     Gun revolver;
+    Transform child;
+
+    public override Vector3 Forward
+    {
+        get
+        {
+            return child.forward;
+        }
+    }
+
     public float HealthRatio
     {
         get { return (float)health / maxHealth; }
@@ -20,7 +29,6 @@ public class Player : Lifeform {
     {
         Initialize(30);
         revolver = GetComponent<Gun>();
-        parent = GameObject.Find("FPSController");
 
         spells.Add("Fire", GetComponent<Fire>());
         spells.Add("Force", GetComponent<Force>());
@@ -28,7 +36,8 @@ public class Player : Lifeform {
         spells.Add("Ice", GetComponent<Ice>());
         spells.Add("Lightning", GetComponent<Lightning>());
         spells.Add("Wind", GetComponent<Wind>());
-        
+
+        child = GetComponentInChildren<Transform>();
     }
 
 	
@@ -36,7 +45,7 @@ public class Player : Lifeform {
 	void Update () {
 		if (Input.GetButtonDown("Fire gun"))
         {
-            revolver.Shoot(true);
+            revolver.Shoot(transform.position, Forward, true);
         }
 
         if (Input.GetButtonDown("Reload gun"))

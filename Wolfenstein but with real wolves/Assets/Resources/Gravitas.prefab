@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23004629569412598}
   - component: {fileID: 65890099771225152}
   m_Layer: 0
-  m_Name: Gravity
+  m_Name: Gravitas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -11,14 +11,24 @@ public abstract class Spells : MonoBehaviour {
     protected float cooldown;
     protected bool casted;
     protected float cooldownTime;
-    public GameObject obj;
+    public GameObject projectilePrefab;
     protected GameObject createdObj;
-    protected GameObject player;
+    protected GameObject caster;
 
 	// Use this for initialization
 	void Start () {
-		
+        Initialize();
 	}
+
+    protected void Initialize(string spelllName, int dam, float range)
+    {
+        spellName = spelllName;
+        projectilePrefab = Resources.Load<GameObject>(spellName);
+        damage = dam;
+        maxRange = range;
+    }
+
+    protected abstract void Initialize();
 
     // Update is called once per frame
     public abstract void Update();

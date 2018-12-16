@@ -8,8 +8,13 @@ public abstract class Lifeform : MonoBehaviour {
 
     protected CharacterController col;
 
+    public virtual Vector3 Forward
+    {
+        get { return transform.forward; }
+    }
+
     [SerializeField]
-    protected int health;
+    protected float health;
     // Use this for initialization
     protected virtual void Start () {
         Initialize();
@@ -31,7 +36,7 @@ public abstract class Lifeform : MonoBehaviour {
     /// </summary>
     /// <param name="healthReduction">Amount by which to reduce health.</param>
     /// <returns>Whether or not it's stilll alive</returns>
-    public bool TakeDamage(int healthReduction)
+    public bool TakeDamage(float healthReduction)
     {
         //Debug.Log("A lifeform is taking " + healthReduction + " damage");
         //Debug.Log("Health was " + health);

@@ -7,30 +7,33 @@ public class Force : Spells {
     {
         if (!casted)
         {
-            Debug.Log("Force");
+            //Debug.Log("Force");
             casted = true;
             cooldownTime = 0f;
             //Raycast collision detection
             //Deal effect on hit
             RaycastHit hits;
-            Physics.Raycast(player.transform.position, player.transform.forward, out hits);
-            Enemy enemy = hits.collider.gameObject.GetComponent<Enemy>();
-            enemy.TakeDamage(damage);
+            Physics.Raycast(caster.transform.position, caster.transform.forward, out hits);
+            Enemy enemy;
+            
+            if(enemy = hits.collider.gameObject.GetComponent<Enemy>())
+            {
+
+                enemy.TakeDamage(damage);
+            }
+            
             //push back
         }
     }
 
     // Use this for initialization
-    void Start () {
-        obj = GameObject.Find("Wind");
-        spellName = "Assantius";
-        damage = 1;
-        maxRange = 10f;
+    protected override void Initialize() {
+        Initialize("Assantius", 1, 10);
         aoe = 0f;
         cooldown = 5f;
         casted = false;
         cooldownTime = 0f;
-        player = gameObject;
+        caster = gameObject;
     }
 
     // Update is called once per frame

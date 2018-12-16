@@ -20,11 +20,8 @@ public class Fire : Spells {
     }
 
     // Use this for initialization
-    void Start () {
-        obj = GameObject.Find("Fire");
-        spellName = "Fuego";
-        damage = 2;
-        maxRange = 10f;
+    protected override void Initialize() {
+        Initialize("Fuego", 2, 10);
         aoe = 5f;
         cooldown = 5f;
         cooldownTime = 0f;
@@ -32,7 +29,7 @@ public class Fire : Spells {
         cooldownTime = 0f;
         speed = 0.25f;
         projectile = false;
-        player = gameObject;
+        caster = gameObject;
     }
 
     // Update is called once per frame
@@ -58,9 +55,8 @@ public class Fire : Spells {
 
     protected override void DrawSpell()
     {
-        createdObj = Instantiate(obj);
-        createdObj.transform.position = player.transform.position + player.transform.forward;
-        createdObj.transform.forward = player.transform.forward;
+        createdObj = Instantiate(projectilePrefab, transform.position + transform.forward, transform.rotation);
+        createdObj.GetComponent<FireCollision>().SetDamage(damage, (float)damage / 2);
         projectile = true;
     }
 

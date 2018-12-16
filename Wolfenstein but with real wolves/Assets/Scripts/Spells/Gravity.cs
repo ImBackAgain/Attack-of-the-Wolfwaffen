@@ -25,10 +25,8 @@ public class Gravity : Spells {
     }
 
     // Use this for initialization
-    void Start () {
-        obj = GameObject.Find("Gravity");
-        spellName = "Gravitus";
-        damage = 0;
+    protected override void Initialize() {
+        Initialize("Gravitus", 0);
         maxRange = 0f;
         aoe = 0f;
         cooldown = 10f;
@@ -38,7 +36,7 @@ public class Gravity : Spells {
         activated = false;
         cooldownTime = 0f;
         playerController = GameObject.Find("FirstPersonCharacter").GetComponent<FirstPersonController>();
-        player = this.gameObject;
+        caster = gameObject;
     }
 
     // Update is called once per frame

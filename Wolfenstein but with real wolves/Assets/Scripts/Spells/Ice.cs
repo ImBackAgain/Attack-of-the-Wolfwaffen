@@ -19,10 +19,8 @@ public class Ice : Spells {
     }
 
     // Use this for initialization
-    void Start () {
-        obj = GameObject.Find("Ice");
-        spellName = "Infriga";
-        damage = 3;
+    protected override void Initialize() {
+        Initialize("Infriga", 3);
         maxRange = 10f;
         aoe = 0f;
         cooldown = 5f;
@@ -30,7 +28,7 @@ public class Ice : Spells {
         cooldownTime = 0f;
         projectile = false;
         speed = 0.25f;
-        player = this.gameObject;
+        caster = gameObject;
     }
 	
 	// Update is called once per frame
@@ -56,9 +54,9 @@ public class Ice : Spells {
 
     protected override void DrawSpell()
     {
-        createdObj = Instantiate(obj);
-        createdObj.transform.position = player.transform.position + player.transform.forward;
-        createdObj.transform.forward = player.transform.forward;
+        createdObj = Instantiate(projectilePrefab);
+        createdObj.transform.position = caster.transform.position + caster.transform.forward;
+        createdObj.transform.forward = caster.transform.forward;
         projectile = true;
     }
 

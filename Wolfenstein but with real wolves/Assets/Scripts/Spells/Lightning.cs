@@ -15,16 +15,14 @@ public class Lightning : Spells {
     }
 
     // Use this for initialization
-    void Start () {
-        obj = GameObject.Find("Lightning");
-        spellName = "Ventas Fulmino";
-        damage = 2;
+    protected override void Initialize() {
+        Initialize("Ventas Fulmino", 2);
         maxRange = 5f;
         aoe = 90f;
         cooldown = 5f;
         casted = false;
         cooldownTime = 0f;
-        player = this.gameObject;
+        caster = gameObject;
     }
 
     // Update is called once per frame
@@ -42,8 +40,8 @@ public class Lightning : Spells {
 
     protected override void DrawSpell()
     {
-        createdObj = Instantiate(obj);
-        createdObj.transform.position = player.transform.position;
-        createdObj.transform.forward = player.transform.forward;
+        createdObj = Instantiate(projectilePrefab);
+        createdObj.transform.position = caster.transform.position;
+        createdObj.transform.forward = caster.transform.forward;
     }
 }

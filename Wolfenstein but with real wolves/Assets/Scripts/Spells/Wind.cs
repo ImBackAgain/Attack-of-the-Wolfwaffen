@@ -24,12 +24,8 @@ public class Wind : Spells {
     }
 
     // Use this for initialization
-    void Start () {
-        obj = GameObject.Find("Wind");
-        spellName = "Ventus Servitas";
-        damage = 1;
-        maxRange = 3f;
-        aoe = 3f;
+    protected override void Initialize() {
+        Initialize("Ventus Servitas", 1, 3);
         cooldown = 10f;
         duration = 5f;
         casted = false;
@@ -37,7 +33,7 @@ public class Wind : Spells {
         activated = false;
         cooldownTime = 0f;
         speed = 0.15f;
-        player = gameObject;
+        caster = gameObject;
         fixedPlayerTransform = GameObject.Find("FPSController").transform;
     }
 
@@ -67,7 +63,7 @@ public class Wind : Spells {
 
     protected override void DrawSpell()
     {
-        createdObj = Instantiate(obj);
+        createdObj = Instantiate(projectilePrefab);
         createdObj.transform.parent = fixedPlayerTransform;
         createdObj.transform.position = 
             fixedPlayerTransform.position + fixedPlayerTransform.forward;

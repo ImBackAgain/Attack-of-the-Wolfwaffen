@@ -9,7 +9,7 @@ public class BobButEvil : Enemy {
     {
         healthOfffset = 0.7f;
         healthScalar = 0.128f / transform.localScale.x;
-        Initialize(300);
+        Initialize(50);
     }
 
     protected override void BeIntelligent()
