@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : Lifeform {
     Gun revolver;
+    AudioSource reload;
+
     public Transform child;
 
     public override Vector3 Forward
@@ -44,6 +46,8 @@ public class Player : Lifeform {
         }
 
         child = GetComponentsInChildren<Transform>()[1];
+        AudioSource[] sounds = GetComponents<AudioSource>();
+        reload = sounds[1];
     }
 
 	
@@ -57,6 +61,7 @@ public class Player : Lifeform {
         if (Input.GetButtonDown("Reload gun"))
         {
             revolver.Reload();
+            reload.Play();
         }
 
         foreach(string spelllName in spells.Keys)
