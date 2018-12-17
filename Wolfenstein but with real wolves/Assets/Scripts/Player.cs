@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Player : Lifeform {
     Gun revolver;
-    AudioSource reload;
+    public AudioSource reload;
+    public AudioSource grunt;
     public GameObject evilBobRef;
 
     public Transform child;
@@ -51,6 +52,7 @@ public class Player : Lifeform {
         child = GetComponentsInChildren<Transform>()[1];
         AudioSource[] sounds = GetComponents<AudioSource>();
         reload = sounds[1];
+        grunt = sounds[2];
     }
 
 	
