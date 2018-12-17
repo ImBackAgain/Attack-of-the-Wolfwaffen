@@ -12,7 +12,7 @@ public class Key : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        p1 = GameObject.Find("FirstPersonCharacter").GetComponent<Player>();
+        p1 = GameObject.Find("FPSController").GetComponent<Player>();
 	}
 	
 	// Update is called once per frame

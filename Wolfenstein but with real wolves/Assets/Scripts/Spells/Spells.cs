@@ -13,6 +13,11 @@ public abstract class Spells : MonoBehaviour {
     protected bool casted;
     protected float cooldownTime;
 
+    public float TimeLeft
+    {
+        get { return cooldownTime; }
+    }
+
     public GameObject projectilePrefab;
     protected GameObject createdObj;
     protected Lifeform caster;

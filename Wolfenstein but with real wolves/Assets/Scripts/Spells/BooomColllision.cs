@@ -7,6 +7,8 @@ public class BooomColllision : SpellHitbox
 {
     float lifetime;
     float maxLifetime;
+
+
     // Use this for initialization
     public override void Initialize(float d, string t)
     {
@@ -27,18 +29,8 @@ public class BooomColllision : SpellHitbox
         lifetime += Time.deltaTime;
     }
 
-    protected override void OnHit(GameObject hit)
-    {
-    //    Debug.Log("Touching player");
-    //    Vector3 away = hit.transform.position - transform.position;
-    //    away = away.normalized * 60;
-    //    away.y = 3;
-    //    FirstPersonController dresden = hit.GetComponent<FirstPersonController>();
-    //    dresden.m_MoveDir = away;
-    //    dresden.m_Jump = true;
-    }
 
-    void OnTriggerStay(Collider other)
+    protected override void OnTriggerStay(Collider other)
     {
         GameObject hit = other.gameObject;
         if (hit.tag == "Player")
@@ -57,5 +49,10 @@ public class BooomColllision : SpellHitbox
 
             dresdenScript.m_Jump = true;
         }
+    }
+
+    protected override void OnHit(GameObject hit)
+    {
+        throw new System.NotImplementedException();
     }
 }

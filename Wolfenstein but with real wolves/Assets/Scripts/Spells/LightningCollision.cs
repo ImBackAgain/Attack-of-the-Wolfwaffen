@@ -14,9 +14,9 @@ public class LightningCollision : SpellHitbox
         maxLifetime = 3.0f;
 	}
 
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update ()
     {
         if (!collided)
         {
@@ -30,9 +30,18 @@ public class LightningCollision : SpellHitbox
         lifetime += Time.deltaTime;
 	}
 
-   
+    protected void OnTriggerEnter(Collider other)
+    {
+        GameObject hit = other.gameObject;
+        Lifeform hitScript;
+        if ((hit.tag == targetTag) && (hitScript = hit.GetComponent<Lifeform>()))
+        {
+            hitScript.TakeDamage(damage);
+            OnHit(hit);
+        }
+    }
 
-    protected override void OnHit(GameObject hit)
+    protected override void OnTriggerStay(Collider other)
     {
     }
 }

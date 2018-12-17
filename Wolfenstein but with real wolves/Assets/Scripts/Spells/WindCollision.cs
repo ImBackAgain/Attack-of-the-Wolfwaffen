@@ -14,4 +14,6 @@ public class WindCollision : SpellHitbox
     {
         hit.GetComponent<CharacterController>().SimpleMove((hit.transform.position - parent.transform.position).normalized);
     }
+
+    //void 
 }

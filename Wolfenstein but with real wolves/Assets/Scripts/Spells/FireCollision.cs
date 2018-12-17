@@ -23,15 +23,10 @@ public class FireCollision : SpellHitbox
         transform.position += transform.forward * speeed;
     }
 
-    protected override void OnTriggerEnter(Collider other)
+    protected override void OnHit(GameObject hit)
     {
-        base.OnTriggerEnter(other);
         createdObj = Instantiate(fireAOE, transform.position, Quaternion.identity);
         createdObj.GetComponent<FireAOECollision>().SetDamage(dotDamage);
         Destroy(gameObject);
-    }
-
-    protected override void OnHit(GameObject hit)
-    {
     }
 }

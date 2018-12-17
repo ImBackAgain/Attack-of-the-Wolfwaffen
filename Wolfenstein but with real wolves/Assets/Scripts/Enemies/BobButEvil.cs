@@ -1,27 +1,41 @@
-﻿using System.Collections;
+﻿//using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BobButEvil : Enemy {
-
-    Vector3 forward;
-
+    [SerializeField]
     float timer;
+    [SerializeField]
     float waitTime;
+
+    readonly float overtimeDuration = 5;
+
+    readonly float buffferTime = 3;
+
+    public Bounds realm;
+
+    readonly float squareDangerRadius = Mathf.Pow(2.3f, 2);
+    readonly float squareLightningRange = Mathf.Pow(4, 2);
 
     bool dormant = true;
 
-    public void Awaken()
-    {
-        dormant = false;
-    }
+    [SerializeField]
+    float wanderTimer;
+    readonly float wanderDelay = 1;
+
+    Vector3 direction;
+
+
+    enum Action { Fire, Ice, Lightning, Booom };
+
+    [SerializeField]
+    Action toDo;
+    readonly float speeed = 10;
 
     Dictionary<string, Spells> spells;
 
-    enum Action { Fire, Ice, Lightning };
-
-    Action toDo;
-
+    Vector3 forward;
     public override Vector3 Forward
     {
         get
@@ -29,6 +43,8 @@ public class BobButEvil : Enemy {
             return forward;
         }
     }
+    
+
 
     protected override void Initialize()
     {
@@ -50,9 +66,15 @@ public class BobButEvil : Enemy {
         {
             spells[name].SetTargets("Player");
         }
-
+        wanderTimer = wanderDelay;
+    }
+    
+    public void Awaken()
+    {
+        dormant = false;
         DecideOnNextAction();
     }
+
 
     protected override void BeIntelligent()
     {
@@ -62,23 +84,92 @@ public class BobButEvil : Enemy {
         forward = toPlayer - Vector3.Dot(toPlayer, transform.right) * transform.right;
         forward.Normalize();
 
-        rb.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer2D.x, toPlayer2D.z) * Mathf.Rad2Deg, 0);
+        DangerCast();
 
+        if (waitTime > timer)
+        {
+            wanderTimer += Time.deltaTime;
+            if (wanderTimer < wanderDelay)
+            {
+                rb.rotation = Quaternion.LookRotation(toPlayer, Vector3.up);
+                transform.position += direction * Time.deltaTime;
+            }
+            else
+            {
+                wanderTimer -= wanderDelay;
+                direction = Random.onUnitSphere;
+                direction.Normalize();
+            }
+        }
+        else
+        {
+            if (timer < overtimeDuration)
+            {
+                switch (toDo)
+                {
+                    case Action.Booom:
+                        transform.position += toPlayer.normalized * speeed * Time.deltaTime;
+                        break;
 
-        if(Input.GetKeyDown(KeyCode.Z))
+                    case Action.Lightning:
+                        transform.position += toPlayer.normalized * speeed * Time.deltaTime;
+                        if (toPlayer.sqrMagnitude < squareLightningRange)
+                        {
+                            spells["Lightning"].Cast();
+                            DecideOnNextAction();
+                        }
+                        break;
+
+                    case Action.Fire:
+                    case Action.Ice:
+                    default:
+                        spells[toDo.ToString()].Cast();
+                        DecideOnNextAction();
+                        break;
+                }
+            }
+            else
+            {
+                DecideOnNextAction();
+            }
+        }
+
+        StayInBounds();
+
+    }
+
+    private void StayInBounds()
+    {
+        if (!realm.Contains(transform.position))
+        {
+            transform.position = realm.ClosestPoint(transform.position);
+        }
+    }
+
+    void DecideOnNextAction()
+    {
+        timer = 0;
+        if(spells["Booom"].TimeLeft <= 0 && Random.Range(0, 10) > 8)
+            //If the spelll is ready, 10% chance he'lll just come at you
+        {
+            toDo = Action.Booom;
+        }
+        else
+        {
+            toDo = (Action)Random.Range(0, 3);
+        }
+        waitTime = Mathf.Max(spells[toDo.ToString()].TimeLeft, buffferTime);
+    }
+
+    void DangerCast()
+    {
+        if (toDo == Action.Booom)
+        {
+            DecideOnNextAction();
+        }
+        if (toPlayer2D.sqrMagnitude < squareDangerRadius)
         {
             spells["Booom"].Cast();
         }
-
-        if (timer >= 3)
-        {
-            timer -= 3;
-            //spells["Fire"].Cast();
-        }
-    }
-    
-    void DecideOnNextAction()
-    {
-        toDo = (Action)Random.Range(0, 3);
     }
 }

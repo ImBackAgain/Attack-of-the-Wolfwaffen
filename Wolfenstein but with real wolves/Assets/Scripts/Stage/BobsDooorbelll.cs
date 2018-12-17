@@ -8,6 +8,7 @@ public class BobsDooorbelll : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         bob = GameObject.Find("Bobject").GetComponent<BobButEvil>();
+        bob.realm = GetComponent<BoxCollider>().bounds;
 	}
 
     void OnTriggerEnter(Collider other)
@@ -15,7 +16,7 @@ public class BobsDooorbelll : MonoBehaviour {
         if (other.tag == "Player")
         {
             bob.Awaken();
-            Destroy(gameObject);
+            enabled = false;
         }
     }
 }

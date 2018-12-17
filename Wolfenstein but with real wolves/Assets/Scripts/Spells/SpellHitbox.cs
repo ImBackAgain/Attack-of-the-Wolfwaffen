@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class SpellHitbox : MonoBehaviour {
 
     protected float damage;
-    string targetTag;
+    protected string targetTag;
 
 	// Use this for initialization
 	public virtual void Initialize(float d, string t)
@@ -15,7 +15,7 @@ public abstract class SpellHitbox : MonoBehaviour {
         GetComponent<AudioSource>().Play();
     }
 
-    protected virtual void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerStay(Collider other)
     {
         GameObject hit = other.gameObject;
         Lifeform hitScript;
@@ -26,5 +26,8 @@ public abstract class SpellHitbox : MonoBehaviour {
         }
     }
 
-    protected abstract void OnHit(GameObject hit);
+    protected virtual void OnHit(GameObject hit)
+    {
+
+    }
 }
