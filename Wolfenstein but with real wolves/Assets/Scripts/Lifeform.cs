@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class Lifeform : MonoBehaviour {
     protected int maxHealth;
-
+    public Player p1;
     protected CharacterController col;
 
     public virtual Vector3 Forward
@@ -19,6 +19,7 @@ public abstract class Lifeform : MonoBehaviour {
         Initialize();
         health = maxHealth;
         col = GetComponent<CharacterController>();
+        p1 = GameObject.Find("FPSController").GetComponent<Player>();
 	}
 
 
@@ -37,6 +38,8 @@ public abstract class Lifeform : MonoBehaviour {
     /// <returns>Whether or not it's stilll alive</returns>
     public bool TakeDamage(float healthReduction)
     {
+        if (this.tag == "Player")
+            p1.grunt.Play();
         //Debug.Log("A lifeform is taking " + healthReduction + " damage");
         //Debug.Log("Health was " + health);
         health -= healthReduction;
