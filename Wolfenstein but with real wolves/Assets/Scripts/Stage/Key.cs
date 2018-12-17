@@ -9,10 +9,12 @@ public class Key : MonoBehaviour
     bool GoldGet = false;
     bool SilverGet = false;
     public Player p1;
+    AudioSource pickup;
 	// Use this for initialization
 	void Start ()
     {
         p1 = GameObject.Find("FPSController").GetComponent<Player>();
+        pickup = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -28,12 +30,14 @@ public class Key : MonoBehaviour
             if(isGold)
             {
                 p1.gotGold = true;
-                this.gameObject.SetActive(false);
+                transform.position = new Vector3(9000, 9000, 9000);
+                pickup.Play();
             }
             else if(isSilver)
             {
                 p1.gotSilver = true;
-                this.gameObject.SetActive(false);
+                transform.position = new Vector3(9000, 9000, 9000);
+                pickup.Play();
             }
         }
     }

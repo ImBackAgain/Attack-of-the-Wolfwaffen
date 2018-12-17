@@ -7,7 +7,7 @@ public class Force : Spells {
     {
         if (!casted)
         {
-            Debug.Log("Force");
+            //Debug.Log("Force");
             casted = true;
             cooldownTime = 0f;
 
