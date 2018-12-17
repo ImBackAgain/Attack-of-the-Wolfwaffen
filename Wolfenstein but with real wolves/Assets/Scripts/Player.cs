@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Lifeform {
     Gun revolver;
+    AudioSource reload;
+    public GameObject evilBobRef;
+
     public Transform child;
 
     public override Vector3 Forward
@@ -45,6 +49,8 @@ public class Player : Lifeform {
         }
 
         child = GetComponentsInChildren<Transform>()[1];
+        AudioSource[] sounds = GetComponents<AudioSource>();
+        reload = sounds[1];
     }
 
 	
@@ -58,6 +64,7 @@ public class Player : Lifeform {
         if (Input.GetButtonDown("Reload gun"))
         {
             revolver.Reload();
+            reload.Play();
         }
 
         foreach(string spelllName in spells.Keys)
@@ -66,6 +73,16 @@ public class Player : Lifeform {
             {
                 spells[spelllName].Cast();
             }
+        }
+
+        if(health <= 0)
+        {
+            SceneManager.LoadScene(3);
+        }
+
+        if(evilBobRef == null)
+        {
+            SceneManager.LoadScene(2);
         }
 	}
 
