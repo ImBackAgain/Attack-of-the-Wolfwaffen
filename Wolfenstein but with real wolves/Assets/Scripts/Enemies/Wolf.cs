@@ -36,21 +36,24 @@ public class Wolf : Enemy {
     {
         if (!atttacking)
         {
-            if (toPlayer.sqrMagnitude < atttackThreshold)
+            if (toPlayer.sqrMagnitude < agggroThreshold)
             {
-                rb.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer2D.x, toPlayer2D.z) * Mathf.Rad2Deg, 0);
-                StartCoroutine("ClawAttack");
-                //Debug.Log("Claw atttacked?");
-            }
-            else if (toPlayer.sqrMagnitude < agggroThreshold)
-            {
-                
-                if (state == AnimState.IdleBattle)
+
+                if (toPlayer2D.sqrMagnitude < atttackThreshold)
                 {
-                    SetAnimation(AnimState.Walk);
+                    rb.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer2D.x, toPlayer2D.z) * Mathf.Rad2Deg, 0);
+                    StartCoroutine("ClawAttack");
+                    //Debug.Log("Claw atttacked?");
                 }
-                rb.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer2D.x, toPlayer2D.z) * Mathf.Rad2Deg, 0);
-                col.SimpleMove(toPlayer2D.normalized*3);
+                else
+                {
+                    if (state == AnimState.IdleBattle)
+                    {
+                        SetAnimation(AnimState.Walk);
+                    }
+                    rb.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer2D.x, toPlayer2D.z) * Mathf.Rad2Deg, 0);
+                    col.SimpleMove(toPlayer2D.normalized * 3);
+                }
             }
             else
             {
