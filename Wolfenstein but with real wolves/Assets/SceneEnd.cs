@@ -11,10 +11,13 @@ public class SceneEnd : MonoBehaviour {
     float timer = -1;
     float timeOut = 3;
 
+    int sceneNum;
+
     public void StartTrans(int scene)
     {
         timer = 0;
-        //Find object
+        curtain = GetComponent<Image>();
+        sceneNum = scene;
     }
 	// Use this for initialization
 	void Start () {
@@ -25,9 +28,17 @@ public class SceneEnd : MonoBehaviour {
 	void Update () {
 		if (timer >= 0)
         {
+            timer += Time.deltaTime;
             Color c = curtain.color;
-            //Change its alpha
-            //if timer reaches timeOut, change scenes
+
+            c.a = timer / timeOut;
+
+            curtain.color = c;
+
+            if (timer > timeOut + 0.5f)
+            {
+                SceneManager.LoadScene(sceneNum);
+            }
         }
 	}
 }

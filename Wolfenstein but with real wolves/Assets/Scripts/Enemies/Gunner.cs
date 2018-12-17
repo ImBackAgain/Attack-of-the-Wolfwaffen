@@ -83,7 +83,14 @@ public class Gunner : Enemy
             }
         }
     }
-
+    protected override void Die()
+    {
+        if (atttacking)
+        {
+            StopAllCoroutines();
+        }
+        SetAnimation(AnimState.Death);
+    }
     IEnumerator FirearmAtttack()
     {
         if (weapon.Ammo <= 0)

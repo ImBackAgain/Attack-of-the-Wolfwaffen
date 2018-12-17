@@ -67,11 +67,11 @@ public class Wolf : Enemy {
 
     protected override void Die()
     {
-        //if(atttacking)
-        //{
-
-        //}
-        Destroy(gameObject);
+        if(atttacking)
+        {
+            StopAllCoroutines();
+        }
+        SetAnimation(AnimState.Death);
     }
 
     IEnumerator ClawAttack()
