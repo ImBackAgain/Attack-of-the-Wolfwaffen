@@ -548,6 +548,23 @@ ModelImporter:
     101084: wall_straight_7
     101086: wall_straight_8
     101088: wall_straight_9 1
+    101090: door_square_0
+    101092: door_square_1
+    101094: door_square_10
+    101096: door_square_11
+    101098: door_square_12
+    101100: door_square_13
+    101102: door_square_14
+    101104: door_square_15
+    101106: door_square_16
+    101108: door_square_2
+    101110: door_square_3
+    101112: door_square_4
+    101114: door_square_5
+    101116: door_square_6
+    101118: door_square_7
+    101120: door_square_8
+    101122: door_square_9
     400000: //RootNode
     400002: door_round_34
     400004: floor_corner_100
@@ -1093,6 +1110,23 @@ ModelImporter:
     401084: wall_straight_7
     401086: wall_straight_8
     401088: wall_straight_9 1
+    401090: door_square_0
+    401092: door_square_1
+    401094: door_square_10
+    401096: door_square_11
+    401098: door_square_12
+    401100: door_square_13
+    401102: door_square_14
+    401104: door_square_15
+    401106: door_square_16
+    401108: door_square_2
+    401110: door_square_3
+    401112: door_square_4
+    401114: door_square_5
+    401116: door_square_6
+    401118: door_square_7
+    401120: door_square_8
+    401122: door_square_9
     2100000: stone
     2100002: lightStone
     2100004: wood
@@ -1640,6 +1674,23 @@ ModelImporter:
     2301082: wall_straight_7
     2301084: wall_straight_8
     2301086: wall_straight_9 1
+    2301088: door_square_0
+    2301090: door_square_1
+    2301092: door_square_10
+    2301094: door_square_11
+    2301096: door_square_12
+    2301098: door_square_13
+    2301100: door_square_14
+    2301102: door_square_15
+    2301104: door_square_16
+    2301106: door_square_2
+    2301108: door_square_3
+    2301110: door_square_4
+    2301112: door_square_5
+    2301114: door_square_6
+    2301116: door_square_7
+    2301118: door_square_8
+    2301120: door_square_9
     3300000: door_round_34
     3300002: floor_corner_100
     3300004: floor_corner_101
@@ -2184,6 +2235,23 @@ ModelImporter:
     3301082: wall_straight_7
     3301084: wall_straight_8
     3301086: wall_straight_9 1
+    3301088: door_square_0
+    3301090: door_square_1
+    3301092: door_square_10
+    3301094: door_square_11
+    3301096: door_square_12
+    3301098: door_square_13
+    3301100: door_square_14
+    3301102: door_square_15
+    3301104: door_square_16
+    3301106: door_square_2
+    3301108: door_square_3
+    3301110: door_square_4
+    3301112: door_square_5
+    3301114: door_square_6
+    3301116: door_square_7
+    3301118: door_square_8
+    3301120: door_square_9
     4300000: wall_doorwayRound_0
     4300002: wall_corner_1
     4300004: wall_corner_2
@@ -2728,6 +2796,23 @@ ModelImporter:
     4301082: structure_column_278
     4301084: structure_column_279
     4301086: structure_column_280
+    4301088: door_square_0
+    4301090: door_square_1
+    4301092: door_square_2
+    4301094: door_square_3
+    4301096: door_square_4
+    4301098: door_square_5
+    4301100: door_square_6
+    4301102: door_square_7
+    4301104: door_square_8
+    4301106: door_square_9
+    4301108: door_square_10
+    4301110: door_square_11
+    4301112: door_square_12
+    4301114: door_square_13
+    4301116: door_square_14
+    4301118: door_square_15
+    4301120: door_square_16
   externalObjects: {}
   materials:
     importMaterials: 1

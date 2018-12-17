@@ -13,7 +13,8 @@ public class Player : Lifeform {
             return child.forward;
         }
     }
-
+    public bool gotGold = false;
+    public bool gotSilver = false;
     public float HealthRatio
     {
         get { return health / maxHealth; }
@@ -66,4 +67,8 @@ public class Player : Lifeform {
             }
         }
 	}
+
+
+
+    
 }
