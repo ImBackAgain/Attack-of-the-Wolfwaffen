@@ -24,7 +24,8 @@ public class Player : Lifeform {
     {
         get { return revolver.Ammo; }
     }
-    Dictionary<string, Spells> spells = new Dictionary<string, Spells>();
+
+    public Dictionary<string, Spells> spells = new Dictionary<string, Spells>();
 
     protected override void Initialize()
     {
