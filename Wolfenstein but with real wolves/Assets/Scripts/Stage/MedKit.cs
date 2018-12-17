@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class MedKit : MonoBehaviour {
     public Player p1;
-
+    AudioSource pickup;
 	// Use this for initialization
 	void Start ()
     {
         p1 = GameObject.Find("FPSController").GetComponent<Player>();
+        pickup = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -24,8 +25,8 @@ public class MedKit : MonoBehaviour {
             p1.health += 5;
             if (p1.health > 30)
                 p1.health = 30;
-
-            this.gameObject.SetActive(false);
+            pickup.Play();
+            transform.position = new Vector3(90000, 90000, 90000);
         }
     }
 }
