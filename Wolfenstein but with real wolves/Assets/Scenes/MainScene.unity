@@ -21015,6 +21015,11 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4301362, guid: 0992a01e02694e74f8e617acf7f1999d, type: 3}
+--- !u!1 &847608005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1395021852791042, guid: bacdbd2c704436a40a9bab022d91ab33,
+    type: 2}
+  m_PrefabInternal: {fileID: 117306907}
 --- !u!1 &850780050 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 101138, guid: 0992a01e02694e74f8e617acf7f1999d,
@@ -21092,6 +21097,11 @@ Prefab:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114068352922230688, guid: 9259f5b76c3667044bd59762b55785c4,
+        type: 2}
+      propertyPath: evilBobRef
+      value: 
+      objectReference: {fileID: 847608005}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9259f5b76c3667044bd59762b55785c4, type: 2}
   m_IsPrefabAsset: 0
