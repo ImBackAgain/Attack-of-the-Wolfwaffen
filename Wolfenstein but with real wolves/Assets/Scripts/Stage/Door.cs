@@ -16,7 +16,7 @@ public class Door : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        p1 = GameObject.Find("FirstPersonCharacter").GetComponent<Player>();
+        p1 = GameObject.Find("FPSController").GetComponent<Player>();
         AudioSource[] sounds = GetComponents<AudioSource>();
         if(sounds != null)
         {
