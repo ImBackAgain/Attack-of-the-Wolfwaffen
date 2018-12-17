@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Player : Lifeform {
+    SceneEnd fader;
     Gun revolver;
     public AudioSource reload;
     public AudioSource grunt;
@@ -36,6 +36,8 @@ public class Player : Lifeform {
     {
         Initialize(30);
         revolver = GetComponent<Gun>();
+
+        fader = GameObject.Find("Fader").GetComponent<SceneEnd>();
 
         spells.Add("Fire", GetComponent<Fire>());
         spells.Add("Force", GetComponent<Force>());
@@ -79,12 +81,13 @@ public class Player : Lifeform {
 
         if(health <= 0)
         {
-            SceneManager.LoadScene(3);
+            fader.StartTrans(3);
         }
 
         if(evilBobRef == null)
         {
-            SceneManager.LoadScene(2);
+            //SceneManager.LoadScene(2);
+            fader.StartTrans(2);
         }
 	}
 
