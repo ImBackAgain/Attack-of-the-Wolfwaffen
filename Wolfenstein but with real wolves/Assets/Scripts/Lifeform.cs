@@ -14,7 +14,7 @@ public abstract class Lifeform : MonoBehaviour {
     }
 
     [SerializeField]
-    protected float health;
+    public float health;
     // Use this for initialization
     protected virtual void Start () {
         Initialize();
