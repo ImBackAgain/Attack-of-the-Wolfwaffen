@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Lifeform {
     Gun revolver;
     AudioSource reload;
+    public GameObject evilBobRef;
 
     public Transform child;
 
@@ -26,7 +28,8 @@ public class Player : Lifeform {
     {
         get { return revolver.Ammo; }
     }
-    Dictionary<string, Spells> spells = new Dictionary<string, Spells>();
+
+    public Dictionary<string, Spells> spells = new Dictionary<string, Spells>();
 
     protected override void Initialize()
     {
@@ -70,6 +73,16 @@ public class Player : Lifeform {
             {
                 spells[spelllName].Cast();
             }
+        }
+
+        if(health <= 0)
+        {
+            SceneManager.LoadScene(3);
+        }
+
+        if(evilBobRef == null)
+        {
+            SceneManager.LoadScene(2);
         }
 	}
 
