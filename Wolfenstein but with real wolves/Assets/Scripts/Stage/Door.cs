@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Door : MonoBehaviour {
     bool open = false;
-    public bool locked;
+    public bool silverLocked;
+    public bool goldLocked;
     bool inDoorWay = false; // whether or not the player is close to the door
     AudioSource openSFX = null;
     AudioSource closeSFX = null;
     AudioSource unlockSFX = null;
     AudioSource lockSFX = null;
+    public Player p1;
 
-    Quaternion rotation;
 	// Use this for initialization
 	void Start ()
     {
+        p1 = GameObject.Find("FirstPersonCharacter").GetComponent<Player>();
         AudioSource[] sounds = GetComponents<AudioSource>();
         if(sounds != null)
         {
@@ -30,9 +32,33 @@ public class Door : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.E) && inDoorWay)
         {
-            if(locked)
+            if(silverLocked)
             {
-                lockSFX.Play();
+                if(p1.gotSilver)
+                {
+                    unlockSFX.Play();
+                    transform.Rotate(0, 0, 90);
+                    openSFX.Play();
+                    silverLocked = false;
+                    open = !open;
+                }
+
+                else
+                    lockSFX.Play();
+            }
+
+            else if(goldLocked)
+            {
+                if (p1.gotGold)
+                {
+                    unlockSFX.Play();
+                    transform.Rotate(0, 0, 90);
+                    openSFX.Play();
+                    goldLocked = false;
+                }
+
+                else
+                    lockSFX.Play();
             }
 
             else
