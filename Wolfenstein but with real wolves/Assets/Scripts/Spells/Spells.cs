@@ -18,6 +18,14 @@ public abstract class Spells : MonoBehaviour {
         get { return cooldownTime; }
     }
 
+    public float TimeLeftRatio
+    {
+        get
+        {
+            return (casted ? cooldownTime / cooldown : 1);
+        }
+    }
+
     public GameObject projectilePrefab;
     protected GameObject createdObj;
     protected Lifeform caster;

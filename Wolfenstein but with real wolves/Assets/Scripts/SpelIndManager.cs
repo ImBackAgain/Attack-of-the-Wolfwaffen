@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpelIndManager : MonoBehaviour {
 
-    int vSpacing = 70;
+    int vSpacing = 60;
     [SerializeField]
     GameObject spelIndPrefab;
 
@@ -18,8 +18,11 @@ public class SpelIndManager : MonoBehaviour {
         spellls = GameObject.Find("FPSController").GetComponent<Player>().spells;
 
         indicators = new SpelInd[spellls.Count];
-        for (int i = 0; i < spellls.Count; i++)
+
+        string[] bluh = new string[] { "Fire", "Ice", "Lightning", "Force", "Wind", "Gravity"};
+        for (int i = 0; i < 6; i++)
         {
+            string name = bluh[i];
             GameObject ind = Instantiate(
                 spelIndPrefab, 
                 transform.position + i * vSpacing * Vector3.down, 
@@ -28,6 +31,8 @@ public class SpelIndManager : MonoBehaviour {
             );
 
             indicators[i] = ind.GetComponent<SpelInd>();
+
+            indicators[i].SetName(name, spellls[name]);
         }
 	}
 	
