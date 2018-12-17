@@ -15,7 +15,7 @@ public class Wind : Spells {
     {
         if (!casted)
         {
-            Debug.Log("Cast " + spellName);
+            //Debug.Log("Cast " + spellName);
             activated = true;
             timer = 0f;
             casted = true;

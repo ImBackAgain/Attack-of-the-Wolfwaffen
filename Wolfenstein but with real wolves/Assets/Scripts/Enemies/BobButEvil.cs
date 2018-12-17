@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BobButEvil : Enemy {
-    [SerializeField]
     float timer;
-    [SerializeField]
     float waitTime;
 
     readonly float overtimeDuration = 3;
@@ -20,7 +18,6 @@ public class BobButEvil : Enemy {
 
     bool dormant = true;
 
-    [SerializeField]
     float wanderTimer;
     readonly float wanderDelay = 1;
 
@@ -29,7 +26,6 @@ public class BobButEvil : Enemy {
 
     enum Action { Fire, Ice, Lightning, Booom };
 
-    [SerializeField]
     Action toDo;
     readonly float speeed = 10;
 

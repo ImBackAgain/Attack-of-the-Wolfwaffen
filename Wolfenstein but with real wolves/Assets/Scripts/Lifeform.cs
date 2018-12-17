@@ -13,7 +13,6 @@ public abstract class Lifeform : MonoBehaviour {
         get { return transform.forward; }
     }
 
-    [SerializeField]
     public float health;
     // Use this for initialization
     protected virtual void Start () {
