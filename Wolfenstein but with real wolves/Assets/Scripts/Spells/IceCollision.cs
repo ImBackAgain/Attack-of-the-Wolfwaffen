@@ -10,8 +10,14 @@ public class IceCollision : SpellHitbox
         transform.position += transform.forward * speeed;
     }
 
-    protected override void OnHit(GameObject hit)
+    protected override void OnTriggerStay(Collider other)
     {
+        GameObject hit = other.gameObject;
+        Lifeform hitScript;
+        if ((hit.tag == targetTag) && (hitScript = hit.GetComponent<Lifeform>()))
+        {
+            hitScript.TakeDamage(damage);
+        }
         Destroy(gameObject);
     }
 }

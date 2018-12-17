@@ -8,6 +8,8 @@ TagManager:
   - Fire
   - SilverKey
   - GoldKey
+  - Cancelable
+  - Carefullly Cancelable
   layers:
   - Default
   - TransparentFX

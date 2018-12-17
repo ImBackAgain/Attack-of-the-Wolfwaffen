@@ -11,7 +11,6 @@ public class Ice : Spells {
     {
         if (!casted)
         {
-            Debug.Log("Cast " + spellName);
             casted = true;
             cooldownTime = 0f;
             DrawSpell();

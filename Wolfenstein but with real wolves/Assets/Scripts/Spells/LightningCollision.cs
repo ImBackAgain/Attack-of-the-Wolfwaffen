@@ -6,12 +6,11 @@ public class LightningCollision : SpellHitbox
 {
     bool collided = false;
     float lifetime;
-    float maxLifetime;
+    float maxLifetime = 1;
 	// Use this for initialization
 	public override void Initialize(float d, string t) {
         base.Initialize(d, t);
         lifetime = 0f;
-        maxLifetime = 3.0f;
 	}
 
 
@@ -30,7 +29,8 @@ public class LightningCollision : SpellHitbox
         lifetime += Time.deltaTime;
 	}
 
-    protected void OnTriggerEnter(Collider other)
+
+    protected override void OnTriggerStay(Collider other)
     {
         GameObject hit = other.gameObject;
         Lifeform hitScript;
@@ -39,9 +39,5 @@ public class LightningCollision : SpellHitbox
             hitScript.TakeDamage(damage);
             OnHit(hit);
         }
-    }
-
-    protected override void OnTriggerStay(Collider other)
-    {
     }
 }

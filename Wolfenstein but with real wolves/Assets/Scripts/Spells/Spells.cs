@@ -6,7 +6,7 @@ public abstract class Spells : MonoBehaviour {
 
     protected string spellName;
     protected string targetTag;
-    protected int damage;
+    protected float damage;
     protected float maxRange;
 
     protected float cooldown;
@@ -40,7 +40,7 @@ public abstract class Spells : MonoBehaviour {
         targetTag = tag;
     }
 
-    protected void Initialize(string spelllName, int dam, float range, float coooldown)
+    protected void Initialize(string spelllName, float dam, float range, float coooldown)
     {
         spellName = spelllName;
         projectilePrefab = Resources.Load<GameObject>(spellName);

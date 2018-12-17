@@ -10,7 +10,7 @@ public class FireCollision : SpellHitbox
 
     float speeed;
 
-    public void Initialize(int d, float ad, string t)
+    public void Initialize(float d, float ad, string t)
     {
         Initialize(d, t);
         dotDamage = ad;
@@ -23,8 +23,9 @@ public class FireCollision : SpellHitbox
         transform.position += transform.forward * speeed;
     }
 
-    protected override void OnHit(GameObject hit)
+    protected override void OnTriggerStay(Collider other)
     {
+        base.OnTriggerStay(other);
         createdObj = Instantiate(fireAOE, transform.position, Quaternion.identity);
         createdObj.GetComponent<FireAOECollision>().SetDamage(dotDamage);
         Destroy(gameObject);

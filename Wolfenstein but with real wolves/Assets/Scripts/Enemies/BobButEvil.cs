@@ -9,7 +9,7 @@ public class BobButEvil : Enemy {
     [SerializeField]
     float waitTime;
 
-    readonly float overtimeDuration = 5;
+    readonly float overtimeDuration = 3;
 
     readonly float buffferTime = 3;
 
@@ -103,7 +103,7 @@ public class BobButEvil : Enemy {
         }
         else
         {
-            if (timer < overtimeDuration)
+            if (timer < waitTime + overtimeDuration)
             {
                 switch (toDo)
                 {
@@ -123,6 +123,7 @@ public class BobButEvil : Enemy {
                     case Action.Fire:
                     case Action.Ice:
                     default:
+                        Debug.Log("Bob cast a spelll");
                         spells[toDo.ToString()].Cast();
                         DecideOnNextAction();
                         break;

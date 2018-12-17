@@ -9,6 +9,8 @@ public class Wind : Spells {
     private bool activated;
     private float speed;
 
+    GameObject[] createdObjs;
+
     public override void Cast()
     {
         if (!casted)
@@ -24,7 +26,7 @@ public class Wind : Spells {
 
     // Use this for initialization
     protected override void Initialize() {
-        Initialize("Ventus Servitas", 1, 3, 10);
+        Initialize("Ventus Servitas", 0.3f, 3, 10);
         duration = 5f;
         timer = 0f;
         activated = false;
@@ -38,11 +40,17 @@ public class Wind : Spells {
         if (activated)
         {
             timer += Time.deltaTime;
-            createdObj.transform.LookAt(CastForm);
-            createdObj.transform.position += createdObj.transform.right * speed;
+            foreach(GameObject createdObj in createdObjs)
+            {
+                createdObj.transform.LookAt(CastForm);
+                createdObj.transform.position += createdObj.transform.right * speed;
+            }
             if (timer >= duration)
             {
-                Destroy(createdObj);
+                foreach(GameObject createdObj in createdObjs)
+                {
+                    Destroy(createdObj);    
+                }
                 activated = false;
             }
         }
@@ -50,8 +58,14 @@ public class Wind : Spells {
 
     protected override void DrawSpell()
     {
-        createdObj = Instantiate(projectilePrefab, CastForm.position, CastForm.rotation, CastForm);
-        createdObj.GetComponent<WindCollision>().Initialize(damage, targetTag);
+        createdObjs = new GameObject[3];
+        for (int i = 0; i < 3; i++)
+        {
+            GameObject createdObj = Instantiate(projectilePrefab, CastForm.position, Quaternion.Euler(0, i * 120, 0), CastForm);
+            createdObj.GetComponent<WindCollision>().Initialize(damage, targetTag);
+
+            createdObjs[i] = createdObj;
+        }
     }
 
 }

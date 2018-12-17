@@ -21,6 +21,6 @@ public class Booom : Spells {
 
     protected override void Initialize()
     {
-        Initialize("Bobbbus Explodus", 4, 1, 1);
+        Initialize("Bobbbus Explodus", 8, 1, 8);
     }
 }

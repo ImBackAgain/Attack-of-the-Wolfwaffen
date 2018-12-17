@@ -30,9 +30,8 @@ public class BooomColllision : SpellHitbox
     }
 
 
-    protected override void OnTriggerStay(Collider other)
+    protected override void OnHit(GameObject hit)
     {
-        GameObject hit = other.gameObject;
         if (hit.tag == "Player")
         {
             //Debug.Log("Touching player");
@@ -49,10 +48,5 @@ public class BooomColllision : SpellHitbox
 
             dresdenScript.m_Jump = true;
         }
-    }
-
-    protected override void OnHit(GameObject hit)
-    {
-        throw new System.NotImplementedException();
     }
 }

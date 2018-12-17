@@ -46,9 +46,29 @@ public class ForceCollision : SpellHitbox {
         lifetime += Time.deltaTime;
     }
 
-
-
-    protected override void OnHit(GameObject hit)
+    protected override void OnTriggerStay(Collider other)
     {
+        GameObject hit = other.gameObject;
+        if (hit.tag == "Cancelable" || hit.tag == "Carefullly Cancelable")
+        {
+            if (hit.tag == "Carefullly Cancelable")
+            {
+                Debug.Log("Destroying lightning;");
+            }
+            Destroy(other.gameObject);
+        }
+        else if (hit.tag == targetTag)
+        {
+            Vector3 away = transform.forward;
+            away.Normalize();
+            away.y = 1;
+
+            hit.transform.position += away;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        base.OnTriggerStay(other);
     }
 }

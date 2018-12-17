@@ -10,10 +10,22 @@ public class WindCollision : SpellHitbox
         base.Initialize(d, t);
         parent = transform.parent;
     }
-    protected override void OnHit(GameObject hit)
-    {
-        hit.GetComponent<CharacterController>().SimpleMove((hit.transform.position - parent.transform.position).normalized);
-    }
 
-    //void 
+    protected override void OnTriggerStay(Collider other)
+    {
+        base.OnTriggerStay(other);
+        GameObject hit = other.gameObject;
+        if (hit.tag == "Cancelable")
+        {
+            Destroy(other.gameObject);
+        }
+        else if (hit.tag == targetTag)
+        {
+            Vector3 away = (hit.transform.position - parent.transform.position);
+            away.Normalize();
+            away.y = 1;
+
+            hit.transform.position += away;
+        }
+    }
 }

@@ -99,15 +99,8 @@ public abstract class Gun : MonoBehaviour {
 
             if (isLifeForm)// && dealDamage)
             {
-                Debug.Log("Shot a lifeform");
                 victimScript.TakeDamage(damage);
             }
-        }
-        else
-        {
-            Debug.Log("Nothing hit");
-            //isLifeForm = false;
-            //victim = null;
         }
 
         //Debug.Log("Ammmo left: " + ammmo);
