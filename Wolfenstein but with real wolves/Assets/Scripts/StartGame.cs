@@ -11,13 +11,11 @@ public class StartGame : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    public void OnMouseUp()
+	void Update ()
     {
-        Debug.Log("clicked");
-        //SceneManager.LoadScene(1);
-    }
+		if(Input.GetKey(KeyCode.Return))
+        {
+            SceneManager.LoadScene(1);
+        }
+	}
 }
