@@ -3668,19 +3668,13 @@ Animation:
   m_GameObject: {fileID: 100250}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: f6758db2d1f015f4aa72150d607514f1, type: 3}
+  m_Animation: {fileID: 7400000, guid: 27d348e67ee34ba488519fa23962899a, type: 3}
   m_Animations:
-  - {fileID: 7400000, guid: 0fac4ccbe0b18c045b7d179c3d35113a, type: 3}
-  - {fileID: 7400000, guid: 540268a4ee556d642adbf588eca9df05, type: 3}
+  - {fileID: 7400000, guid: 27d348e67ee34ba488519fa23962899a, type: 3}
+  - {fileID: 7400000, guid: f6758db2d1f015f4aa72150d607514f1, type: 3}
   - {fileID: 7400000, guid: 9cad1977aca33c64c970593cb98b325b, type: 3}
   - {fileID: 7400000, guid: 271f228fe1f05084cb3ca30e7694251b, type: 3}
-  - {fileID: 7400000, guid: 0a74c5f5a5563e5408daae5a9dce6893, type: 3}
-  - {fileID: 7400000, guid: d0b64ce7892476848a998905283fb8be, type: 3}
   - {fileID: 7400000, guid: b8a69631d78ecf848897444386c77fae, type: 3}
-  - {fileID: 7400000, guid: 47a18c9ff4f650b4db0beeba5d2c2799, type: 3}
-  - {fileID: 7400000, guid: f6758db2d1f015f4aa72150d607514f1, type: 3}
-  - {fileID: 7400000, guid: 4d0bd0579815c4241849821578e468d2, type: 3}
-  - {fileID: 7400000, guid: 27d348e67ee34ba488519fa23962899a, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -3914,6 +3908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc487bd0bce84e46a47cee2376a985d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  p1: {fileID: 0}
   health: 0
 --- !u!143 &143626708552706098
 CharacterController:

@@ -1406,6 +1406,7 @@ GameObject:
   - component: {fileID: 54288068525668226}
   - component: {fileID: 143096869966448586}
   - component: {fileID: 120778079164256100}
+  - component: {fileID: 114235252562357762}
   m_Layer: 8
   m_Name: Gunwolf
   m_TagString: Untagged
@@ -3694,13 +3695,13 @@ Animation:
   m_GameObject: {fileID: 1722329391432842}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: d584561b7b8041841b847180af4078ea, type: 3}
+  m_Animation: {fileID: 7400000, guid: 27d348e67ee34ba488519fa23962899a, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: 27d348e67ee34ba488519fa23962899a, type: 3}
   - {fileID: 7400000, guid: f6758db2d1f015f4aa72150d607514f1, type: 3}
   - {fileID: 7400000, guid: 271f228fe1f05084cb3ca30e7694251b, type: 3}
   - {fileID: 7400000, guid: 9cad1977aca33c64c970593cb98b325b, type: 3}
-  - {fileID: 7400000, guid: d584561b7b8041841b847180af4078ea, type: 3}
+  - {fileID: 7400000, guid: b8a69631d78ecf848897444386c77fae, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -3716,8 +3717,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 099d96aa059ead74faaf9780062ee90d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  p1: {fileID: 0}
   health: 0
   hitboxPrefab: {fileID: 0}
+--- !u!114 &114235252562357762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1722329391432842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0905b142e96ad3348b14849a8a38e1e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!120 &120778079164256100
 LineRenderer:
   m_ObjectHideFlags: 1

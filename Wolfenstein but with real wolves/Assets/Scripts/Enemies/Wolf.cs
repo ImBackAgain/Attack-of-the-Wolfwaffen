@@ -65,6 +65,15 @@ public class Wolf : Enemy {
         }
     }
 
+    protected override void Die()
+    {
+        //if(atttacking)
+        //{
+
+        //}
+        Destroy(gameObject);
+    }
+
     IEnumerator ClawAttack()
     {
         SetAnimation(AnimState.Attack2);

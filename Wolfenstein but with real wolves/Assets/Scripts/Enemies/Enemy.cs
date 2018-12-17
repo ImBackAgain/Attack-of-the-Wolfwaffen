@@ -14,7 +14,7 @@ public abstract class Enemy : Lifeform {
 
     protected Rigidbody rb;
 
-    protected enum AnimState { IdleBattle, Walk, Attack3, Attack2 }
+    protected enum AnimState { IdleBattle, Walk, Attack3, Attack2, Death }
 
     protected AnimState state = AnimState.IdleBattle;
 
@@ -60,6 +60,14 @@ public abstract class Enemy : Lifeform {
 
     protected virtual void Update()
     {
+        if (state == AnimState.Death)
+        {
+            if (!animationNotControlller.isPlaying)
+            {
+                Destroy(gameObject);
+            }
+            return;
+        }
         toPlayer2D = toPlayer = player.transform.position - transform.position;
 
         toPlayer2D.y = 0;
@@ -77,7 +85,7 @@ public abstract class Enemy : Lifeform {
         }
     }
 
-    void Die()
+    protected virtual void Die()
     {
         Destroy(gameObject);
     }
