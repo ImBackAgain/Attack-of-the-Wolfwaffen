@@ -14,7 +14,6 @@ public class Gravity : Spells {
     {
         if(!casted)
         {
-            Debug.Log("Cast " + spellName);
             activated = true;
             timer = 0f;
             casted = true;
@@ -48,16 +47,8 @@ public class Gravity : Spells {
                 playerController.m_GravityMultiplier = 2.5f;
             }
         }
-        if(casted)
-        {
-            cooldownTime += Time.deltaTime;
-            if(cooldownTime >= cooldown)
-            {
-                casted = false;
-
-            }
-        }
-	}
+        base.Update();
+    }
 
     protected override void DrawSpell()
     {

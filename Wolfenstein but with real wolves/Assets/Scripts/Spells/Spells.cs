@@ -8,9 +8,11 @@ public abstract class Spells : MonoBehaviour {
     protected string targetTag;
     protected int damage;
     protected float maxRange;
+
     protected float cooldown;
     protected bool casted;
     protected float cooldownTime;
+
     public GameObject projectilePrefab;
     protected GameObject createdObj;
     protected Lifeform caster;
@@ -50,7 +52,17 @@ public abstract class Spells : MonoBehaviour {
     protected abstract void Initialize();
 
     // Update is called once per frame
-    public abstract void Update();
+    public virtual void Update()
+    {
+        if (casted)
+        {
+            cooldownTime += Time.deltaTime;
+            if (cooldownTime >= cooldown)
+            {
+                casted = false;
+            }
+        }
+    }
 
     public abstract void Cast();
 

@@ -26,12 +26,9 @@ public class Gunner : Enemy
 
 
 
-    Rigidbody rb;
-
     protected override void Initialize()
     {
         Initialize(8);
-        rb = GetComponent<Rigidbody>();
         weapon = GetComponent<Gun>();
 
         //lr = GetComponent<LineRenderer>();

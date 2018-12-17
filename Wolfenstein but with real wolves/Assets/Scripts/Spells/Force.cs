@@ -7,20 +7,11 @@ public class Force : Spells {
     {
         if (!casted)
         {
-            //Debug.Log("Force");
+            Debug.Log("Force");
             casted = true;
             cooldownTime = 0f;
-            //Raycast collision detection
-            //Deal effect on hit
-            RaycastHit hits;
-            Physics.Raycast(caster.transform.position, caster.transform.forward, out hits);
-            Enemy enemy;
-            
-            if(enemy = hits.collider.gameObject.GetComponent<Enemy>())
-            {
 
-                enemy.TakeDamage(damage);
-            }
+            DrawSpell();
             
             //push back
         }
@@ -46,6 +37,8 @@ public class Force : Spells {
 
     protected override void DrawSpell()
     {
-        throw new System.NotImplementedException();
+        //Debug.Log("Asssantius");
+        CreateProjectile();
+        createdObj.GetComponent<ForceCollision>().Initialize(damage, targetTag);
     }
 }

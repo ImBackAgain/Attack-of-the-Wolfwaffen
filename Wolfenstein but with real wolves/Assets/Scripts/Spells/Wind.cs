@@ -34,14 +34,7 @@ public class Wind : Spells {
     // Update is called once per frame
     public override void Update ()
     {
-        if (casted)
-        {
-            cooldownTime += Time.deltaTime;
-            if (cooldownTime >= cooldown)
-            {
-                casted = false;
-            }
-        }
+        base.Update();
         if (activated)
         {
             timer += Time.deltaTime;

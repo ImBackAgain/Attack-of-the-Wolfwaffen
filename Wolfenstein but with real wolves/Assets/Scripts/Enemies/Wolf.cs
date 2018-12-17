@@ -9,7 +9,7 @@ public class Wolf : Enemy {
     readonly float atttackThreshold = 2f;
     readonly float agggroThreshold = 400;
 
-    
+
 
 
     bool atttacking = false;
@@ -24,13 +24,11 @@ public class Wolf : Enemy {
     readonly int atk = 5;
 
 
-    Rigidbody rb;
 
     protected override void Initialize()
     {
         Initialize(10);
         hitboxPrefab = Resources.Load<GameObject>("Hitbox");
-        rb = GetComponent<Rigidbody>();
     }
 
 
@@ -38,14 +36,15 @@ public class Wolf : Enemy {
     {
         if (!atttacking)
         {
-            if (toPlayer2D.sqrMagnitude < atttackThreshold)
+            if (toPlayer.sqrMagnitude < atttackThreshold)
             {
                 rb.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer2D.x, toPlayer2D.z) * Mathf.Rad2Deg, 0);
                 StartCoroutine("ClawAttack");
                 //Debug.Log("Claw atttacked?");
             }
-            else if (toPlayer2D.sqrMagnitude < agggroThreshold)
+            else if (toPlayer.sqrMagnitude < agggroThreshold)
             {
+                
                 if (state == AnimState.IdleBattle)
                 {
                     SetAnimation(AnimState.Walk);

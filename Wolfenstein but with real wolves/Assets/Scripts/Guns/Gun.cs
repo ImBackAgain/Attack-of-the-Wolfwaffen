@@ -4,12 +4,18 @@ using UnityEngine;
 
 public abstract class Gun : MonoBehaviour {
 
+    static bool audioLoaded;
+
+    static AudioClip[] shots;
+
     int damage;
     float range;
     float fireTimeout;
     float reloadTimeout;
     int ammmoLimit;
     float timer;
+
+    AudioSource shotPlayer;
 
     public int GetDamage
     {
@@ -21,6 +27,20 @@ public abstract class Gun : MonoBehaviour {
     protected void Initialize(int dam, float rng, float fireT, float reloadT, int ammmoL)
     {
         damage = dam; range = rng; fireTimeout = fireT; reloadTimeout = reloadT; Ammo = ammmoLimit = ammmoL;
+
+        if (!audioLoaded)
+        {
+            audioLoaded = true;
+            shots = new AudioClip[3];
+            for (int i = 1; i < 4; i++)
+            {
+                shots[i - 1] = Resources.Load<AudioClip>("Gunshot" + i);
+            }
+        }
+
+        shotPlayer = gameObject.AddComponent<AudioSource>();
+        shotPlayer.volume = 0.05f;
+        shotPlayer.spatialBlend = 1;
     }
 
     protected abstract void Initialize();
@@ -54,6 +74,9 @@ public abstract class Gun : MonoBehaviour {
         }
 
         Ammo--;
+
+        shotPlayer.clip = shots[Random.Range(0, 3)];
+        shotPlayer.Play();
 
         RaycastHit hits;
         if(ignorePlayer)

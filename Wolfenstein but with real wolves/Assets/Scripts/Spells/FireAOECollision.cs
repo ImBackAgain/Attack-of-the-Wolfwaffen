@@ -21,9 +21,11 @@ public class FireAOECollision : MonoBehaviour {
         //Color c = mat.color;
         //c.a = 1 - timer / lifespan;
         //mat.color = c;
+
+        
 	}
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerStay(Collider collision)
     {
         //Debug.Log("fire aoe collision");
         Lifeform hit = collision.GetComponent<Lifeform>();

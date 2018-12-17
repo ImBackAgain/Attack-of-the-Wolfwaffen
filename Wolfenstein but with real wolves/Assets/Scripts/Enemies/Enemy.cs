@@ -10,6 +10,9 @@ public abstract class Enemy : Lifeform {
     protected float healthOfffset = 3;
     protected float healthScalar = 1;
 
+    protected AudioSource foootstepPlayer;
+
+    protected Rigidbody rb;
 
     protected enum AnimState { IdleBattle, Walk, Attack3, Attack2 }
 
@@ -19,11 +22,15 @@ public abstract class Enemy : Lifeform {
     protected Vector3 toPlayer, toPlayer2D;
 
     protected abstract void BeIntelligent();
+
+
     protected override void Initialize(int maxHealth)
     {
         animationNotControlller = GetComponent<Animation>();
         base.Initialize(maxHealth);
         player = GameObject.Find("FPSController").GetComponent<Player>();
+
+        foootstepPlayer = GetComponent<AudioSource>();
 
         healthbarTransform = Instantiate
         (
@@ -47,6 +54,8 @@ public abstract class Enemy : Lifeform {
                 break;
             }
         }
+
+        rb = GetComponent<Rigidbody>();
     }
 
     protected virtual void Update()

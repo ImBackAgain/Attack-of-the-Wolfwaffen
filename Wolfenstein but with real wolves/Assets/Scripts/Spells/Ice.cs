@@ -25,26 +25,7 @@ public class Ice : Spells {
         speed = 0.25f;
     }
 	
-	// Update is called once per frame
-	public override void Update ()
-    {
-        if (casted)
-        {
-            cooldownTime += Time.deltaTime;
-            if (cooldownTime >= cooldown)
-            {
-                casted = false;
-            }
-        }
-        if (createdObj == null)
-        {
-            projectile = false;
-        }
-        if (projectile)
-        {
-            createdObj.transform.position += createdObj.transform.forward * speed;
-        }
-    }
+	
 
     protected override void DrawSpell()
     {

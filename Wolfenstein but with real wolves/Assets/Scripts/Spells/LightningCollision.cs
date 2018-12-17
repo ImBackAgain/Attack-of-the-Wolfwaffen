@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class LightningCollision : SpellHitbox
 {
-    bool coll;
+    bool collided = false;
     float lifetime;
     float maxLifetime;
 	// Use this for initialization
-	void Start () {
-        damage = 2;
-        coll = false;
+	public override void Initialize(float d, string t) {
+        base.Initialize(d, t);
         lifetime = 0f;
         maxLifetime = 3.0f;
 	}
+
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (!coll)
+        if (!collided)
         {
-            coll = true;
+            collided = true;
             GetComponent<Collider>().enabled = false;
         }
 		if(lifetime >= maxLifetime)

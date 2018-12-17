@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lightning : Spells {
+public class Booom : Spells {
     public override void Cast()
     {
         if (!casted)
@@ -13,15 +13,14 @@ public class Lightning : Spells {
         }
     }
 
-    // Use this for initialization
-    protected override void Initialize() {
-        Initialize("Ventus Fulmino", 4, 5, 5);
-    }
-
-   
     protected override void DrawSpell()
     {
         CreateProjectile();
-        createdObj.GetComponent<LightningCollision>().Initialize(damage, targetTag);
+        createdObj.GetComponent<BooomColllision>().Initialize(damage, targetTag);
+    }
+
+    protected override void Initialize()
+    {
+        Initialize("Bobbbus Explodus", 4, 1, 1);
     }
 }
