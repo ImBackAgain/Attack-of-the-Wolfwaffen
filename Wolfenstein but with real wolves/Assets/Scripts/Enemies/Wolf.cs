@@ -8,7 +8,7 @@ public class Wolf : Enemy {
     GameObject hitboxPrefab;
     readonly float atttackThreshold = 2f;
     readonly float agggroThreshold = 400;
-
+    AudioSource deathSFX;
 
 
 
@@ -29,6 +29,7 @@ public class Wolf : Enemy {
     {
         Initialize(10);
         hitboxPrefab = Resources.Load<GameObject>("Hitbox");
+        deathSFX = GetComponent<AudioSource>();
     }
 
 
@@ -71,6 +72,7 @@ public class Wolf : Enemy {
         {
             StopAllCoroutines();
         }
+        deathSFX.Play();
         SetAnimation(AnimState.Death);
     }
 
