@@ -19,7 +19,7 @@ public class Force : Spells {
 
     // Use this for initialization
     protected override void Initialize() {
-        Initialize("Assantius", 1, 10, 5);
+        Initialize("Assantius", 1, 5);
     }
 
     // Update is called once per frame

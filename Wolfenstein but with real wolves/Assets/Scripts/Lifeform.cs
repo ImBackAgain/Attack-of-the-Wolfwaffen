@@ -38,7 +38,7 @@ public abstract class Lifeform : MonoBehaviour {
     /// <returns>Whether or not it's stilll alive</returns>
     public bool TakeDamage(float healthReduction)
     {
-        if (tag == "Player")
+        if (tag == "Player" && health > 0)
             p1.grunt.Play();
         //Debug.Log("A lifeform is taking " + healthReduction + " damage");
         //Debug.Log("Health was " + health);

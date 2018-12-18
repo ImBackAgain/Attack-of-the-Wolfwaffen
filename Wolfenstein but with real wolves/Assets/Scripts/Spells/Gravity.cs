@@ -25,7 +25,7 @@ public class Gravity : Spells {
 
     // Use this for initialization
     protected override void Initialize() {
-        Initialize("Gravitus", 0, 0, 5);
+        Initialize("Gravitus", 0, 5);
 
         duration = 5f;
         timer = 0f;

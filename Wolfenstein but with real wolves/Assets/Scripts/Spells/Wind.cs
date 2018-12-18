@@ -26,7 +26,7 @@ public class Wind : Spells {
 
     // Use this for initialization
     protected override void Initialize() {
-        Initialize("Ventus Servitas", 0.3f, 3, 10);
+        Initialize("Ventus Servitas", 0.3f, 10);
         duration = 5f;
         timer = 0f;
         activated = false;

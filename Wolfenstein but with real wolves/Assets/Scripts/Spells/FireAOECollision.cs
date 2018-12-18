@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireAOECollision : MonoBehaviour {
     float damage;
-    readonly float lifespan = 2f;
+    readonly float lifespan = 1f;
     float timer = 0;
 
 	// Use this for initialization

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Lifeform {
+    bool gameOver = false;
     SceneEnd fader;
     Gun revolver;
     public AudioSource reload;
@@ -60,6 +61,25 @@ public class Player : Lifeform {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (gameOver)
+        {
+            return;
+        }
+
+
+        if (transform.position.y < -100)
+        {
+            health = 0;
+        }
+
+        if (health <= 0)
+        {
+            fader.StartTrans(3);
+            gameOver = true;
+        }
+
+
 		if (Input.GetButtonDown("Fire gun"))
         {
             revolver.Shoot(transform.position, Forward, true);
@@ -79,15 +99,16 @@ public class Player : Lifeform {
             }
         }
 
-        if(health <= 0)
+        if (Input.GetKeyDown(KeyCode.Backslash))
         {
-            fader.StartTrans(3);
+            TakeDamage(-10);
         }
 
         if(evilBobRef == null)
         {
             //SceneManager.LoadScene(2);
             fader.StartTrans(2);
+            gameOver = true;
         }
 	}
 

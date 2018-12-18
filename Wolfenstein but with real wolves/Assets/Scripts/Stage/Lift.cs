@@ -14,6 +14,14 @@ public class Lift : MonoBehaviour
     AudioSource boss;
     bool isPlaying = false;
 
+    public AudioSource NowPlaying
+    {
+        get
+        {
+            return isPlaying ? boss : music;
+        }
+    }
+
 	// Use this for initialization
 	void Start ()
     {      

@@ -119,7 +119,7 @@ public class BobButEvil : Enemy {
                     case Action.Fire:
                     case Action.Ice:
                     default:
-                        Debug.Log("Bob cast a spelll");
+                        //Debug.Log("Bob cast a spelll");
                         spells[toDo.ToString()].Cast();
                         DecideOnNextAction();
                         break;

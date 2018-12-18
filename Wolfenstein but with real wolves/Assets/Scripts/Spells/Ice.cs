@@ -19,7 +19,7 @@ public class Ice : Spells {
 
     // Use this for initialization
     protected override void Initialize() {
-        Initialize("Infriga", 3, 10, 5);
+        Initialize("Infriga", 3, 5);
         projectile = false;
         speed = 0.25f;
     }

@@ -18,7 +18,7 @@ public class Fire : Spells {
 
     // Use this for initialization
     protected override void Initialize() {
-        Initialize("Fuego", 2, 10, 6);
+        Initialize("Fuego", 2, 6);
         
         projectile = false;
     }

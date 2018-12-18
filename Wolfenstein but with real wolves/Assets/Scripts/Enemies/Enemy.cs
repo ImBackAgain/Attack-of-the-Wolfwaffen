@@ -76,7 +76,7 @@ public abstract class Enemy : Lifeform {
         healthbarTransform.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer.x, toPlayer.z) * Mathf.Rad2Deg, 0);
         if (health == 0 || transform.position.y < -1000)
         {
-            Debug.Log("Callling die");
+            //Debug.Log("Callling die");
             Die();
         }
         else

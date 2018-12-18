@@ -15,7 +15,7 @@ public class Lightning : Spells {
 
     // Use this for initialization
     protected override void Initialize() {
-        Initialize("Ventus Fulmino", 4, 5, 5);
+        Initialize("Ventus Fulmino", 4, 5);
     }
 
    
