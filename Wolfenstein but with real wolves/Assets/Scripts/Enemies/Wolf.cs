@@ -19,6 +19,7 @@ public class Wolf : Enemy {
     readonly float windupBeforeAtttack = 0.5f;
     readonly float durationOfAtttack = 0.4f;    
     readonly float coooldownAfterAtttack = 0.4f;
+    readonly float moveSpeeed = 3;
 
     //Atttack damage
     readonly int atk = 5;
@@ -39,10 +40,11 @@ public class Wolf : Enemy {
         {
             if (toPlayer.sqrMagnitude < agggroThreshold)
             {
+                if (name == "The first") Debug.Log("Rotating");
+                transform.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer2D.x, toPlayer2D.z) * Mathf.Rad2Deg, 0);
 
                 if (toPlayer2D.sqrMagnitude < atttackThreshold)
                 {
-                    rb.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer2D.x, toPlayer2D.z) * Mathf.Rad2Deg, 0);
                     StartCoroutine("ClawAttack");
                     //Debug.Log("Claw atttacked?");
                 }
@@ -52,8 +54,7 @@ public class Wolf : Enemy {
                     {
                         SetAnimation(AnimState.Walk);
                     }
-                    rb.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer2D.x, toPlayer2D.z) * Mathf.Rad2Deg, 0);
-                    col.SimpleMove(toPlayer2D.normalized * 3);
+                    col.SimpleMove(toPlayer2D.normalized * moveSpeeed);
                 }
             }
             else

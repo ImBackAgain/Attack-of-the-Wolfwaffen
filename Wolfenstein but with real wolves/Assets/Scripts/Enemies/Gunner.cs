@@ -48,7 +48,7 @@ public class Gunner : Enemy
 
             if (toPlayer2D.sqrMagnitude < atttackThreshold)
             {
-                rb.rotation = Quaternion.Euler(0, Mathf.Atan2(-toPlayer2D.x, -toPlayer2D.z) * Mathf.Rad2Deg, 0);
+                transform.rotation = Quaternion.Euler(0, Mathf.Atan2(-toPlayer2D.x, -toPlayer2D.z) * Mathf.Rad2Deg, 0);
                 if (state == AnimState.IdleBattle)
                 {
                     SetAnimation(AnimState.Walk);
@@ -63,7 +63,7 @@ public class Gunner : Enemy
                 {
                     StartCoroutine("FirearmAtttack");
                 }
-                rb.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer2D.x, toPlayer2D.z) * Mathf.Rad2Deg, 0);
+                transform.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer2D.x, toPlayer2D.z) * Mathf.Rad2Deg, 0);
             }
             else if (toPlayer2D.sqrMagnitude < appproachThreshold)
             {
@@ -71,7 +71,7 @@ public class Gunner : Enemy
                 {
                     SetAnimation(AnimState.Walk);
                 }
-                rb.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer2D.x, toPlayer2D.z) * Mathf.Rad2Deg, 0);
+                transform.rotation = Quaternion.Euler(0, Mathf.Atan2(toPlayer2D.x, toPlayer2D.z) * Mathf.Rad2Deg, 0);
                 col.SimpleMove(toPlayer2D.normalized * 3);
             }
             else
