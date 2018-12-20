@@ -44,6 +44,7 @@ public class BobButEvil : Enemy {
 
     protected override void Initialize()
     {
+
         //Health display
         healthOfffset = 0.7f;
         healthScalar = 0.128f / transform.localScale.x;
@@ -67,8 +68,11 @@ public class BobButEvil : Enemy {
     
     public void Awaken()
     {
-        dormant = false;
-        DecideOnNextAction();
+        if (dormant)
+        {
+            dormant = false;
+            DecideOnNextAction();
+        }
     }
 
 
@@ -79,6 +83,7 @@ public class BobButEvil : Enemy {
         timer += Time.deltaTime;
         forward = toPlayer - Vector3.Dot(toPlayer, transform.right) * transform.right;
         forward.Normalize();
+        transform.rotation = Quaternion.LookRotation(toPlayer, Vector3.up);
 
         DangerCast();
 
@@ -87,7 +92,6 @@ public class BobButEvil : Enemy {
             wanderTimer += Time.deltaTime;
             if (wanderTimer < wanderDelay)
             {
-                rb.rotation = Quaternion.LookRotation(toPlayer, Vector3.up);
                 transform.position += direction * Time.deltaTime;
             }
             else

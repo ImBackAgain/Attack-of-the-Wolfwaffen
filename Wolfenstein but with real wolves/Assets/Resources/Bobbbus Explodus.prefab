@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 199065473365402808}
   - component: {fileID: 114037558873290368}
   - component: {fileID: 82501153440313446}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Bobbbus Explodus
   m_TagString: Carefullly Cancelable
   m_Icon: {fileID: 0}
@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3a30af51de918a4eb0ad3ca5c2048a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTag: 
 --- !u!136 &136334888787038828
 CapsuleCollider:
   m_ObjectHideFlags: 1

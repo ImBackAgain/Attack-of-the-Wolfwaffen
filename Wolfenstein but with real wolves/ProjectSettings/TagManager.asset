@@ -8,6 +8,7 @@ TagManager:
   - Fire
   - SilverKey
   - GoldKey
+  - Canceler
   - Cancelable
   - Carefullly Cancelable
   layers:
@@ -22,11 +23,11 @@ TagManager:
   - Enemies
   - Player
   - Env
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Cancelable
+  - Carefullly Cancelable
+  - Canceler
+  - Other Spellls
+  - Pickups
   - 
   - 
   - 

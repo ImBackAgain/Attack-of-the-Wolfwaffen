@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 496484}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Bone_cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ GameObject:
   m_Component:
   - component: {fileID: 460558}
   - component: {fileID: 9594776}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: pbr_box_ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 497898}
   - component: {fileID: 3331918}
   - component: {fileID: 2357730}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: box_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 459332}
   - component: {fileID: 3347040}
   - component: {fileID: 2342562}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: box_cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}

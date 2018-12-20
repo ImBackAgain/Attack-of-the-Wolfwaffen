@@ -20,8 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4138287877739438}
   - component: {fileID: 65673048832931298}
+  - component: {fileID: 65500372847819718}
   - component: {fileID: 114499659011892416}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: Realm of Bob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,6 +42,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65500372847819718
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1102238152059274}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14.159495, y: 1.3166834, z: 20.237612}
+  m_Center: {x: 5.007634, y: -0.64468217, z: 0.25507346}
 --- !u!65 &65673048832931298
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -51,8 +64,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 18.89738, y: 4.271995, z: 20.24542}
-  m_Center: {x: 7.3718157, y: 1.0446749, z: 0.2555718}
+  m_Size: {x: 19.05573, y: 3.1749055, z: 20.24542}
+  m_Center: {x: 7.4509897, y: 1.5932198, z: 0.2555718}
 --- !u!114 &114499659011892416
 MonoBehaviour:
   m_ObjectHideFlags: 1

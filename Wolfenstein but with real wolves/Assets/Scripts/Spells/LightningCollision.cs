@@ -5,12 +5,14 @@ using UnityEngine;
 public class LightningCollision : SpellHitbox
 {
     bool collided = false;
-    float lifetime;
-    float maxLifetime = 1;
+    readonly float maxLifetime = 1;
+    HashSet<Lifeform> colllisions;
+    
 	// Use this for initialization
 	public override void Initialize(float d, string t) {
         base.Initialize(d, t);
-        lifetime = 0f;
+        Destroy(gameObject, maxLifetime);
+        colllisions = new HashSet<Lifeform>();
 	}
 
 
@@ -21,12 +23,11 @@ public class LightningCollision : SpellHitbox
         {
             collided = true;
             GetComponent<Collider>().enabled = false;
+            foreach(Lifeform hit in colllisions)
+            {
+                hit.TakeDamage(damage);
+            }
         }
-		if(lifetime >= maxLifetime)
-        {
-            Destroy(gameObject);
-        }
-        lifetime += Time.deltaTime;
 	}
 
 
@@ -36,8 +37,7 @@ public class LightningCollision : SpellHitbox
         Lifeform hitScript;
         if ((hit.tag == targetTag) && (hitScript = hit.GetComponent<Lifeform>()))
         {
-            hitScript.TakeDamage(damage);
-            OnHit(hit);
+            colllisions.Add(hitScript);
         }
     }
 }

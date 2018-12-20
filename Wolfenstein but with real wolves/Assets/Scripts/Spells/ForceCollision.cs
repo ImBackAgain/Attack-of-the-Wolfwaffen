@@ -3,30 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ForceCollision : SpellHitbox {
-    int coll;
+    //int coll;
     float lifetime;
     float maxLifetime;
     Material mat;
+    SpelllNegater blocker;
+
+
+    SphereCollider col;
+
     // Use this for initialization
     public override void Initialize(float d, string t) {
-        base.Initialize(d, t);  
-        coll = 0;
+        base.Initialize(d, t);
+        col = GetComponent<SphereCollider>();
+        //coll = 0;
         lifetime = 0f;
         maxLifetime = 0.7f;
         mat = GetComponentInChildren<Renderer>().material;
+        blocker = gameObject.AddComponent<SpelllNegater>();
+        blocker.targetTag = targetTag;
 	}
 
-    void FixedUpdate()
-    {
-        if (coll < 3)
-        {
-            coll++;
-        }
-        if (coll == 2)
-        {
-            GetComponent<Collider>().enabled = false;
-        }
-    }
 
     // Update is called once per frame
     void Update()
@@ -46,29 +43,33 @@ public class ForceCollision : SpellHitbox {
         lifetime += Time.deltaTime;
     }
 
+
     protected override void OnTriggerStay(Collider other)
     {
-        GameObject hit = other.gameObject;
-        if (hit.tag == "Cancelable" || hit.tag == "Carefullly Cancelable")
+        if (other.tag == targetTag)
         {
-            if (hit.tag == "Carefullly Cancelable")
-            {
-                Debug.Log("Destroying lightning;");
-            }
-            Destroy(other.gameObject);
-        }
-        else if (hit.tag == targetTag)
-        {
+            GameObject hit = other.gameObject;
+
+            if (hit.GetComponent<BobButEvil>()) return;
+            //Don't push bob
             Vector3 away = transform.forward;
             away.Normalize();
-            away.y = 1;
+            away.y = 0.2f;
 
             hit.transform.position += away;
         }
+        
     }
 
     void OnTriggerEnter(Collider other)
     {
         base.OnTriggerStay(other);
+
+        GameObject thing = other.gameObject;
+
+        if (thing.tag == "Cancelable" || thing.tag == "Carefullly Cancelable")
+        {
+            blocker.Nullify(thing.GetComponent<SpellHitbox>());
+        }
     }
 }

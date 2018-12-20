@@ -26,6 +26,7 @@ public class FireCollision : SpellHitbox
     protected override void OnTriggerStay(Collider other)
     {
         base.OnTriggerStay(other);
+        if (other.tag == "Canceler") return;
         createdObj = Instantiate(fireAOE, transform.position, Quaternion.identity);
         createdObj.GetComponent<FireAOECollision>().SetDamage(dotDamage);
         Destroy(gameObject);

@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class SpellHitbox : MonoBehaviour {
 
     protected float damage;
-    protected string targetTag;
+    public string targetTag;
 
 	// Use this for initialization
 	public virtual void Initialize(float d, string t)

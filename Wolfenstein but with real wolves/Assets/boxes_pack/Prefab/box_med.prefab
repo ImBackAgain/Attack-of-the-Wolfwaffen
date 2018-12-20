@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 412476}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Bone_cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 437276}
   - component: {fileID: 3347154}
   - component: {fileID: 2358682}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: box_cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 486830}
   - component: {fileID: 9580444}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: box_med
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 436616}
   - component: {fileID: 3320884}
   - component: {fileID: 2318978}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: box_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

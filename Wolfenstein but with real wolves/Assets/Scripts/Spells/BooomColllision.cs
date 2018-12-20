@@ -48,24 +48,4 @@ public class BooomColllision : SpellHitbox
 
             dresdenScript.m_Jump = true;
         }
-    }
-    protected override void OnTriggerStay(Collider other)
-    {
-        GameObject hit = other.gameObject;
-        Lifeform hitScript;
-        if ((hit.tag == targetTag) && (hitScript = hit.GetComponent<Lifeform>()))
-        {
-            OnHit(hit);
-        }
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        GameObject hit = other.gameObject;
-        Lifeform hitScript;
-        if ((hit.tag == targetTag) && (hitScript = hit.GetComponent<Lifeform>()))
-        {
-            hitScript.TakeDamage(damage);
-        }
-    }
-}
+    }}

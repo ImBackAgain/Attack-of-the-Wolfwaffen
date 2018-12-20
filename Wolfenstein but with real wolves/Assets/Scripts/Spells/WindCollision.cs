@@ -5,27 +5,43 @@ using UnityEngine;
 public class WindCollision : SpellHitbox
 {
     Transform parent;
+    SpelllNegater blocker;
+    SphereCollider col;
     public override void Initialize(float d, string t)
     {
         base.Initialize(d, t);
+        col = GetComponent<SphereCollider>();
         parent = transform.parent;
+        blocker = gameObject.AddComponent<SpelllNegater>();
+        blocker.targetTag = targetTag;
     }
 
     protected override void OnTriggerStay(Collider other)
     {
-        base.OnTriggerStay(other);
-        GameObject hit = other.gameObject;
-        if (hit.tag == "Cancelable")
+        if (other.tag == targetTag)
         {
-            Destroy(other.gameObject);
-        }
-        else if (hit.tag == targetTag)
-        {
-            Vector3 away = (hit.transform.position - parent.transform.position);
+            GameObject hit = other.gameObject;
+
+            if (hit.GetComponent<BobButEvil>()) return;
+            //Don't push bob
+            Vector3 away = transform.forward;
             away.Normalize();
-            away.y = 1;
+            away.y = 0.2f;
 
             hit.transform.position += away;
+        }
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        base.OnTriggerStay(other);
+
+        GameObject thing = other.gameObject;
+
+        if (thing.tag == "Cancelable")
+        {
+            blocker.Nullify(thing.GetComponent<SpellHitbox>());
         }
     }
 }

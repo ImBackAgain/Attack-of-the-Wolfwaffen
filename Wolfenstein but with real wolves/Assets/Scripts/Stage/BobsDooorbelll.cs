@@ -16,7 +16,6 @@ public class BobsDooorbelll : MonoBehaviour {
         if (other.tag == "Player")
         {
             bob.Awaken();
-            enabled = false;
         }
     }
 }

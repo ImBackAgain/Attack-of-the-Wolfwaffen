@@ -113,7 +113,7 @@ public class Gunner : Enemy
             yield return null;
         }
 
-        weapon.Shoot(transform.position, toPlayer);
+        weapon.Shoot(transform.position, toPlayer + Random.insideUnitSphere);
         
 
 
