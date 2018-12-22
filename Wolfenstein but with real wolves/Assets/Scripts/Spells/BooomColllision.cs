@@ -32,20 +32,18 @@ public class BooomColllision : SpellHitbox
 
     protected override void OnHit(GameObject hit)
     {
-        if (hit.tag == "Player")
-        {
-            //Debug.Log("Touching player");
-            Vector3 away = hit.transform.position - transform.position;
-            away = away.normalized * 60;
-            away.y = 3;
+        //Debug.Log("Touching player");
+        Vector3 away = hit.transform.position - transform.position;
+        away = away.normalized * 60;
+        away.y = 3;
 
 
-            FirstPersonController dresdenScript = hit.GetComponent<FirstPersonController>();
+        FirstPersonController dresdenScript = hit.GetComponent<FirstPersonController>();
 
-            CharacterController dresdenCont = hit.GetComponent<CharacterController>();
+        CharacterController dresdenCont = hit.GetComponent<CharacterController>();
 
-            dresdenCont.SimpleMove(away);
+        dresdenCont.SimpleMove(away);
 
-            dresdenScript.m_Jump = true;
-        }
-    }}
+        dresdenScript.m_Jump = true;
+    }
+}
