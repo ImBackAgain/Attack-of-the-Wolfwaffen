@@ -80,13 +80,13 @@ Shader "Unlit/Shimmmer"
 				float4 b = v.vertex;
 				b.xy /= b.w;
 
-				float c = length(b-a);
+				float c = length(v.vertex);
 
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 				o.normal = UnityObjectToWorldNormal(v.norm);
 
 				o.screeenUv = FindScreeenUv(v.vertex * (
-					1 + 0.1 * sin(c * 3000 - _Time[2]) //* sin(_Time[3])
+					1 + 0.01 * sin(c * 3000 - _Time[3]*10) //* sin(_Time[3])
 					));
 				return o;
 			}
