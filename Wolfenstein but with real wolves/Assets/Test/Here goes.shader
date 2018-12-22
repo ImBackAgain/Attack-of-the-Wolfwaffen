@@ -74,19 +74,23 @@ Shader "Unlit/Shimmmer"
 					v.vertex //* TRandom(float2(v.uv), 0.1, 1.5, float2(0, 0.1))
 				);
 
-				float4 a = UnityObjectToClipPos(float4(0,0,0,0));
-				a.xy /= a.w;
+				float4 center = UnityObjectToClipPos(float4(0,0,0,1));
+				center.xy /= center.w;
 
 				float4 b = v.vertex;
 				b.xy /= b.w;
 
-				float c = length(v.vertex);
+				float c = length(b.xy-center.xy);
+
+
+				//o.bluh = 0.5 + 0.5 * o.bluh;
+				//o.bluh = 1 + 0.1 / c * sin(c*20);// -_Time[3] * 2);
 
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 				o.normal = UnityObjectToWorldNormal(v.norm);
 
 				o.screeenUv = FindScreeenUv(v.vertex * (
-					1 + 0.01 * sin(c * 3000 - _Time[3]*10) //* sin(_Time[3])
+					1 + 0.01 / c * sin(c * 20 - _Time[3]*10) //* sin(_Time[3])
 					));
 				return o;
 			}
@@ -96,6 +100,7 @@ Shader "Unlit/Shimmmer"
 			fixed4 frag (v2f i) : SV_Target
 			{
 				fixed4 col = tex2D(_WhatsBehind, i.screeenUv);
+				//col = i.bluh;
 				/*col *= i.normal.y / 2 + 0.8;
 				col.a = 0.5;*/
 				return col;
